@@ -716,12 +716,50 @@ h6 {
 }
 
 .footer {
-    border-top: 2px solid #A7AAAB;
-    padding: 60px 0;
+    padding: 80px 0;
     background: #000;
     color: #fff;
     font-size: 20px;
+}
+.footer .contact-us {
     font-weight: bold;
+}
+.footer .contact-us .mail, .footer .contact-us .phone{
+    padding: 13px;
+    border: 2px solid #FFF;
+}
+.footer .contact-us .mail {
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+.footer .contact-us span {
+    margin-right: 10px;
+}
+.footer .contact-us p {
+    margin-bottom: 0;
+}
+.footer .logo-footer {
+    margin-bottom: 24px;
+}
+.footer .social-area ul {
+    list-style: none;
+    padding-left: 0;
+}
+.footer .social-area ul li {
+    margin-right: 16px;
+}
+.footer .social-area ul li img {
+    width: 32px;
+}
+.footer .logo-footer img {
+    width: 245.622px;
+}
+.footer .menu-footer {
+    padding-left: 0;
+    list-style: none;
+}
+.footer .menu-footer li a {
+    color: #fff;
 }
 #page-footer {
     background: #fff;
@@ -764,12 +802,22 @@ h6 {
 .page__home #about-us {
     color: #fff;
     padding-top: 96px;
-    padding-bottom: 160px;
-    border-bottom: 2px solid #FFF;
 }
 .page__home #about-us .img {
     margin-top: 64px;
     margin-bottom: 96px;
+}
+.page__home #about-us #our-client {
+    margin-top: 64px;
+    padding-bottom: 160px;
+    border-bottom: 2px solid #FFF;
+}
+.page__home #about-us #our-client .client-logo {
+    text-align: center;
+    padding: 37px;
+}
+.page__home #about-us #our-client .client-logo img {
+    width: 274px;
 }
 .page__home #home-title h4.title {
     font-family: 'Noto Serif', serif;
