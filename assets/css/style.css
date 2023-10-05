@@ -807,6 +807,9 @@ h6 {
     margin-top: 64px;
     margin-bottom: 96px;
 }
+.page__home #about-us .img img {
+    width: 100%;
+}
 .page__home #about-us #our-client {
     margin-top: 64px;
     padding-bottom: 160px;
@@ -1574,10 +1577,17 @@ input:checked+.slider:before {
         padding-top: 20px!important;
     }
     .header i.fa-bars {
-        color: #000;
+        color: #fff;
+    }
+    .page__home .last-update .instruction-2 .update-info {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .header #navbar-header {
+        padding-left: 0;
     }
     .home-top-banner {
-        background: #0C3FFF;
+        padding-top: 100px;
     }
     .home-top-banner .img {
         display: none   ;
@@ -1612,7 +1622,7 @@ input:checked+.slider:before {
         margin: 24px 0 0 0;
     }
     .header {
-        background: #fff;
+        background: #000;
         position: unset;
     }
     .header .navbar-expand-lg .navbar-nav.menu-header {
