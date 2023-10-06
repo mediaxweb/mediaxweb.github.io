@@ -723,6 +723,7 @@ h6 {
 }
 .footer .contact-us {
     font-weight: bold;
+    font-size: 24px;
 }
 .footer .contact-us .mail, .footer .contact-us .phone{
     padding: 13px;
@@ -737,6 +738,8 @@ h6 {
 }
 .footer .contact-us p {
     margin-bottom: 0;
+    font-weight: 300;
+    font-size: 18px;
 }
 .footer .logo-footer {
     margin-bottom: 24px;
@@ -760,6 +763,7 @@ h6 {
 }
 .footer .menu-footer li a {
     color: #fff;
+    font-size: 18px;
 }
 #page-footer {
     background: #fff;
