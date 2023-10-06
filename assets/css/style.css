@@ -612,7 +612,7 @@ h6 {
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-link {
     color: #fff;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 36px;
     padding: 0;
     display: inline-block;
@@ -820,7 +820,7 @@ h6 {
     padding: 37px;
 }
 .page__home #about-us #our-client .client-logo img {
-    width: 274px;
+    
 }
 .page__home #home-title h4.title {
     font-family: 'Noto Serif', serif;
