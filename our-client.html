@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/images/fav.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <title>Media X</title>
+    <style id="svelte-166mr51-style">
+        ul.svelte-166mr51 {
+            display: flex;
+            flex-flow: column nowrap;
+            position: fixed;
+            font-size: 16px;
+            padding: 0 0.75em;
+            margin: 0;
+            list-style-type: none;
+            width: 20em;
+            bottom: 0;
+            right: 0;
+            font-family: 'Helvetica Neue';
+            max-height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            color: #4a4a4a;
+            background: transparent;
+            scrollbar-width: none;
+            box-sizing: border-box;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 99999999
+        }
+        
+        @media only screen and (max-width: 450px) {
+            ul.svelte-166mr51 {
+                width: 100%
+            }
+        }
+        
+        .bn-notify-custom.bn-notify-dark-mode {
+            background: #283944;
+            color: #ffffff;
+            background: rgba(40, 57, 68, 0.9)
+        }
+        
+        .bn-notify-clickable:hover {
+            cursor: pointer
+        }
+        
+        .svelte-166mr51::-webkit-scrollbar {
+            display: none
+        }
+        
+        li.svelte-166mr51 {
+            position: relative;
+            display: flex;
+            padding: 0.75em;
+            font-size: 0.889em;
+            font-family: inherit;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            color: inherit;
+            transition: background 300ms ease-in-out, color 300ms ease-in-out;
+            pointer-events: all;
+            background: #ffffff;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9)
+        }
+        
+        div.svelte-166mr51 {
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+            font-size: inherit;
+            font-family: inherit
+        }
+    </style>
+    <style id="svelte-7rn0pv-style">
+        div.svelte-7rn0pv {
+            height: 100%;
+            font-size: inherit;
+            font-family: inherit;
+            width: 1.5em
+        }
+    </style>
+    <style id="svelte-5f7pqk-style">
+        div.svelte-5f7pqk {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            font-size: inherit;
+            font-family: inherit;
+            margin-left: 0.75em;
+            width: 90%
+        }
+        
+        p.svelte-5f7pqk {
+            display: flex;
+            align-items: center;
+            margin: 0.5em 0 0 0;
+            opacity: 0.7;
+            font-size: 0.889em;
+            line-height: 1.15;
+            font-family: inherit
+        }
+        
+        span.svelte-5f7pqk {
+            font-family: inherit;
+            display: flex;
+            align-items: center
+        }
+    </style>
+    <style id="svelte-12gqi36-style">
+        p.svelte-12gqi36 {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit
+        }
+    </style>
+    <style id="svelte-1ociadw-style">
+        svg.svelte-1ociadw {
+            margin: 0 0.25em 0 0.5em
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper page-client">
+        <header class="header" id="header">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container container-1">
+                    <div class="row flex-grow-1 align-items-center">
+                        <div class="col-6 col-lg-2">
+                            <div class="d-flex align-items-center">
+                                <button class="navbar-toggler mr-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-header">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                <div class="logo" onclick="window.location = 'index.html'">
+                                    <img src="../assets/images/mediax-logo.svg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="collapse navbar-collapse" id="navbar-header">
+                                <ul class="navbar-nav menu-header ms-auto mb-2 mb-lg-0 align-items-lg-end">
+                                    <li>
+                                        <a class="nav-link" href="#">Our Client</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Products</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">News</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="page__home page-our-client" style="min-height: calc(100vh - 73px);">
+            <div id="about-us" style="background-color: #257090;">
+                <div class="container container-1">
+                    <article class="instruction-1" id="home-title">
+                        <h4 class="title">Transforming work and creativity with AI</h4>
+                        <p>Enim erat hendrerit donec lectus. Donec auctor vestibulum morbi in sit. Faucibus et vestibulum quis duis eu in. Vel hac quam a lectus gravida neque pellentesque. Amet platea vitae commodo mollis dis faucibus adipiscing enim vitae. Magna turpis facilisis cursus nulla </p>
+                        <a href="" class="home-btn">Take a tour</a>
+                    </article>
+                </div>
+                <div class="img">
+                    <img src="./assets/images/our-client-img-1.png" alt="">
+                </div>
+            </div>
+            <div id="show-case" style="background-color: #fff;">
+                <div class="container container-1">
+                    <div class="show-case">
+                        <article class="instruction-2" id="home-instruction">
+                            <div class="instruction "> 
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-lg-6" style="display: flex;align-items: center;">
+                                            <div class="description">
+                                                <h4 class="title">Strategy & Consulting</h4>
+                                                <p>Enim erat hendrerit donec lectus. Donec auctor vestibulum morbi in sit. Faucibus et vestibulum quis duis eu in. Vel hac quam a lectus gravida neque pellentesque. Amet platea vitae commodo mollis dis faucibus adipiscing enim vitae. Magna turpis facilisis cursus nulla eget volutpat erat netus. Integer commodo libero velit lobortis eu cras. Auctor iaculis consequat lorem condimentum suscipit urna nibh fermentum urna. A erat vel ut sit sem scelerisque mi. Egestas lorem habitant mi nunc non mauris. Sapien tempus non senectus laoreet proin sed mauris. Nec magna tellus semper in lorem mi eu risus. Nunc viverra varius viverra orci dictumst suscipit nibh.</p>
+                                                <a href="#">READ MORE</a>
+                                            </div>      
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="img">
+                                                <img src="./assets/images/our-client-item-1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="img">
+                                                <img src="./assets/images/our-client-item-1.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6" style="display: flex;align-items: center;">
+                                            <div class="description">
+                                                <h4 class="title">Strategy & Consulting</h4>
+                                                <p>Enim erat hendrerit donec lectus. Donec auctor vestibulum morbi in sit. Faucibus et vestibulum quis duis eu in. Vel hac quam a lectus gravida neque pellentesque. Amet platea vitae commodo mollis dis faucibus adipiscing enim vitae. Magna turpis facilisis cursus nulla eget volutpat erat netus. Integer commodo libero velit lobortis eu cras. Auctor iaculis consequat lorem condimentum suscipit urna nibh fermentum urna. A erat vel ut sit sem scelerisque mi. Egestas lorem habitant mi nunc non mauris. Sapien tempus non senectus laoreet proin sed mauris. Nec magna tellus semper in lorem mi eu risus. Nunc viverra varius viverra orci dictumst suscipit nibh.</p>
+                                                <a href="#">READ MORE</a>
+                                            </div> 
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-lg-6" style="display: flex;align-items: center;">
+                                            <div class="description">
+                                                <h4 class="title">Strategy & Consulting</h4>
+                                                <p>Enim erat hendrerit donec lectus. Donec auctor vestibulum morbi in sit. Faucibus et vestibulum quis duis eu in. Vel hac quam a lectus gravida neque pellentesque. Amet platea vitae commodo mollis dis faucibus adipiscing enim vitae. Magna turpis facilisis cursus nulla eget volutpat erat netus. Integer commodo libero velit lobortis eu cras. Auctor iaculis consequat lorem condimentum suscipit urna nibh fermentum urna. A erat vel ut sit sem scelerisque mi. Egestas lorem habitant mi nunc non mauris. Sapien tempus non senectus laoreet proin sed mauris. Nec magna tellus semper in lorem mi eu risus. Nunc viverra varius viverra orci dictumst suscipit nibh.</p>
+                                                <a href="#">READ MORE</a>
+                                            </div>      
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="img">
+                                                <img src="./assets/images/our-client-item-1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="img">
+                                                <img src="./assets/images/our-client-item-1.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6" style="display: flex;align-items: center;">
+                                            <div class="description">
+                                                <h4 class="title">Strategy & Consulting</h4>
+                                                <p>Enim erat hendrerit donec lectus. Donec auctor vestibulum morbi in sit. Faucibus et vestibulum quis duis eu in. Vel hac quam a lectus gravida neque pellentesque. Amet platea vitae commodo mollis dis faucibus adipiscing enim vitae. Magna turpis facilisis cursus nulla eget volutpat erat netus. Integer commodo libero velit lobortis eu cras. Auctor iaculis consequat lorem condimentum suscipit urna nibh fermentum urna. A erat vel ut sit sem scelerisque mi. Egestas lorem habitant mi nunc non mauris. Sapien tempus non senectus laoreet proin sed mauris. Nec magna tellus semper in lorem mi eu risus. Nunc viverra varius viverra orci dictumst suscipit nibh.</p>
+                                                <a href="#">READ MORE</a>
+                                            </div> 
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-lg-6" style="display: flex;align-items: center;">
+                                            <div class="description">
+                                                <h4 class="title">Strategy & Consulting</h4>
+                                                <p>Enim erat hendrerit donec lectus. Donec auctor vestibulum morbi in sit. Faucibus et vestibulum quis duis eu in. Vel hac quam a lectus gravida neque pellentesque. Amet platea vitae commodo mollis dis faucibus adipiscing enim vitae. Magna turpis facilisis cursus nulla eget volutpat erat netus. Integer commodo libero velit lobortis eu cras. Auctor iaculis consequat lorem condimentum suscipit urna nibh fermentum urna. A erat vel ut sit sem scelerisque mi. Egestas lorem habitant mi nunc non mauris. Sapien tempus non senectus laoreet proin sed mauris. Nec magna tellus semper in lorem mi eu risus. Nunc viverra varius viverra orci dictumst suscipit nibh.</p>
+                                                <a href="#">READ MORE</a>
+                                            </div>      
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="img">
+                                                <img src="./assets/images/our-client-item-1.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="contact-us" style="background-color: #F3F3F3;">
+                <div class="container container-1">
+                    <article class="instruction-1" id="home-title">
+                        <h4 class="title">Would you like to find out more?</h4>
+                        <p>We are delighted to answer any questions! You can connect with us here.</p>
+                    </article>
+                    <div class="form-contact">
+                        <form action="" method="post">
+                            <div class="name-and-email">
+                                <input type="text" id="name" name="name" placeholder="Name" required>
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                            </div> 
+                            <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+                    
+                            <a href="#" class="send-btn">SEND</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container container-1">
+                    <div class="row flex-grow-1">
+                        <div class="col-lg-4" style="display: flex;align-items: center;">
+                            <div class="logo-footer">
+                                <a href="#"><img src="./assets/images/mediax-logo.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="collapse navbar-collapse" id="navbar-footer">
+                                <ul class="menu-footer mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link" target="_blank" href="">About Us <i class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" target="_blank" href="">Our Client <i class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" target="_blank" href="">Our Products <i class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" target="_blank" href="">Last Updates <i class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="social-area d-flex ms-auto mb-2 mb-lg-0 justify-content-start">
+                                <ul class="social-list d-flex flex-row ">
+                                    <li><a href=""><img src="./assets/images/twiter-new-logo.png" alt=""></a></li>
+                                    <li><a href=""><img src="./assets/images/telegram-logo.png" alt=""></a></li>
+                                    <li><a href="#"><img src="./assets/images/github-logo.png" alt=""></a></li>
+                                    <li><a href="#"><img src="./assets/images/facebook-logo.png" alt=""></a></li>
+                                </ul>
+                            </div>
+                            <div class="contact-us">
+                                <div>Contact Us</div>
+                                <div class="mail">
+                                    <p><span class=""><img src="./assets/images/mail-logo.png" alt=""></span>abcdefgjklmnopq@gmail.com</p>
+                                </div>
+                                <div class="phone">
+                                    <p><span class=""><img src="./assets/images/phone-logo.png" alt=""></span>+84 123456789</p>
+                                </div>
+                                <div class="address">
+                                    <p><span class=""><img src="./assets/images/address-logo.png" alt=""></span>B12B-02, Vinhomes Gardenia, Ham Nghi, Nam Tu Liem, Ha Noi, Vietnam</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </footer>
+    </div>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/custom.menu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>

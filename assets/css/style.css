@@ -591,7 +591,9 @@ h6 {
     z-index: 20;
     background-color: transparent;
 }
-
+.page-client .header.sticky-header {
+    background: #257090;
+}
 .header #navbar-header {
     padding: 16px 32px;
     border-radius: 50px;
@@ -717,17 +719,13 @@ h6 {
 
 .footer {
     padding: 80px 0;
-    background: #000;
+    background: #257090;
     color: #fff;
     font-size: 20px;
 }
 .footer .contact-us {
     font-weight: bold;
     font-size: 24px;
-}
-.footer .contact-us .mail, .footer .contact-us .phone{
-    padding: 13px;
-    border: 2px solid #FFF;
 }
 .footer .contact-us .mail {
     margin-top: 24px;
@@ -737,7 +735,7 @@ h6 {
     margin-right: 10px;
 }
 .footer .contact-us p {
-    margin-bottom: 0;
+    margin-bottom: 21px;
     font-weight: 300;
     font-size: 18px;
 }
@@ -760,10 +758,16 @@ h6 {
 .footer .menu-footer {
     padding-left: 0;
     list-style: none;
+    width: 75%;
 }
 .footer .menu-footer li a {
     color: #fff;
     font-size: 18px;
+    padding: 24px 0;
+    border-bottom: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 #page-footer {
     background: #fff;
@@ -853,6 +857,71 @@ h6 {
 .page__home .last-update .instruction-2 .update-info h4.title {
     font-size: 16px;
     margin-top: 8px;
+}
+.page-our-client #about-us {
+    padding-bottom: 160px;
+    padding-top: 210px;
+}
+.page-our-client #show-case .instruction .item {
+    padding-top: 96px;
+    padding-bottom: 160px;
+    border-bottom: 2px solid #000;
+}
+.page-our-client #show-case .instruction .item:last-child {
+    border-bottom: 0;
+}
+.page-our-client #show-case .instruction .item .description h4.title {
+    font-size: 40px;
+    font-family: 'Noto Serif', serif;
+    margin-bottom: 24px;
+}
+.page-our-client #show-case .instruction .item .description p {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 64px;
+}
+.page-our-client #show-case .instruction .item .description a {
+    padding: 16px 32px;
+    background: #000;
+    font-weight: bold;
+    color: #fff!important;
+    font-size: 18px;
+}
+.page-our-client #contact-us {
+    padding-top: 96px;
+    padding-bottom: 160px;
+}
+#contact-us .form-contact {
+    display: flex;
+    justify-content: center;
+}
+#contact-us .form-contact form {
+    text-align: center;
+}
+#contact-us .form-contact form .name-and-email {
+    margin-bottom: 20px;
+}
+#contact-us .form-contact form #name , #contact-us .form-contact form #email {
+    width: 403px;
+    height: 49px;
+    padding: 16px;
+    border: 2px solid #CDCDCD;
+}
+#contact-us .form-contact form #name {
+    margin-right: 20px;
+}
+#contact-us .form-contact form #description {
+    width: 830px;
+    height: 140px;
+    border: 2px solid #CDCDCD;
+}
+#contact-us .form-contact form a.send-btn {
+    padding: 10px 50px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+    border: 0;
+    background-color: #257090;
 }
 .home__title-xlarge {
     font-size: 40px;
