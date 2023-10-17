@@ -1774,6 +1774,9 @@ input:checked+.slider:before {
     #contact-us .form-contact form #name {
         margin-right: 0;
     }
+    #contact-us .contact-info {
+        margin-top: 30px;
+    }
     .header .navbar-expand-lg .navbar-nav.menu-header {
         padding: 20px 0 0 0;
     }
@@ -1806,9 +1809,6 @@ input:checked+.slider:before {
         text-align: left;
         padding: 6px 10px;
     }
-    /* .ctmenu-sub {
-        margin-left: -6%;
-    } */
     .masthead__action-buttons {
         display: block!important;
         width: 100%;
