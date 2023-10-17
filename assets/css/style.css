@@ -592,7 +592,10 @@ h6 {
     background-color: transparent;
 }
 .page-client .header.sticky-header {
-    background: #257090;
+    background: #007BFF;
+}
+.page-client .header {
+    background: #007BFF;
 }
 .header #navbar-header {
     padding: 16px 32px;
@@ -719,9 +722,12 @@ h6 {
 
 .footer {
     padding: 80px 0;
-    background: #257090;
+    background: #000;
     color: #fff;
     font-size: 20px;
+}
+.page-client .footer {
+    background: #007BFF;
 }
 .footer .contact-us {
     font-weight: bold;
@@ -865,7 +871,7 @@ h6 {
 .page-our-client #show-case .instruction .item {
     padding-top: 96px;
     padding-bottom: 160px;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #007BFF;
 }
 .page-our-client #show-case .instruction .item:last-child {
     border-bottom: 0;
@@ -882,7 +888,7 @@ h6 {
 }
 .page-our-client #show-case .instruction .item .description a {
     padding: 16px 32px;
-    background: #000;
+    background: #007BFF;
     font-weight: bold;
     color: #fff!important;
     font-size: 18px;
@@ -890,6 +896,26 @@ h6 {
 .page-our-client #contact-us {
     padding-top: 96px;
     padding-bottom: 160px;
+}
+.page-contact-us #contact-us {
+    padding-bottom: 160px;
+    padding-top: 210px;
+}
+.page-contact-us #contact-us .form-contact form input {
+    width: 100%!important;
+    margin-bottom: 32px;
+    height: 49px;
+    padding: 16px;
+    border: 2px solid #CDCDCD;
+}
+.page-contact-us #contact-us .form-contact form input:last-child {
+    margin-bottom: 0;
+}
+.page-contact-us #contact-us .form-contact {
+    display: block;
+}
+.page-contact-us #contact-us .form-contact form #description {
+    width: 100%;
 }
 #contact-us .form-contact {
     display: flex;
@@ -899,7 +925,7 @@ h6 {
     text-align: center;
 }
 #contact-us .form-contact form .name-and-email {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 #contact-us .form-contact form #name , #contact-us .form-contact form #email {
     width: 403px;
@@ -914,6 +940,7 @@ h6 {
     width: 830px;
     height: 140px;
     border: 2px solid #CDCDCD;
+    padding: 16px;
 }
 #contact-us .form-contact form a.send-btn {
     padding: 10px 50px;
@@ -921,7 +948,33 @@ h6 {
     color: #fff;
     font-weight: 700;
     border: 0;
-    background-color: #257090;
+    background-color: #007BFF;
+}
+#contact-us .contact-info {
+    padding: 64px;
+    background: #F3F3F3;
+}
+#contact-us .contact-info .info {
+    border-bottom: 2px solid #000;
+}
+#contact-us .contact-info .social {
+    margin-top: 40px;
+}
+#contact-us .contact-info .social ul {
+    list-style: none;
+    padding-left: 0;
+}
+#contact-us .contact-info .social ul li {
+    margin-right: 24px;
+}
+#contact-us .contact-info p {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 40px;
+}
+#contact-us .contact-info p span {
+    color: #868686;
+    margin-bottom: 10px;
 }
 .home__title-xlarge {
     font-size: 40px;
@@ -1697,6 +1750,29 @@ input:checked+.slider:before {
     .header {
         background: #000;
         position: unset;
+    }
+    .page-client .header {
+        background: #007BFF;
+    }
+    .page-our-client #about-us {
+        padding-top: 80px;
+        padding-bottom: 0;
+    }
+    .page-our-client #show-case .instruction .item .description {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    .page-our-client #show-case .instruction .item .img img {
+        width: 100%;
+    }
+    #contact-us .form-contact form #name, #contact-us .form-contact form #email {
+        width: 80%;
+    }
+    #contact-us .form-contact form #description {
+        width: 80%;
+    }
+    #contact-us .form-contact form #name {
+        margin-right: 0;
     }
     .header .navbar-expand-lg .navbar-nav.menu-header {
         padding: 20px 0 0 0;
