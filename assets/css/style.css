@@ -597,6 +597,9 @@ h6 {
 .page-client .header {
     background: #007BFF;
 }
+.page-client .footer .menu-footer li a {
+    border-bottom: 2px solid #3295FF;
+}
 .header #navbar-header {
     padding: 16px 32px;
     border-radius: 50px;
@@ -776,7 +779,7 @@ h6 {
     color: #fff;
     font-size: 18px;
     padding: 24px 0;
-    border-bottom: 2px solid #3295FF;
+    border-bottom: 2px solid #242424;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1760,6 +1763,7 @@ input:checked+.slider:before {
     .page-client .header {
         background: #007BFF;
     }
+
     .page-our-client #about-us {
         padding-top: 80px;
         padding-bottom: 0;
