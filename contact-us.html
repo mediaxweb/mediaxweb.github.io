@@ -177,14 +177,14 @@
                 </div>
             </nav>
         </header>
-        <main class="page__home page-contact-us" style="min-height: calc(100vh - 73px);">         
+        <main class="page__home page-contact-us" style="min-height: calc(100vh - 73px);background: #fff;">         
             <div id="contact-us" style="background-color: #fff;">
                 <div class="container container-1">
                     <div class="row">
                         <div class="col-lg-6">
                             <p>We'd love to learn more about you and what we can design and build together.</p>
                             <div class="form-contact">
-                                <form action="https://formspree.io/f/mleyaqej" method="POST">
+                                <form id="form-contact" action="https://formspree.io/f/mleyaqej" method="POST">
                                     <div class="name-and-email">
                                         <input type="text" id="name" name="name" placeholder="Name" required>
                                         <input type="email" id="email" name="email" placeholder="Email" required>
@@ -194,6 +194,7 @@
                                     <textarea id="description" name="message" placeholder="Question" rows="4" cols="50"></textarea><br><br>
                             
                                     <button type="submit" class="send-btn">Send</button>
+                                    <p id="my-form-status"></p>
                                 </form>
                             </div>
                         </div>
@@ -233,16 +234,16 @@
                             <div class="collapse navbar-collapse" id="navbar-footer">
                                 <ul class="menu-footer mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                        <a class="nav-link" target="_blank" href="">About Us <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a class="nav-link" href="services.html">Services</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" target="_blank" href="">Our Client <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a class="nav-link"  href="">Our Research <i class="fa-solid fa-arrow-right"></i></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" target="_blank" href="">Our Products <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a class="nav-link"  href="">About Us <i class="fa-solid fa-arrow-right"></i></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" target="_blank" href="">Last Updates <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="contact-us.html" class="nav-link" href="">Contact <i class="fa-solid fa-arrow-right"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -281,6 +282,37 @@
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/custom.menu.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script>
+        var form = document.getElementById("form-contact");
+    
+        async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+            status.innerHTML = "Thanks for your submission!";
+            form.reset()
+            } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+            })
+            }
+        }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
 </body>
 </html>
