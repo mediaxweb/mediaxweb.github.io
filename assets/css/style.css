@@ -731,17 +731,23 @@ h6 {
 }
 .footer .contact-us {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px;
+    margin-bottom: 78px;
 }
-.footer .contact-us .mail {
+.footer .contact-us .mail ,  .footer .contact-us .phone , .footer .contact-us .address {
     margin-top: 24px;
-    margin-bottom: 8px;
+    margin-bottom: 21px;
+    display: flex;
+    align-items: center;
 }
 .footer .contact-us span {
     margin-right: 10px;
 }
+.footer .contact-us span img {
+    max-width: 32px;
+}
 .footer .contact-us p {
-    margin-bottom: 21px;
+    margin-bottom: 0px;
     font-weight: 300;
     font-size: 18px;
 }
@@ -770,7 +776,7 @@ h6 {
     color: #fff;
     font-size: 18px;
     padding: 24px 0;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #3295FF;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -942,7 +948,7 @@ h6 {
     border: 2px solid #CDCDCD;
     padding: 16px;
 }
-#contact-us .form-contact form a.send-btn {
+#contact-us .form-contact form .send-btn {
     padding: 10px 50px;
     font-size: 18px;
     color: #fff;
