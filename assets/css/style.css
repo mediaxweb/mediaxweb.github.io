@@ -1777,6 +1777,9 @@ input:checked+.slider:before {
     #contact-us .contact-info {
         margin-top: 30px;
     }
+    .page-our-client #show-case .instruction .item .description h4.title {
+        font-size: 30px;
+    }
     .header .navbar-expand-lg .navbar-nav.menu-header {
         padding: 20px 0 0 0;
     }
@@ -1824,9 +1827,6 @@ input:checked+.slider:before {
         margin-left: 0!important;
         margin-top: 1rem;
     }
-    .grb-farm-2 .masthead {
-        margin: 0;
-    }
     .home__banner-title {
         font-size: 42px;
         line-height: 40px;
@@ -1849,23 +1849,6 @@ input:checked+.slider:before {
     }
     .image-token {
         width: 222px;
-    }
-    .nft-quantity-check {
-        margin-top: 1rem;
-    }
-    .grb-farm-2 {
-        padding: 210px 0;
-    }
-    .list-nft-pool .info {
-        width: 291px!important;
-        height: 130px!important;
-        bottom: 19px!important;
-    }
-    .list-nft-pool .name-of-pool {
-        margin-bottom: 34px!important;
-    }
-    .list-nft-pool .img {
-        margin-bottom: 20px;
     }
     #modal-bridge-popup .modal-body .infor .time, #modal-bridge-popup .modal-body .infor .value {
         margin-bottom: 24px;
@@ -2007,11 +1990,6 @@ input:checked+.slider:before {
     height: 30px;
 }
 
-
-/* .currency-laybal .token-name,
-.currency-laybal .max-token-input {
-    padding: 8px;
-} */
 
 .currency-laybal .maxBalanceCoin {
     background-color: #fff;
@@ -2582,11 +2560,6 @@ button--circle, .button--circle i {
     padding: 1.33rem;
     text-align: center;
 }
-span.approve_vegrb_message, span.error_lock_vegrb_message, span.approve_grb_1week_message, span.error_grb_1week_message, span.approve_grb_1month_message, span.error_grb_1month_message, span.approve_grb_1year_message, span.error_grb_1year_message, span.approve_vegrb_1week_message, span.error_vegrb_1week_message, span.approve_vegrb_1month_message, span.error_vegrb_1month_message, span.approve_vegrb_1year_message, span.error_vegrb_1year_message {
-    width: 100%;
-    display: block;
-    margin-bottom: 13px;
-}
 .liquidity-form .volume {
     box-sizing: border-box;
     margin: 0px;
@@ -2594,34 +2567,7 @@ span.approve_vegrb_message, span.error_lock_vegrb_message, span.approve_grb_1wee
     font-weight: 500;
     font-size: 36px;
 }
-.grb-farm-2 .masthead__balance-value {
-    margin-left: 12px;
-}
-.grb-farm-2 .image {
-    text-align: center;
-    height: 466px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-.image .nft-deposited-check {
-    position: absolute;
-    top: 33px;
-}
-.grb-farm-2 .token-1 , .grb-farm-2 .token-2 {
-    --size: 25px;
-    border-radius: 100px;
-    border:0.5px solid #fff;
-    color: rgb(255, 255, 255);
-    background-color: rgb(41, 50, 73);
-    font-size: calc(var(--size) / 3);
-    font-weight: 500;
-    height: 25px;
-    line-height: 25px;
-    text-align: center;
-    width: 25px;
-}
+
 .liquidity-form .form-item {
     margin-top: 20px;
 }
@@ -2760,38 +2706,6 @@ button.button-token span.active {
 }
 #token-increase .modal-body .img img {
     width: 100px;
-}
-.grb-farm-2 .masthead {
-    margin-top: 0;
-}
-.list-nft-pool .info {
-    background: #000;
-    position: absolute;
-    bottom: 0;
-    width: 226px;
-    height: 105px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    padding: 13px;
-    color: #fff;
-}
-.list-nft-pool .name-of-pool {
-    margin-bottom: 20px;
-}
-.list-nft-pool .logo-token {
-    float: left;
-}
-.list-nft-pool .logo-token .token-1 {
-    border-radius: 100px;
-    border: 0.5px solid #fff;
-    color: rgb(255, 255, 255);
-    background-color: rgb(41, 50, 73);
-    font-size: calc(var(--size) / 3);
-    font-weight: 500;
-    height: 25px;
-    line-height: 25px;
-    text-align: center;
-    width: 25px;
 }
  .liquidity-form .harvest-button {
     width: fit-content;
