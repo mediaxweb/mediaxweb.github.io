@@ -852,7 +852,7 @@ h6 {
     padding: 37px;
 }
 .page-our-client #post-research {
-    padding-bottom: 160px;
+    padding-bottom: 140px;
 }
 @media only screen and (max-width: 912px) {
     .page-our-client #post-research {
@@ -864,6 +864,7 @@ h6 {
 }
 .post_content p {
     text-align: justify;
+    margin-bottom: 20px;
 }
 .page-our-client #about-us {
     padding-top: 80px;
@@ -1936,6 +1937,10 @@ input:checked+.slider:before {
     }
     .img-logo {
         display: block!important;
+    }
+    .my-image {
+        margin-top: 12px;
+        margin-bottom: 32px !important;
     }
 }
 
