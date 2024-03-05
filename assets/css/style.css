@@ -754,6 +754,12 @@ h6 {
     align-items: center;
 }
 
+.rowbt p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
+
 .btrs{
     display: flex;
     width: 124px;
@@ -2029,7 +2035,7 @@ input:checked+.slider:before {
     }
     .btrs{
         display: flex;
-        padding: 5px;
+        padding: 6px;
         justify-content: center;
         align-items: center;
         color: white;
