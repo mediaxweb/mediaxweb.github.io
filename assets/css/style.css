@@ -730,7 +730,47 @@ h6 {
     width: 1542px;
     padding: 64px 0px;
     align-items: center;
-    gap: 110px; 
+    gap: 64px; 
+}
+
+#lg12-line {
+    width: 100%;
+}
+
+.titlers{
+    display: flex;
+    width: 1543px;
+    padding: 200px 0px 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.rowbt{
+    display: flex;
+    width: 1543px;
+    padding-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btrs{
+    display: flex;
+    width: 124px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-next {
+    background-color: #007BFF;
+}
+
+.btn-previous {
+    background-color: #B4B4B4;
 }
 
 .postrs{
@@ -1016,6 +1056,7 @@ p a:hover {
 .page-contact-us #contact-us .form-contact form #description {
     width: 100%;
 }
+
 #contact-us .form-contact {
     display: flex;
     justify-content: center;
@@ -1969,6 +2010,32 @@ input:checked+.slider:before {
     .img{
         margin-bottom: 20px;
     }
+    #lg12 {
+        flex-direction: column; 
+        gap: 20px; 
+        width: auto;
+    }
+    .btns {
+        display: none;
+    }
+    .buttonpost{
+        display: none;
+    }
+    .titlers{
+        padding: 30px 20px;
+    }
+    #lg12{
+        padding: 20px;
+    }
+    .btrs{
+        display: flex;
+        padding: 5px;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 520px) {
@@ -2018,7 +2085,29 @@ input:checked+.slider:before {
         min-height: 500px;
         padding: 30px 0;
     }
+    #lg12 {
+        flex-direction: column; 
+        gap: 20px; 
+        width: auto;
+    }
+    .btns {
+        display: none;
+    }
+    .buttonpost{
+        display: none;
+    }
+    .titlers{
+        padding: 30px 20px;
+    }
+    #lg12{
+        padding: 20px;
+    }
+}
 
+@media screen and (min-width: 992px) {
+    .imgrs{
+        width: 324px;
+    }
 }
 .addlp__form-item {
     padding: 20px;
