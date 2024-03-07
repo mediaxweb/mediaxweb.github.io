@@ -1227,6 +1227,11 @@ a.home-btn {
     line-height: 30px;
     margin: 0 7%;
 }
+
+.post_text{
+    font-size: 27px;
+}
+
 .home__banner .divider-center {
     margin: 0.25rem 0;
     width: 30px;
