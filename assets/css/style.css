@@ -971,11 +971,12 @@ p a:hover {
 .page__home #about-us #our-client .client-logo img {
     
 }
-.page__home #home-title h4.title {
+.page__home #home-title h2.title, h1.title {
     font-family: 'Noto Serif', serif;
     font-size: 40px;
     margin-bottom: 24px;
 }
+
 .page__home #home-title p {
     font-size: 18px;
     font-weight: 700;
@@ -1021,7 +1022,7 @@ p a:hover {
 .page-our-client #show-case .instruction .item:last-child {
     border-bottom: 0;
 }
-.page-our-client #show-case .instruction .item .description h4.title {
+.page-our-client #show-case .instruction .item .description h2.title {
     font-size: 40px;
     font-family: 'Noto Serif', serif;
     margin-bottom: 24px;
