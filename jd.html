@@ -234,30 +234,46 @@
                         <p style="font-size: 18px; padding: 10px;">Salary: 10 million VND/month (net)</p>
                     </div>
                 
-                    <div style="background-color: #F2F2F2; height: 600px; padding: 20px;">
+                    <div style="background-color: #F2F2F2; height: 660px; padding: 20px;">
                         <h3 style="font-size: 24px; margin-bottom: 20px;">Apply for this job</h3>
-                        <form id="apply-form" action="submit_to_backend" method="POST">
-                            <label for="name" style="display: block; margin-bottom: 10px;">Name *</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required style="width: 100%; margin-bottom: 20px;">
-                    
-                            <label for="email" style="display: block; margin-bottom: 10px;">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="hello@example.com" required style="width: 100%; margin-bottom: 20px;">
-                    
-                            <label for="phone" style="display: block; margin-bottom: 10px;">Phone number *</label>
-                            <input type="text" id="phone" name="phone" placeholder="0791234567" required style="width: 100%; margin-bottom: 20px;">
-                    
-                            <label for="resume" style="display: block; margin-bottom: 10px;">Upload your latest resume *</label>
-                            <div style="border: 1px solid #ccc; padding: 6px 10px; margin-bottom: 20px; position: relative;">
-                                <input type="file" id="resume" name="resume" accept="doc,docx,pdf" style="width: 100%; opacity: 0; position: absolute; left: 0; top: 0; height: 100%;">
-                                <span style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;">Choose file</span>
-                                <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;">DOC, DOCX, PDF Max File size: 5MB</span>
+                        <form id="apply-form" action="submit_to_backend" method="POST" onsubmit="return validateForm()">
+                            <label for="name" style="display: block; margin-bottom: 5px;">Name <span style="color: red;">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc;">
+                            <div id="name-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
+                                <img src="./assets/images/jd-icon-2.svg"> The field is required
+                            </div>
+                            <label for="email" style="display: block; margin-bottom: 5px;">Email <span style="color: red;">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="hello@example.com" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc;">
+                            <div id="email-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
+                                <img src="./assets/images/jd-icon-2.svg"> The field is required
                             </div>
                     
-                            <button type="submit" style="width: 100%; background-color: #007BFF; color: white;">Apply</button>
+                            <label for="phone" style="display: block; margin-bottom: 5px;">Phone number <span style="color: red;">*</span></label>
+                            <input type="text" id="phone" name="phone" placeholder="0791234567" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc;">
+                            <div id="phone-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
+                                <img src="./assets/images/jd-icon-2.svg"> The field is required
+                            </div>
+                    
+                            <label for="resume" style="display: block; margin-bottom: 5px;">Upload your latest resume <span style="color: red;">*</span></label>
+                            <div style="border: 1px dashed #000; padding: 12px 20px; margin-bottom: 20px; position: relative; font-size: 16px; height: 80px; display: flex; align-items: center; justify-content: center; background-color: white;">
+                                <input type="file" id="resume" name="resume" accept="doc,docx,pdf" style="width: 100%; opacity: 0; position: absolute; left: 0; top: 0; height: 100%; cursor: pointer;">
+                                <button type="button" onclick="document.getElementById('resume').click();" style="background-color: #eee; border: 1px solid #ccc; padding: 8px 16px; cursor: pointer;">Choose file</button>
+                                <span style="padding-left: 10px; white-space: nowrap;">DOC, DOCX, PDF <br> Max File size: 5MB</span>
+                            </div>
+                            <div id="resume-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
+                                <img src="./assets/images/jd-icon-2.svg"> The field is required
+                            </div>
+                    
+                            <button type="submit" style="width: 100%; background-color: #007BFF; color: white; font-size: 18px; padding: 10px 20px; position: relative; display: flex; justify-content: center; align-items: center; border: none; margin-bottom: 4px;">
+                                Apply
+                                <img src="./assets/images/jd-icon-1.svg" alt="Icon" style="height: 16px; width: 16px; margin-left: 16px;">
+                            </button>
+                            <div id="button-error" style="display:none; color: red; font-size: 14px;">
+                                <img src="./assets/images/jd-icon-2.svg"> One or more fields have an error. Please check and try again.
+                            </div>
                         </form>
-                    </div>                    
-                </div>
-                
+                    </div>                                        
+                </div>                
             </div>                        
         </main>
 
@@ -334,38 +350,35 @@
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/custom.menu.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+
     <script>
-        var form = document.getElementById("form-services");
-    
-        async function handleSubmit(event) {
-        event.preventDefault();
-        var status = document.getElementById("my-form-status");
-        var data = new FormData(event.target);
-        fetch(event.target.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-            status.innerHTML = "Your inquiry has been received! We appreciate your interest in MediaX and will be in touch shortly.";
-            form.reset()
-            } else {
-            response.json().then(data => {
-                if (Object.hasOwn(data, 'errors')) {
-                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+        function validateForm() {
+            var isValid = true;
+            var errorDisplayed = false;
+            ['name', 'email', 'phone', 'resume'].forEach(function(id) {
+                var input = document.getElementById(id);
+                var error = document.getElementById(id + '-error');
+                if (!input.value) {
+                    error.style.display = 'block';
+                    input.style.border = '1px solid red';
+                    input.style.marginBottom = '4px';
+                    isValid = false;
+                    errorDisplayed = true;
                 } else {
-                status.innerHTML = "Oops! There was a problem submitting your form"
+                    error.style.display = 'none';
+                    input.style.border = '1px solid #ccc';
+                    input.style.marginBottom = '20px';
                 }
-            })
+            });
+            var buttonError = document.getElementById('button-error');
+            if (!isValid) {
+                buttonError.style.display = 'block'; 
+            } else {
+                buttonError.style.display = 'none';
             }
-        }).catch(error => {
-            status.innerHTML = "Oops! There was a problem submitting your form"
-        });
+            return isValid;
         }
-        form.addEventListener("submit", handleSubmit)
     </script>
 </body>
 </html>
