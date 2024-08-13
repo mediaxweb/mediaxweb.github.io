@@ -1,21 +1,25 @@
-from flask import Flask, request, jsonify
+from fastapi import FastAPI, Form, File, UploadFile
+from fastapi.responses import JSONResponse
+from starlette.middleware.cors import CORSMiddleware
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 import os
-from flask_cors import CORS
 
-app = Flask(__name__)
-CORS(app)
+app = FastAPI()
 
-@app.route('/send-email', methods=['POST'])
-def send_email():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    phone = request.form.get('phone')
-    resume = request.files.get('resume')
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"], 
+)
 
+@app.post('/send-email')
+async def send_email(name: str = Form(...), email: str = Form(...), 
+                     phone: str = Form(...), resume: UploadFile = File(...)):
     sender_email = "dzung@mediax.com.vn"
     receiver_email = "dzung@mediax.com.vn"
     password = "rcse gcjs uqgs vahl"
@@ -29,7 +33,7 @@ def send_email():
     message.attach(MIMEText(body, 'plain'))
 
     if resume:
-        part = MIMEApplication(resume.read(), Name=os.path.basename(resume.filename))
+        part = MIMEApplication(await resume.read(), Name=os.path.basename(resume.filename))
         part['Content-Disposition'] = f'attachment; filename="{resume.filename}"'
         message.attach(part)
 
@@ -39,9 +43,10 @@ def send_email():
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, message.as_string())
         server.quit()
-        return jsonify({"status": "success", "message": "Email sent successfully!"}), 200
+        return JSONResponse({"status": "success", "message": "Email sent successfully!"}, status_code=200)
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        return JSONResponse({"status": "error", "message": str(e)}, status_code=500)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    import uvicorn
+    uvicorn.run(app, host='127.0.0.1', port=8000)

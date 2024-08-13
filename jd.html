@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="../assets/images/fav-blue.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <title>Recruitment - MediaX</title>
+    <title>JD - MediaX</title>
     <style id="svelte-166mr51-style">
         ul.svelte-166mr51 {
             display: flex;
@@ -465,7 +465,7 @@
             formData.append('phone', document.getElementById('phone').value);
             formData.append('resume', document.getElementById('resume').files[0]);
 
-            fetch('http://127.0.0.1:5000/send-email', {
+            fetch('http://127.0.0.1:8000/send-email', {
                 method: 'POST',
                 body: formData
             })
