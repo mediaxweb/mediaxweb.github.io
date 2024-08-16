@@ -465,8 +465,8 @@
             formData.append('phone', document.getElementById('phone').value);
             formData.append('resume', document.getElementById('resume').files[0]);
 
-            // fetch('http://api.mediax.com.vn/send-email', {
-            fetch('http://139.59.119.175:8000/send-email', {
+            fetch('http://api.mediax.com.vn/send-email', {
+            // fetch('http://139.59.119.175:8000/send-email', {
                 method: 'POST',
                 body: formData
             })
