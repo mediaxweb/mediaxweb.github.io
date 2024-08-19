@@ -299,7 +299,7 @@
                                     <ul id="file-list" style="list-style: none; padding-left: 0; width: 100%; height: 50px; background-color: #E6E6E6; z-index: 2; display: flex; align-items: center; justify-content: center; flex-direction: column; margin-bottom: 6px;"></ul>
 
                                     <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; position: relative;">
-                                        <input type="file" id="resume" name="resume" accept="doc,docx,pdf"
+                                        <input type="file" id="resume" name="resume" accept="pdf"
                                             style="width: 100%; opacity: 0; position: absolute; height: 100%; cursor: pointer;"
                                             onchange="handleFileUpload()">
                                         <button type="button" onclick="document.getElementById('resume').click();" style="background-color: #eee; border: 1px solid #ccc; padding: 8px 16px; cursor: pointer;">Choose file</button>
@@ -528,7 +528,17 @@
                 li.textContent = file.name;
                 fileList.appendChild(li);
             });
-
+            if (fileInput.files.length > 0) {
+                var fileName = fileInput.files[0].name;
+                var maxLength = 30;
+                if (fileName.length > maxLength) {
+                    var fileExtension = fileName.substring(fileName.lastIndexOf('.'));
+                    var start = fileName.substring(0, (maxLength - 3) / 2);
+                    var end = fileName.substring(fileName.length - (maxLength - 3) / 2);
+                    fileName = `${start}...${end}`;
+                }
+                fileList.innerHTML = `<li>${fileName}</li>`;
+            }
             if (valid) {
                 var baseHeight = 80; 
                 var additionalHeight = files.length * 60; 
