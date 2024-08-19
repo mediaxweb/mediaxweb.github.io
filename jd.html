@@ -56,7 +56,11 @@
                 width: 100%
             }
         }
-        
+        @media (max-width: 992px) {
+            .title {
+                margin-top: 60px!important;
+            }
+        }        
         .bn-notify-custom.bn-notify-dark-mode {
             background: #283944;
             color: #ffffff;
@@ -207,123 +211,129 @@
         <main class="page__home page-our-client" style="min-height: calc(100vh - 73px);background: #fff; margin-left: 10%; margin-right: 10%;">
             <h2 class="title" style="font-size: 32px; text-align: left; margin-top: 160px;">Full-stack Engineer (TypeScript & NextJS)</h2>          
             <div id="contact-us" style="background-color: #ffff; display: flex; justify-content: space-between; padding-top: 0;">
-                <div class="container container-1" style="width: 50%; padding: 0; text-align: left; margin-top: 16px;">
-                    <article class="instruction-1" id="home-title">
-                        <h3 style="font-size: 18px; text-align: left;">About Us</h3>
-                        <p style="font-size: 16px; text-align: left; font-weight: normal;">Mediak helps Singapore and US tech companies build and manage software engineering teams in Vietnam. We are currently developing our own product, an AI-powered online coding test platform that helps HR personnel assess technical capabilities of software engineering candidates quickly, easily, and accurately. This is an excellent opportunity to gain hands-on experience in developing an AI application and fine-tuning AI models, such as LIMS and vision models.</p>
-                        <h3 style="font-size: 18px; text-align: left;">Responsibilities</h3>
-                        <ul style="font-size: 16px; list-style-position: inside; text-align: left">
-                            <li>Daily tasks may include but are not limited to: maintaining and fixing bugs in existing features.</li>
-                            <li>Participating in the end-to-end development process, including frontend (NextJS/ReactJS), backend development (NestJS/TypeScript) and testing.</li>
-                            <li>Troubleshooting and debugging issues, identifying bottlenecks, and proposing solutions to optimize application performance.</li>
-                        </ul>
-                        <h3 style="font-size: 18px; text-align: left;">Requirements</h3>
-                        <ul style="font-size: 16px; list-style-position: inside; text-align: left">
-                            <li>Must-Have: At least a Bachelor's degree in Computer Science or Software Engineering.</li>
-                            <li>Prior coding experience (any language will do).</li>
-                            <li>Strong algorithmic thinking skills.</li>
-                        </ul>
-                        <h3 style="font-size: 18px; text-align: left;">Preferred:</h3>
-                        <ul style="font-size: 16px; list-style-position: inside; text-align: left">
-                            <li>Prior coding experience in frontend (ReactJS & NextJS) or backend development (NodeJS & TypeScript).</li>
-                        </ul>
-                        <h3 style="font-size: 18px; text-align: left;">Culture Fit:</h3>
-                        <ul style="font-size: 16px; list-style-position: inside; text-align: left">
-                            <li>Self-learner: We provide resources and guidance, but you must take the initiative to self-learn whatever is required for your job as we experiment with new and untested campaigns.</li>
-                        </ul>
-                        <h3 style="font-size: 18px; text-align: left;">Benefits:</h3>
-                        <ul style="font-size: 16px; list-style-position: inside; text-align: left">
-                            <li>Performance review every 6 months.</li>
-                            <li>Opportunities to build an AI application and fine-tune AI models.</li>
-                        </ul>
-                        <h3 style="font-size: 18px; text-align: left;">Interview Process:</h3>
-                        <ul style="font-size: 16px; list-style-position: inside; text-align: left">
-                            <li>1 written technical test.</li>
-                            <li>1 interview.</li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="container container-2" style="width: 45%; padding: 16px;">
-                    <div style="background-color: #FFFFFF; padding-bottom: 20px;">
-                        <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
-                            <img src="./assets/images/recruitment-icon-3.svg" alt="Level Icon" style="vertical-align: middle;">
-                            <span style="font-size: 12px;">Level</span>
-                            <p style="font-size: 16px; margin: 0;">Entry-level</p>
-                        </div>
-                        <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
-                            <img src="./assets/images/recruitment-icon-2.svg" alt="Location Icon" style="vertical-align: middle;">
-                            <span style="font-size: 12px;">Location</span>
-                            <p style="font-size: 16px; margin: 0;">Hanoi</p>
-                        </div>
-                        <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
-                            <img src="./assets/images/recruitment-icon-5.svg" alt="Type Icon" style="vertical-align: middle;">
-                            <span style="font-size: 12px;">Type</span>
-                            <p style="font-size: 16px; margin: 0;">Full time</p>
-                        </div>
-                        <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
-                            <img src="./assets/images/recruitment-icon-1.svg" alt="Salary Icon" style="vertical-align: middle;">
-                            <span style="font-size: 12px;">Salary</span>
-                            <p style="font-size: 16px; margin: 0;">10 million VND/month (net)</p>
-                        </div>
+                <div class="row">
+                    <div class="container col-md-6 col-12" style="padding: 0; text-align: left; margin-top: 16px;">
+                        <article class="instruction-1" id="home-title">
+                            <h3 style="font-size: 18px; text-align: left;">About Us</h3>
+                            <p style="font-size: 16px; text-align: left; font-weight: normal;">Mediak helps Singapore and US tech companies build and manage software engineering teams in Vietnam. We are currently developing our own product, an AI-powered online coding test platform that helps HR personnel assess technical capabilities of software engineering candidates quickly, easily, and accurately. This is an excellent opportunity to gain hands-on experience in developing an AI application and fine-tuning AI models, such as LIMS and vision models.</p>
+                            <h3 style="font-size: 18px; text-align: left;">Responsibilities</h3>
+                            <ul style="font-size: 16px; list-style-position: inside; text-align: left">
+                                <li>Daily tasks may include but are not limited to: maintaining and fixing bugs in existing features.</li>
+                                <li>Participating in the end-to-end development process, including frontend (NextJS/ReactJS), backend development (NestJS/TypeScript) and testing.</li>
+                                <li>Troubleshooting and debugging issues, identifying bottlenecks, and proposing solutions to optimize application performance.</li>
+                            </ul>
+                            <h3 style="font-size: 18px; text-align: left;">Requirements</h3>
+                            <ul style="font-size: 16px; list-style-position: inside; text-align: left">
+                                <li>Must-Have: At least a Bachelor's degree in Computer Science or Software Engineering.</li>
+                                <li>Prior coding experience (any language will do).</li>
+                                <li>Strong algorithmic thinking skills.</li>
+                            </ul>
+                            <h3 style="font-size: 18px; text-align: left;">Preferred:</h3>
+                            <ul style="font-size: 16px; list-style-position: inside; text-align: left">
+                                <li>Prior coding experience in frontend (ReactJS & NextJS) or backend development (NodeJS & TypeScript).</li>
+                            </ul>
+                            <h3 style="font-size: 18px; text-align: left;">Culture Fit:</h3>
+                            <ul style="font-size: 16px; list-style-position: inside; text-align: left">
+                                <li>Self-learner: We provide resources and guidance, but you must take the initiative to self-learn whatever is required for your job as we experiment with new and untested campaigns.</li>
+                            </ul>
+                            <h3 style="font-size: 18px; text-align: left;">Benefits:</h3>
+                            <ul style="font-size: 16px; list-style-position: inside; text-align: left">
+                                <li>Performance review every 6 months.</li>
+                                <li>Opportunities to build an AI application and fine-tune AI models.</li>
+                            </ul>
+                            <h3 style="font-size: 18px; text-align: left;">Interview Process:</h3>
+                            <ul style="font-size: 16px; list-style-position: inside; text-align: left">
+                                <li>1 written technical test.</li>
+                                <li>1 interview.</li>
+                            </ul>
+                        </article>
                     </div>
-                    
-                
-                    <div style="background-color: #F2F2F2; height: 700px; padding: 20px;">
-                        <h3 style="font-size: 24px; margin-bottom: 20px;">Apply for this job</h3>
-                        <form id="apply-form" method="POST" onsubmit="return submitForm()">
-                            <label for="name" style="display: block; margin-bottom: 5px;">Name <span style="color: red;">*</span></label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
-                            <div id="name-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
-                                <img src="./assets/images/jd-icon-2.svg"> The field is required
+                    <div class="container col-md-6 col-12" style="padding: 16px;">
+                        <div style="background-color: #FFFFFF; padding-bottom: 20px;">
+                            <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
+                                <img src="./assets/images/recruitment-icon-3.svg" alt="Level Icon" style="vertical-align: middle;">
+                                <span style="font-size: 12px;">Level</span>
+                                <p style="font-size: 16px; margin: 0;">Entry-level</p>
                             </div>
-                            <label for="email" style="display: block; margin-bottom: 5px;">Email <span style="color: red;">*</span></label>
-                            <input type="email" id="email" name="email" placeholder="hello@example.com" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
-                            <div id="email-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
-                                <img src="./assets/images/jd-icon-2.svg"> The field is required
+                            <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
+                                <img src="./assets/images/recruitment-icon-2.svg" alt="Location Icon" style="vertical-align: middle;">
+                                <span style="font-size: 12px;">Location</span>
+                                <p style="font-size: 16px; margin: 0;">Hanoi</p>
                             </div>
-                    
-                            <label for="phone" style="display: block; margin-bottom: 5px;">Phone number <span style="color: red;">*</span></label>
-                            <input type="text" id="phone" name="phone" placeholder="0791234567" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
-                            <div id="phone-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
-                                <img src="./assets/images/jd-icon-2.svg"> The field is required
+                            <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
+                                <img src="./assets/images/recruitment-icon-5.svg" alt="Type Icon" style="vertical-align: middle;">
+                                <span style="font-size: 12px;">Type</span>
+                                <p style="font-size: 16px; margin: 0;">Full time</p>
                             </div>
+                            <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
+                                <img src="./assets/images/recruitment-icon-1.svg" alt="Salary Icon" style="vertical-align: middle;">
+                                <span style="font-size: 12px;">Salary</span>
+                                <p style="font-size: 16px; margin: 0;">10 million VND/month (net)</p>
+                            </div>
+                        </div>
+                        
                     
-                            <label for="resume" style="display: block; margin-bottom: 5px;">Upload your latest resume <span style="color: red;">*</span></label>
-
-                            <div style="border: 1px dashed #000; padding: 12px 20px; margin-bottom: 20px; position: relative; font-size: 16px; display: flex; flex-direction: column; align-items: center; background-color: white;" class="resume-container">
-                                <ul id="file-list" style="list-style: none; padding-left: 0; width: 100%; height: 50px; background-color: #E6E6E6; z-index: 2; display: flex; align-items: center; justify-content: center; flex-direction: column;"></ul>
-
-                                <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; position: relative;">
-                                    <input type="file" id="resume" name="resume" accept="doc,docx,pdf" multiple
-                                           style="width: 100%; opacity: 0; position: absolute; height: 100%; cursor: pointer;"
-                                           onchange="handleFileUpload()">
-                                    <button type="button" onclick="document.getElementById('resume').click();" style="background-color: #eee; border: 1px solid #ccc; padding: 8px 16px; cursor: pointer;">Choose file</button>
-                                    <span style="padding-left: 10px; white-space: nowrap;">PDF File Only <br> Max File size: 5MB</span>
+                        <div style="background-color: #F2F2F2; height: 700px; padding: 20px;">
+                            <h3 style="font-size: 24px; margin-bottom: 20px;">Apply for this job</h3>
+                            <form id="apply-form" method="POST" onsubmit="return submitForm()">
+                                <label for="name" style="display: block; margin-bottom: 5px;">Name <span style="color: red;">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
+                                <div id="name-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
+                                    <img src="./assets/images/jd-icon-2.svg"> The field is required
                                 </div>
-                            </div>
-                            
-                            
-                            <div id="resume-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
-                                <img src="./assets/images/jd-icon-2.svg"> Only accept PDF files, maximum size 5MB
-                            </div>
-                    
-                            <button type="submit" style="width: 100%; background-color: #007BFF; color: white; font-size: 18px; padding: 10px 20px; position: relative; display: flex; justify-content: center; align-items: center; border: none; margin-bottom: 4px;">
-                                Apply
-                                <img src="./assets/images/jd-icon-1.svg" alt="Icon" style="height: 16px; width: 16px; margin-left: 16px;">
-                            </button>
-                            <div id="button-error" style="display:none; color: red; font-size: 14px;">
-                                <img src="./assets/images/jd-icon-2.svg"> One or more fields have an error. Please check and try again.
-                            </div>
-                            <div id="success-message" style="display:none; align-items: center; flex-direction: column; margin-bottom: 0;">
-                                <div style="display: flex; align-items: center;">
-                                    <img src="./assets/images/jd-icon-3.svg" style="height: 16px; width: 16px; margin-right: 10px;">
-                                    <p style="color: #289944; font-size: 14px; font-style: italic; margin: 0;">Your CV has been successfully submitted.</p>
+                                <label for="email" style="display: block; margin-bottom: 5px;">Email <span style="color: red;">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="hello@example.com" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
+                                <div id="email-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
+                                    <img src="./assets/images/jd-icon-2.svg"> The field is required
                                 </div>
-                                <p style="color: #000; font-size: 14px; margin-top: 4px;">Thank you for your application. We will contact you shortly.</p>
-                            </div>                            
-                        </form>
-                    </div>                                    
-                </div>                
+                        
+                                <label for="phone" style="display: block; margin-bottom: 5px;">Phone number <span style="color: red;">*</span></label>
+                                <input type="text" id="phone" name="phone" placeholder="0791234567" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
+                                <div id="phone-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
+                                    <img src="./assets/images/jd-icon-2.svg"> The field is required
+                                </div>
+                        
+                                <label for="resume" style="display: block; margin-bottom: 5px;">Upload your latest resume <span style="color: red;">*</span></label>
+
+                                <div style="border: 1px dashed #000; padding: 12px 20px; margin-bottom: 20px; position: relative; font-size: 16px; display: flex; flex-direction: column; align-items: center; background-color: white;" class="resume-container">
+                                    <ul id="file-list" style="list-style: none; padding-left: 0; width: 100%; height: 50px; background-color: #E6E6E6; z-index: 2; display: flex; align-items: center; justify-content: center; flex-direction: column; margin-bottom: 6px;"></ul>
+
+                                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; position: relative;">
+                                        <input type="file" id="resume" name="resume" accept="doc,docx,pdf"
+                                            style="width: 100%; opacity: 0; position: absolute; height: 100%; cursor: pointer;"
+                                            onchange="handleFileUpload()">
+                                        <button type="button" onclick="document.getElementById('resume').click();" style="background-color: #eee; border: 1px solid #ccc; padding: 8px 16px; cursor: pointer;">Choose file</button>
+                                        <span style="padding-left: 10px; white-space: nowrap;">PDF File Only <br> Max File size: 5MB</span>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div id="resume-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
+                                    <img src="./assets/images/jd-icon-2.svg"> Only accept PDF files, maximum size 5MB
+                                </div>
+                        
+                                <button type="submit" id="submit-button" style="width: 100%; background-color: #007BFF; color: white; font-size: 18px; padding: 10px 20px; position: relative; display: flex; justify-content: center; align-items: center; border: none; margin-bottom: 4px;">
+                                    Apply
+                                    <img src="./assets/images/jd-icon-1.svg" alt="Icon" style="height: 16px; width: 16px; margin-left: 16px;">
+                                </button>
+                                <div id="button-error" style="display:none; color: red; font-size: 14px;">
+                                    <img src="./assets/images/jd-icon-2.svg"> One or more fields have an error. Please check and try again.
+                                </div>
+                                <div id="button-timeout" style="display: flex; align-items: center;">
+                                    <img src="./assets/images/jd-icon-2.svg" style="height: 16px; width: 16px; margin-right: 10px;">
+                                    <p style="color: red; font-size: 14px; margin: 0;">Please wait 60 seconds before applying again.</p>
+                                </div>
+                                <div id="success-message" style="display:none; align-items: center; flex-direction: column; margin-bottom: 0;">
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="./assets/images/jd-icon-3.svg" style="height: 16px; width: 16px; margin-right: 10px;">
+                                        <p style="color: #289944; font-size: 14px; font-style: italic; margin: 0;">Your CV has been successfully submitted.</p>
+                                    </div>
+                                    <p style="color: #000; font-size: 14px; margin-top: 4px;">Thank you for your application. We will contact you shortly.</p>
+                                </div>                            
+                            </form>
+                        </div>                                    
+                    </div>
+                </div>     
             </div>                        
         </main>
 
@@ -447,15 +457,20 @@
         function submitForm() {
             var currentTime = Date.now(); 
             var successMessage = document.getElementById('success-message');
-            if (successMessage.style.display === 'block' && currentTime - lastClickTime < 60000) {
-                alert('Please wait 60 seconds before applying again.');
+            var timeoutMessage = document.getElementById('button-timeout');
+            
+            if (currentTime - lastClickTime < 60000) {
+                timeoutMessage.style.display = 'flex';
+                successMessage.style.display = 'none';
                 return false;
+            } else {
+                timeoutMessage.style.display = 'none'; 
             }
             if (!validateForm()) {
                 return false;
             }
 
-            lastClickTime = currentTime;            
+            lastClickTime = currentTime;           
             successMessage.innerHTML = '<div style="display: flex; align-items: center;"><img src="./assets/images/jd-icon-3.svg" style="height: 16px; width: 16px; margin-right: 10px;"><p style="color: #289944; font-size: 14px; font-style: italic; margin: 0;">Your CV has been successfully submitted.</p></div><p style="color: #000; font-size: 14px; margin-top: 4px;">Thank you for your application. We will contact you shortly.</p>';
             successMessage.style.display = 'block';
 
@@ -478,7 +493,6 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('An error occurred while sending your application.');
                 successMessage.style.display = 'none';
             });
             return false;
