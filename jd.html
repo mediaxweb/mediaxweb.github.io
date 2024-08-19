@@ -530,7 +530,7 @@
             });
             if (fileInput.files.length > 0) {
                 var fileName = fileInput.files[0].name;
-                var maxLength = 30;
+                var maxLength = 25;
                 if (fileName.length > maxLength) {
                     var fileExtension = fileName.substring(fileName.lastIndexOf('.'));
                     var start = fileName.substring(0, (maxLength - 3) / 2);
