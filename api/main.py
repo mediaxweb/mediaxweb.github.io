@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Form, File, UploadFile
+from fastapi import FastAPI, Form, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
 from starlette.middleware.cors import CORSMiddleware
 import smtplib
@@ -11,17 +11,23 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=["https://mediax.com.vn"], 
     allow_credentials=True,
-    allow_methods=["*"],  
-    allow_headers=["*"], 
+    allow_methods=["GET", "POST", "OPTIONS"], 
+    allow_headers=["Content-Type", "Authorization"],
 )
 
 @app.post('/send-email')
 async def send_email(name: str = Form(...), email: str = Form(...), 
                      phone: str = Form(...), resume: UploadFile = File(...)):
+    if resume.content_type != 'application/pdf':
+        raise HTTPException(status_code=400, detail="Only PDF files are accepted.")
+    if resume.file._file.getbuffer().nbytes > 5242880:
+        raise HTTPException(status_code=413, detail="File size exceeds the allowable limit of 5MB.")
+
     sender_email = "dzung@mediax.com.vn"
-    receiver_email = "dzung@mediax.com.vn"
+    receiver_email = "david.nguyen@mediax.com.vn"
+    # receiver_email = "dzung@mediax.com.vn"
     password = "rcse gcjs uqgs vahl"
 
     message = MIMEMultipart()
