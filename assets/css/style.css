@@ -628,6 +628,17 @@ h6 {
     display: inline-block;
 }
 
+.nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    font-weight: bold;
+    background-color: transparent !important; 
+}
+
+.nav-link.inactive {
+    opacity: 0.5;
+}
+
 .header .navbar-expand-lg .navbar-nav.menu-header-swap .nav-item {
     margin: 0 2px;
 }
