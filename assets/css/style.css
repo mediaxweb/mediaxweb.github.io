@@ -638,6 +638,9 @@ h6 {
 .nav-link.inactive {
     opacity: 0.5;
 }
+.nav-link:hover {
+    opacity: 1; 
+}
 
 .header .navbar-expand-lg .navbar-nav.menu-header-swap .nav-item {
     margin: 0 2px;
