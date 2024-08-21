@@ -616,7 +616,7 @@ h6 {
 }
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-item {
-    margin-left: 95px;
+    margin-left: 51.5px;
 }
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-link {
@@ -1804,7 +1804,7 @@ input:checked+.slider:before {
 }
 @media screen and (min-width: 1200px) {
     .container-1 {
-        max-width: 1300px;
+        max-width: 1542px;
     }
     .container-2 {
         max-width: 1000px;
