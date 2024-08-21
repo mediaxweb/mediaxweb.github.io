@@ -339,5 +339,21 @@
         }
         form.addEventListener("submit", handleSubmit)
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        var links = document.querySelectorAll('.navbar-nav .nav-link');
+
+        var currentUrl = window.location.pathname.split('/').pop();
+
+        links.forEach(function(link) {
+            var linkUrl = link.getAttribute('href');
+            if (linkUrl === currentUrl) {
+                link.classList.add('active');
+            } else {
+                link.classList.add('inactive');
+            }
+        });
+    });
+    </script>
 </body>
 </html>
