@@ -263,22 +263,22 @@
                             <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
                                 <img src="../assets/images/recruitment-icon-3.svg" alt="Level Icon" style="vertical-align: middle;">
                                 <span style="font-size: 12px;">Level</span>
-                                <p style="font-size: 16px; margin: 0;">Junior</p>
+                                <p style="font-size: 16px; margin: 0; font-weight: bold;">Junior</p>
                             </div>
                             <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
                                 <img src="../assets/images/recruitment-icon-2.svg" alt="Location Icon" style="vertical-align: middle;">
                                 <span style="font-size: 12px;">Location</span>
-                                <p style="font-size: 16px; margin: 0;">Hanoi</p>
+                                <p style="font-size: 16px; margin: 0; font-weight: bold;">Hanoi</p>
                             </div>
                             <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
                                 <img src="../assets/images/recruitment-icon-5.svg" alt="Type Icon" style="vertical-align: middle;">
                                 <span style="font-size: 12px;">Type</span>
-                                <p style="font-size: 16px; margin: 0;">Full time</p>
+                                <p style="font-size: 16px; margin: 0; font-weight: bold;">Full time</p>
                             </div>
                             <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
                                 <img src="../assets/images/recruitment-icon-1.svg" alt="Salary Icon" style="vertical-align: middle;">
                                 <span style="font-size: 12px;">Salary</span>
-                                <p style="font-size: 16px; margin: 0;">___ million VND/month (net)</p>
+                                <p style="font-size: 16px; margin: 0; font-weight: bold;">___ million VND/month (net)</p>
                             </div>
                         </div>
                         
@@ -286,24 +286,24 @@
                         <div style="background-color: #F2F2F2; height: 730px; padding: 20px;">
                             <h3 style="font-size: 24px; margin-bottom: 20px;">Apply for this job</h3>
                             <form id="apply-form" method="POST" onsubmit="return submitForm()">
-                                <label for="name" style="display: block; margin-bottom: 5px;">Name <span style="color: red;">*</span></label>
+                                <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Name <span style="color: red;">*</span></label>
                                 <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
                                 <div id="name-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
                                     <img src="../assets/images/jd-icon-2.svg"> The field is required
                                 </div>
-                                <label for="email" style="display: block; margin-bottom: 5px;">Email <span style="color: red;">*</span></label>
+                                <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email <span style="color: red;">*</span></label>
                                 <input type="email" id="email" name="email" placeholder="hello@example.com" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
                                 <div id="email-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
                                     <img src="../assets/images/jd-icon-2.svg"> The field is required
                                 </div>
                         
-                                <label for="phone" style="display: block; margin-bottom: 5px;">Phone number <span style="color: red;">*</span></label>
+                                <label for="phone" style="display: block; margin-bottom: 5px; font-weight: bold;">Phone number <span style="color: red;">*</span></label>
                                 <input type="text" id="phone" name="phone" placeholder="0791234567" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
                                 <div id="phone-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
                                     <img src="../assets/images/jd-icon-2.svg"> The field is required
                                 </div>
                         
-                                <label for="resume" style="display: block; margin-bottom: 5px;">Upload your latest resume <span style="color: red;">*</span></label>
+                                <label for="resume" style="display: block; margin-bottom: 5px; font-weight: bold;">Upload your latest resume <span style="color: red;">*</span></label>
 
                                 <div style="border: 1px dashed #000; padding: 12px 20px; margin-bottom: 20px; position: relative; font-size: 16px; display: flex; flex-direction: column; align-items: center; background-color: white;" class="resume-container">
                                     <ul id="file-list" style="list-style: none; padding-left: 0; width: 100%; height: 50px; background-color: #E6E6E6; z-index: 2; display: flex; align-items: center; justify-content: center; flex-direction: column; margin-bottom: 6px;"></ul>
@@ -312,7 +312,7 @@
                                         <input type="file" id="resume" name="resume" accept="pdf"
                                             style="width: 100%; opacity: 0; position: absolute; height: 100%; cursor: pointer;"
                                             onchange="handleFileUpload()">
-                                        <button type="button" onclick="document.getElementById('resume').click();" style="background-color: #eee; border: 1px solid #ccc; padding: 8px 16px; cursor: pointer;">Choose file</button>
+                                        <button type="button" onclick="document.getElementById('resume').click();" style="background-color: #eee; border: 1px solid #000; padding: 8px 16px; cursor: pointer;">Choose file</button>
                                         <span style="padding-left: 10px; white-space: nowrap;">PDF File Only <br> Max File size: 5MB</span>
                                     </div>
                                 </div>

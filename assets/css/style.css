@@ -14,7 +14,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    color: #052843;
+    color: #000000;
     font-size: 16px;
     line-height: 24px;
     font-weight: 300;
@@ -603,7 +603,7 @@ h6 {
     border-bottom: 2px solid #3295FF;
 }
 .header #navbar-header {
-    padding: 16px 32px;
+    padding: 16px 0px;
     border-radius: 50px;
 }
 .header.sticky-header {
@@ -945,6 +945,9 @@ h6 {
     .page__home #post-research {
         padding-top: 50px;
     }
+    .text-careers{
+        text-align: left !important;
+    }
 }
 .post_content p {
     text-align: justify;
@@ -989,6 +992,11 @@ p a:hover {
     font-family: 'Noto Serif', serif;
     font-size: 40px;
     margin-bottom: 24px;
+}
+.page__home #home-title h1.title-careers {
+    font-family: 'Noto Serif', serif;
+    font-size: 48px;
+    margin-bottom: 16px;
 }
 
 .page__home #home-title p {
@@ -1810,6 +1818,10 @@ input:checked+.slider:before {
     .home-top-banner .img img {
         width: 65%;
     }
+    .col-lg-3-8 {
+        flex: 0 0 auto;
+        width: 32.6%; 
+    }
 }
 @media screen and (min-width: 2560px) {
     .home-top-banner .img img {
@@ -1842,6 +1854,10 @@ input:checked+.slider:before {
 /*        background: url(../images/bg-home.jpg) top -50px center no-repeat;*/
         background-size: cover;
     }
+    .img-careers{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
 }
 @media screen and (max-width: 1199px) {
     #modal-bridge-popup .pc-view {
@@ -1858,6 +1874,10 @@ input:checked+.slider:before {
     }
     .protocol-info .col-sm-12 {
         width: 100%;
+    }
+    .img-careers{
+        padding-left: 10%;
+        padding-right: 10%;
     }
 
 }
