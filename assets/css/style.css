@@ -1855,8 +1855,8 @@ input:checked+.slider:before {
         background-size: cover;
     }
     .img-careers{
-        padding-left: 1%;
-        padding-right: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
     }
 }
 @media screen and (max-width: 1199px) {
@@ -1875,11 +1875,6 @@ input:checked+.slider:before {
     .protocol-info .col-sm-12 {
         width: 100%;
     }
-    .img-careers{
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-
 }
 @media screen and (max-width: 991px) {
     #page-footer i.fa-bars {
