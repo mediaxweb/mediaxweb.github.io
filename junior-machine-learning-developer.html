@@ -298,9 +298,9 @@
                                 </div>
                         
                                 <label for="phone" style="display: block; margin-bottom: 5px; font-weight: bold;">Phone number <span style="color: red;">*</span></label>
-                                <input type="text" id="phone" name="phone" placeholder="0791234567" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
+                                <input type="tel" id="phone" name="phone" placeholder="0791234567" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
                                 <div id="phone-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
-                                    <img src="../assets/images/jd-icon-2.svg"> The field is required
+                                    <img src="../assets/images/jd-icon-2.svg"> Phone number must contain only digits.
                                 </div>
                         
                                 <label for="resume" style="display: block; margin-bottom: 5px; font-weight: bold;">Upload your latest resume <span style="color: red;">*</span></label>
@@ -444,6 +444,18 @@
                     input.style.marginBottom = '20px';
                 }
             });
+            var phoneInput = document.getElementById('phone');
+            var phoneError = document.getElementById('phone-error');
+            if (!/^\d+$/.test(phoneInput.value)) { 
+                phoneError.style.display = 'block';
+                phoneInput.style.border = '1px solid red';
+                phoneInput.style.marginBottom = '4px';
+                isValid = false;
+            } else {
+                phoneError.style.display = 'none';
+                phoneInput.style.border = '1px solid #ccc';
+            }
+
             var resumeInput = document.getElementById('resume');
             var resumeError = document.getElementById('resume-error');
             var resumeContainer = document.querySelector('.resume-container');

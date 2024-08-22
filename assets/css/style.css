@@ -2077,6 +2077,9 @@ input:checked+.slider:before {
         border: none;
         cursor: pointer;
     }
+    .careers-client {
+        padding-top: 80px !important;
+    }
 }
 
 @media screen and (max-width: 520px) {
