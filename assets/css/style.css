@@ -612,7 +612,7 @@ h6 {
 }
 
 .header .navbar-expand-lg {
-    padding: 11px 0;
+    padding: 0;
 }
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-item {
@@ -819,7 +819,7 @@ h6 {
 .footer .contact-us {
     font-weight: bold;
     font-size: 18px;
-    margin-bottom: 78px;
+    margin-bottom: 120px;
 }
 .footer .contact-us .mail ,  .footer .contact-us .phone , .footer .contact-us .address {
     margin-top: 24px;
@@ -841,6 +841,9 @@ h6 {
 .footer .logo-footer {
     margin-bottom: 24px;
 }
+.footer .social-area {
+    margin-top: 64px;
+}
 .footer .social-area ul {
     list-style: none;
     padding-left: 0;
@@ -851,9 +854,9 @@ h6 {
 .footer .social-area ul li img {
     width: 32px;
 }
-.footer .logo-footer img {
+/* .footer .logo-footer img {
     width: 245.622px;
-}
+} */
 .footer .menu-footer {
     padding-left: 0;
     list-style: none;
@@ -900,7 +903,7 @@ h6 {
     color: #fff;
     padding-top: 96px;
     padding-bottom: 160px;
-    border-bottom: 2px solid #FFF;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 .page__home .last-update .instruction-1 {
     text-align: justify;
@@ -990,7 +993,15 @@ p a:hover {
 }
 .page__home #home-title h2.title, h1.title {
     font-family: 'Noto Serif', serif;
-    font-size: 40px;
+    font-size: 48px;
+    line-height: 58px;
+    margin-bottom: 24px;
+}
+.page__home #home-title p.subtitle {
+    font-family: 'Noto Sans';
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
     margin-bottom: 24px;
 }
 .page__home #home-title h1.title-careers {
@@ -1027,9 +1038,15 @@ p a:hover {
 }
 .page__home .last-update .instruction-2 .update-info span.time {
     font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    line-height: 24px;
 }
 .page__home .last-update .instruction-2 .update-info h4.title {
     font-size: 16px;
+    font-weight: 400;
+    font-family: 'Noto Sans';
+    line-height: 24px;
     margin-top: 8px;
 }
 .page-our-client #about-us {
@@ -1166,7 +1183,7 @@ a.home-btn {
     background: #fff;
     font-weight: bold;
     color: #000!important;
-    font-size: 18px;
+    font-size: 16px;
 }
 .home__title-normal {
     font-size: 40px;
@@ -1831,7 +1848,7 @@ input:checked+.slider:before {
 @media screen and (min-width: 1200px) {
     .container-1 {
         max-width: 1200px;
-        padding: 0;        
+        padding: 0;
     }
     .container-2 {
         max-width: 1000px;
@@ -2080,6 +2097,9 @@ input:checked+.slider:before {
     }
     .careers-client {
         padding-top: 80px !important;
+    }
+    .footer .social-area {
+        margin-top: 0;
     }
 }
 

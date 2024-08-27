@@ -55,8 +55,6 @@
             margin: 0;
             padding: 0;
             white-space: nowrap;
-            font-size: 0;
-            line-height: 0;
             position: relative;
         }
 
@@ -81,7 +79,6 @@
 
         .slideShow__image {
             display: block;
-            margin: 0;
             padding: 0;
             height: auto;
             width: 100%;
@@ -122,11 +119,11 @@
             line-height: 44px;
         }
         .slide-btn{
-            padding: 32px 32px;
+            padding: 24px;
             background: #fff;
             font-weight: bold;
             color: #000 !important;
-            font-size: 18px;
+            font-size: 16px;
             margin-top: 32px;
             display: inline-block;
         }
@@ -347,27 +344,13 @@
                         <span class="dot" onclick="currentSlide(3)"></span> 
                     </div>
                 </div>
-                <!-- <div class="container container-1"> 
-                    <div class="row">
-                        <div class="col-lg-10">                                                              
-                            <div class="" >
-                                <h1 class="home__banner-title">Empowering Vietnamese Businesses and Communities with State-of-the-Art AI Solutions</h1>
-                                <div class="home__title-medium">At MediaX, we envision a future where the Vietnamese language and culture are seamlessly integrated into the global AI landscape. We are committed to driving innovation that caters specifically to the Vietnamese market.</div>
-                                <a href="services.html" class="home-btn">Get Started</a>
-                            </div>                                        
-                        </div>
-                        <div class="col-lg-2">
-                               
-                        </div>
-                    </div>
-                </div> -->
             </article>
             <div id="last-update" style="background-color: #000;">
                 <div class="container container-1">
                     <div class="last-update">
                         <article class="instruction-1" id="home-title">
                             <h2 class="title">Pushing the Boundaries of AI Technology</h2>
-                            <p>Going beyond merely implementing existing AI technologies, we specialize in crafting innovative solutions tailored for the Vietnamese language and marketplace. Our research initiatives lead the way in seamlessly incorporating AI into the daily lives of people in Vietnam.</p>
+                            <p class="subtitle">Going beyond merely implementing existing AI technologies, we specialize in crafting innovative solutions tailored for the Vietnamese language and marketplace. Our research initiatives lead the way in seamlessly incorporating AI into the daily lives of people in Vietnam.</p>
                         </article>
                         <article class="instruction-2" id="home-instruction">
                             <div class="instruction ">
@@ -408,7 +391,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="our-research.html" class="home-btn">Dive into Our Research</a>
+                            <a href="our-research.html" class="home-btn">Find out more</a>
                         </article>
                     </div>
                 </div>
@@ -417,7 +400,7 @@
                 <div class="container container-1">
                     <article class="instruction-1" id="home-title">
                         <h2 class="title">About Us</h2>
-                        <p>Our vision is to become the leading force in AI technology in Vietnam, just as OpenAI is globally. We focus on the unique linguistic and market challenges of Vietnam to build AI solutions that are locally relevant yet globally competitive.</p>
+                        <p class="subtitle">Our vision is to become the leading force in AI technology in Vietnam, just as OpenAI is globally. We focus on the unique linguistic and market challenges of Vietnam to build AI solutions that are locally relevant yet globally competitive.</p>
                     </article>
                 </div>
                 <div class="img">
@@ -429,7 +412,7 @@
                     <div class="last-update">
                         <article class="instruction-1" id="home-title">
                             <h2 class="title">Our Services</h2>
-                            <p>Navigate the complexities of the modern business landscape with AI solutions that are tailored to the specific challenges and opportunities within Vietnam. From natural language processing to data analytics, we offer technologies that transform how you do business.</p>
+                            <p class="subtitle">Navigate the complexities of the modern business landscape with AI solutions that are tailored to the specific challenges and opportunities within Vietnam. From natural language processing to data analytics, we offer technologies that transform how you do business.</p>
                         </article>
                         <article class="instruction-2" id="home-instruction">
                             <div class="instruction ">
@@ -469,7 +452,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="contact-us.html" class="home-btn">Discover Our AI-Powered Solutions</a>
+                            <a href="contact-us.html" class="home-btn">Find out more</a>
                         </article>
                     </div>
                 </div>
@@ -480,12 +463,10 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container container-1">
                     <div class="row flex-grow-1">
-                        <div class="col-lg-4" style="display: flex;align-items: center;">
+                        <div class="col-lg-6" style="display: flex;align-items: stretch;flex-direction: column;">
                             <div class="logo-footer">
-                                <a href="#"><img src="./assets/images/mediax-logo.svg" alt=""></a>
+                                <a href="#"><img src="./assets/images/mediax-logo.svg" style="max-height: 40px;" alt=""></a>
                             </div>
-                        </div>
-                        <div class="col-lg-4">
                             <div class="collapse navbar-collapse" id="navbar-footer">
                                 <ul class="menu-footer mb-2 mb-lg-0">
                                     <li class="nav-item">
@@ -506,7 +487,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">                            
                             <div class="social-area d-flex ms-auto mb-2 mb-lg-0 justify-content-start">
                                 <ul class="social-list d-flex flex-row ">
                                     <li><a href=""><img src="./assets/images/twiter-new-logo.svg" alt=""></a></li>
@@ -557,7 +538,7 @@
 <script>
     var SlideShow = function() {
         var slider, slide, dots, slideAmount, sliderWidth;
-        var clickCounter = 1; // Set default to second slide
+        var clickCounter = 1; 
 
         var _init = function () {
             slider = document.getElementsByClassName('slideShow__container')[0];
@@ -565,9 +546,13 @@
             dots = document.getElementsByClassName('dot');
             slideAmount = slide.length;
             sliderWidth = parseInt(getComputedStyle(slider).width);
+
+            console.log("Slider Width: " + sliderWidth); 
+            console.log("Initial Slide Index: " + clickCounter);
+
             slider.style.transform = 'translateX(-' + sliderWidth * clickCounter + 'px)';
             updateDots();
-            currentSlide(clickCounter); // Initialize with the second slide as the current slide
+            currentSlide(clickCounter);
 
             _eventHandlers();
         }
@@ -575,6 +560,7 @@
         var _eventHandlers = function() {
             Array.from(dots).forEach(function(element, index) {
                 element.addEventListener('click', function() {
+                    console.log("Dot clicked: Index " + index);
                     currentSlide(index);
                 });
             });
@@ -582,6 +568,7 @@
         }
 
         var currentSlide = function(n) {
+            console.log("Moving to slide: " + n);
             clickCounter = n;
             gsap.to(slider, {duration: .9, x:-clickCounter*sliderWidth, ease: "power2.out"});
             updateDots();
@@ -596,6 +583,7 @@
 
         var _resize = function() {
             sliderWidth = parseInt(getComputedStyle(slider).width);
+            console.log("Updated Slider Width: " + sliderWidth);
             gsap.to(slider, {x: -clickCounter * sliderWidth});
         }
 
@@ -605,6 +593,22 @@
     }();
 
     SlideShow.init();
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    var links = document.querySelectorAll('.navbar-nav .nav-link');
+
+    var currentUrl = window.location.pathname.split('/').pop();
+
+    links.forEach(function(link) {
+        var linkUrl = link.getAttribute('href');
+        if (linkUrl === currentUrl) {
+            link.classList.add('active');
+        } else {
+            link.classList.add('inactive');
+        }
+    });
+});
 </script>
 
 </body>
