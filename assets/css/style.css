@@ -621,9 +621,9 @@ h6 {
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-link {
     color: #fff;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 36px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
     padding: 0;
     display: inline-block;
 }
@@ -1831,6 +1831,7 @@ input:checked+.slider:before {
 @media screen and (min-width: 1200px) {
     .container-1 {
         max-width: 1200px;
+        padding: 0;        
     }
     .container-2 {
         max-width: 1000px;
