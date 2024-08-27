@@ -612,7 +612,7 @@ h6 {
 }
 
 .header .navbar-expand-lg {
-    padding: 20px 0;
+    padding: 11px 0;
 }
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-item {
@@ -1820,7 +1820,7 @@ input:checked+.slider:before {
     }
     .col-lg-3-8 {
         flex: 0 0 auto;
-        width: 32.6%; 
+        width: 32.3%; 
     }
 }
 @media screen and (min-width: 2560px) {
@@ -1830,7 +1830,7 @@ input:checked+.slider:before {
 }
 @media screen and (min-width: 1200px) {
     .container-1 {
-        max-width: 1542px;
+        max-width: 1200px;
     }
     .container-2 {
         max-width: 1000px;
