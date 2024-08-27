@@ -915,6 +915,7 @@ h6 {
 .page__home #about-us {
     color: #fff;
     padding-top: 96px;
+    padding-bottom: 5px;
 }
 .page__home #about-us .img {
     margin-top: 64px;
