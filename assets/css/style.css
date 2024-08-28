@@ -592,6 +592,7 @@ h6 {
     right: 0;
     z-index: 20;
     background-color: transparent;
+    opacity: 0.8;
 }
 .page-client .header.sticky-header {
     background: #007BFF;
@@ -613,6 +614,7 @@ h6 {
 
 .header .navbar-expand-lg {
     padding: 0px;
+    height: 50px;
 }
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-item {
@@ -1906,8 +1908,17 @@ input:checked+.slider:before {
         color: #fff;
     }
     .page__home .last-update .instruction-2 .update-info {
-        text-align: center;
+        text-align: start;
         margin-bottom: 20px;
+    }
+    .page__home .last-update .instruction-2 .update-info h4.title{
+        margin-top: 0;
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .page__home .last-update .instruction-2 .update-info span.time{
+        font-size: 13px;
+        line-height: 18px;
     }
     .header #navbar-header {
         padding-left: 0;
@@ -2101,6 +2112,24 @@ input:checked+.slider:before {
     }
     .footer .social-area {
         margin-top: 0;
+    }
+    .page__home #home-title h2.title, h1.title{
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 16px;
+        padding-top: 64px;
+        font-weight: 700;
+    }
+    .page__home #home-title p.subtitle{
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
+    }
+    .page__home #home-title{
+        text-align: start;
+    }
+    .page__home #about-us{
+        padding-top: 0;
     }
 }
 
