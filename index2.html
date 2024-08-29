@@ -131,13 +131,13 @@
             font-size: 16px;
             margin-top: 32px;
             display: inline-block;
-        }
+        }        
     </style>
 
     <style>
         .home-top-banner-2 {
             min-height: 500px;
-            padding-top: 70px;
+            padding-top: 50px;
             padding-bottom: 96px;
             background-color: #000;
         }
@@ -172,6 +172,19 @@
             .slideShow__container {
                 gap: 0;
             }            
+            .menu-home{
+                padding: 4px;
+            }
+            .instruction .row {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth; 
+            }
+            .instruction .row::-webkit-scrollbar {
+                display: none; 
+            }
         }
     </style>
     <style id="svelte-166mr51-style">
@@ -299,13 +312,13 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container container-1">
                     <div class="row flex-grow-1 align-items-center">
-                        <div class="col-6 col-lg-2">
+                        <div class="col-6 col-lg-2 menu-home">
                             <div class="d-flex align-items-center">
                                 <button class="navbar-toggler mr-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-header"> 
                                         <i class="fas fa-bars"></i>
                                     </button>
                                 <div class="logo" onclick="window.location = 'index.html'">
-                                    <h1><img src="../assets/images/mediax-logo.svg" style="max-height: 24px;"/></h1>
+                                    <h1><img class="logo-header" src="../assets/images/mediax-logo.svg"/></h1>
                                 </div>
                             </div>
                         </div>
@@ -373,7 +386,7 @@
                             <h2 class="title">Pushing the Boundaries of AI Technology</h2>
                             <p class="subtitle">Going beyond merely implementing existing AI technologies, we specialize in crafting innovative solutions tailored for the Vietnamese language and marketplace. Our research initiatives lead the way in seamlessly incorporating AI into the daily lives of people in Vietnam.</p>
                         </article>
-                        <article class="instruction-2 instruction-post" id="home-instruction">
+                        <article class="instruction-2" id="home-instruction">
                             <div class="instruction ">
                                 <div class="row">
                                                                     

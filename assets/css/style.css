@@ -601,7 +601,7 @@ h6 {
     background: #007BFF;
 }
 .page-client .footer .menu-footer li a {
-    border-bottom: 2px solid #3295FF;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 .header #navbar-header {
     padding: 16px 0px;
@@ -635,6 +635,14 @@ h6 {
     text-underline-offset: 8px;
     font-weight: bold;
     background-color: transparent !important; 
+}
+
+.copy-right{
+    opacity: 0.7;
+}
+
+.logo-header{
+    max-height: 24px;
 }
 
 .nav-link.inactive {
@@ -2024,6 +2032,10 @@ input:checked+.slider:before {
         text-align: left;
         padding: 6px 10px;
     }
+    .header .navbar-expand-lg{
+        min-height: 50px;
+        height: auto;
+    }
     .masthead__action-buttons {
         display: block!important;
         width: 100%;
@@ -2130,6 +2142,9 @@ input:checked+.slider:before {
     }
     .page__home #about-us{
         padding-top: 0;
+    }
+    .footer .contact-us{
+        margin-bottom: 40px;
     }
 }
 
