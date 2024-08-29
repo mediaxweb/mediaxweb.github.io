@@ -2305,9 +2305,9 @@ input:checked+.slider:before {
         width: 100%;
         margin-bottom: 40px!important;
     }
-    .collapse:not(.show){
+    /* .collapse:not(.show){
         display: block;
-    }
+    } */
 }
 
 @media screen and (max-width: 520px) {
