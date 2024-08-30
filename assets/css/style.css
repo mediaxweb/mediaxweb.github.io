@@ -752,10 +752,10 @@ h6 {
 
 #lg12{
     display: flex;
-    width: 1300px;
+    width: 1200px;
     padding: 64px 0px;
     align-items: center;
-    gap: 64px; 
+    gap: 64px;
 }
 
 #lg12-line {
@@ -764,11 +764,11 @@ h6 {
 
 .titlers{
     display: flex;
-    width: 1543px;
-    padding: 200px 0px 10px;
+    width: 100%;
+    padding: 146px 0px 96px;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    color: white;
 }
 
 .rowbt{
@@ -2174,14 +2174,13 @@ input:checked+.slider:before {
     .btns {
         display: none;
     }
-    .buttonpost{
-        display: none;
-    }
     .titlers{
-        padding: 30px 20px;
+        padding: 24px 16px 0;
+        align-items:flex-start;
     }
     #lg12{
-        padding: 20px;
+        padding: 40px 4px;
+        gap: 24px;
     }
     .btrs{
         display: flex;
@@ -2252,12 +2251,14 @@ input:checked+.slider:before {
     .page__home #home-title h1.title-careers {
         font-size: 28px;
         line-height: 34px;
-        text-align: start;      
+        text-align: start;  
+        margin-bottom: 16px;    
     }
     .page__home #home-title p.title-careers2 {
         font-size: 14px;
         line-height: 20px;
         text-align: start;
+        margin-bottom: 8px;
     }
     .page__home #home-title p.subtitle-careers {
         font-size: 16px; 
@@ -2359,26 +2360,26 @@ input:checked+.slider:before {
     }
     #lg12 {
         flex-direction: column; 
-        gap: 20px; 
         width: auto;
     }
     .btns {
         display: none;
     }
-    .buttonpost{
-        display: none;
-    }
     .titlers{
-        padding: 30px 20px;
+        padding: 24px 16px 0;
+        align-items:flex-start;
     }
     #lg12{
-        padding: 20px;
+        padding: 40px 4px;
     }
 }
 
 @media screen and (min-width: 992px) {
     .imgrs{
-        width: 324px;
+        width: 300px;
+    }
+    .buttonpost {
+        display: none;
     }
 }
 .addlp__form-item {
