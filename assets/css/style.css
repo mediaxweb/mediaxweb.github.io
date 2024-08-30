@@ -2022,8 +2022,8 @@ input:checked+.slider:before {
     i.fa-bars {
         color: #fff;
     }
-    .page__home {
-        padding-top: 0;
+    .page-junior {
+        padding: 0 16px;
     }
     .wrapper {
         width: 100%;
