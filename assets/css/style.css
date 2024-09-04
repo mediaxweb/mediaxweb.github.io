@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Noto+Serif:wght@400;500;700&display=swap');
 * {
     
     -webkit-box-sizing: border-box;
@@ -1324,7 +1324,7 @@ a.home-btn {
     font-size: 32px;
     line-height: 48px;
     margin-bottom: 16px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .benefit-item {
@@ -1886,6 +1886,10 @@ input:checked+.slider:before {
     padding: 4px 8px;
     outline: none;
     border: 0;
+}
+
+.buttonpost{
+
 }
 
 .slippage-input {
