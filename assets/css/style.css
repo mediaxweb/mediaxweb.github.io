@@ -931,7 +931,7 @@ h6 {
 }
 .page__home #post-research {
     color: #000;
-    padding-top: 180px;
+    padding-top: 146px;
 }
 .page__home #post-research .img {
     margin-top: 64px;
@@ -949,7 +949,7 @@ h6 {
     padding: 37px;
 }
 .page-our-client #post-research {
-    padding-bottom: 140px;
+    padding-bottom: 96px;
 }
 @media only screen and (max-width: 912px) {
     .page-our-client #post-research {
@@ -1118,7 +1118,7 @@ p a:hover {
 }
 .page-contact-us #contact-us .form-contact form input {
     width: 100%!important;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     height: 49px;
     padding: 16px;
     border: 2px solid #CDCDCD;
@@ -1146,7 +1146,7 @@ p a:hover {
     text-align: center;
 }
 #contact-us .form-contact form .name-and-email {
-    margin: 24px 0;
+    margin-bottom: 24px;
 }
 #contact-us .form-contact form #name , #contact-us .form-contact form #email {
     width: 403px;
@@ -1170,6 +1170,7 @@ p a:hover {
     font-weight: 700;
     border: 0;
     background-color: #007BFF;
+    width: 100%;
 }
 #contact-us .contact-info {
     padding: 64px;
