@@ -53,8 +53,8 @@
             list-style: none;
             display: flex;
             gap: 40px;
-            margin: 0;
-            padding: 0;
+            padding-left: 20px;
+            padding-right: 20px;
             white-space: nowrap;
             position: relative;
         }
@@ -122,7 +122,11 @@
         .home-slide-medium{
             font-size: 32px;
             line-height: 44px;
+            /* display: block; */
         }
+        /* .home-slide-medium-mobile {
+            display: none;
+        } */
         .slide-btn{
             padding: 12px 24px;
             background: #fff;
@@ -148,13 +152,19 @@
                 min-height: 0;
             }
             .home-slide-title{
-                font-size: 28px;
-                line-height: 34px;
+                font-size: 22px;
+                line-height: 30px;
             }
             .home-slide-medium{
-                font-size: 16px;
-                line-height: 22px;
+                font-size: 14px;
+                line-height: 20px;
+                /* display: none; */
             }
+            /* .home-slide-medium-mobile {
+                display: block; 
+                font-size: 14px;
+                line-height: 20px;
+            } */
             .slideShow__slide, .slideShow__image img {
                 height: 400px;
             }            
@@ -167,6 +177,8 @@
             }
             .slideShow__container {
                 gap: 0;
+                margin: 0;
+                padding: 0;
             }            
             .menu-home{
                 padding: 4px;
@@ -353,6 +365,7 @@
                                 <div class="slide-content">
                                     <h1 class="home-slide-title">Empowering Vietnamese </br> Businesses and Communities with </br> State-of-the-Art AI Solutions</h1>
                                     <div class="home-slide-medium">At MediaX, we envision a future where the Vietnamese language and culture </br> are seamlessly integrated into the global AI landscape. We are committed to </br> driving innovation that caters specifically to the Vietnamese market.</div>
+                                    <!-- <div class=".home-slide-medium-mobile">At MediaX, we envision a future where the Vietnamese </br> language and culture are seamlessly integrated into </br> the global AI landscape. We are committed to </br> driving innovation that caters specifically to the </br> Vietnamese market.</div> -->
                                     <a href="careers.html" class="slide-btn">Get started</a>
                                 </div>
                             </figure>
