@@ -592,13 +592,13 @@ h6 {
     right: 0;
     z-index: 20;
     background-color: rgb(0 0 0 / 70%);
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(30px);
 }
 .page-client .header.sticky-header {
-    background: #007BFF;
+    background-color: rgb(0 123 255 / 70%);
 }
 .page-client .header {
-    background: #007BFF;
+    background-color: rgb(0 123 255 / 70%);
 }
 .page-client .footer .menu-footer li a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.35);
@@ -2052,7 +2052,7 @@ input:checked+.slider:before {
         position: unset;
     }
     .page-client .header {
-        background: #007BFF;
+        background-color: rgb(0 123 255 / 70%);
     }
 
     .page-careers #about-us {
