@@ -74,8 +74,9 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            max-width: 1200px;
+            width: 1200px;
             padding: 20px;
+            white-space: normal;
         }
 
         .slideShow__image {
@@ -122,11 +123,8 @@
         .home-slide-medium{
             font-size: 32px;
             line-height: 44px;
-            /* display: block; */
         }
-        /* .home-slide-medium-mobile {
-            display: none;
-        } */
+
         .slide-btn{
             padding: 12px 24px;
             background: #fff;
@@ -158,13 +156,7 @@
             .home-slide-medium{
                 font-size: 14px;
                 line-height: 20px;
-                /* display: none; */
             }
-            /* .home-slide-medium-mobile {
-                display: block; 
-                font-size: 14px;
-                line-height: 20px;
-            } */
             .slideShow__slide, .slideShow__image img {
                 height: 400px;
             }            
@@ -179,7 +171,10 @@
                 gap: 0;
                 margin: 0;
                 padding: 0;
-            }            
+            }  
+            .slide-content{
+                width: 400px;
+            }
             .menu-home{
                 padding: 4px;
             }
@@ -364,8 +359,7 @@
                                 <img src="./assets/images/slide-home-page-3.png" alt="Home Slide">
                                 <div class="slide-content">
                                     <h1 class="home-slide-title">Empowering Vietnamese </br> Businesses and Communities with </br> State-of-the-Art AI Solutions</h1>
-                                    <div class="home-slide-medium">At MediaX, we envision a future where the Vietnamese language and culture </br> are seamlessly integrated into the global AI landscape. We are committed to </br> driving innovation that caters specifically to the Vietnamese market.</div>
-                                    <!-- <div class=".home-slide-medium-mobile">At MediaX, we envision a future where the Vietnamese </br> language and culture are seamlessly integrated into </br> the global AI landscape. We are committed to </br> driving innovation that caters specifically to the </br> Vietnamese market.</div> -->
+                                    <div class="home-slide-medium">At MediaX, we envision a future where the Vietnamese language and culture are seamlessly integrated into the global AI landscape. We are committed to driving innovation that caters specifically to the Vietnamese market.</div>
                                     <a href="careers.html" class="slide-btn">Get started</a>
                                 </div>
                             </figure>
@@ -384,7 +378,6 @@
                     <div class="dot-container">
                         <span class="dot" onclick="currentSlide(1)"></span> 
                         <span class="dot" onclick="currentSlide(2)"></span> 
-                        <!-- <span class="dot" onclick="currentSlide(3)"></span>  -->
                     </div>
                 </div>
             </article>
@@ -583,6 +576,7 @@
     var SlideShow = function() {
         var slider, slide, dots, slideAmount, sliderWidth;
         var clickCounter = 0; 
+        var interval; 
 
         var _init = function () {
             slider = document.getElementsByClassName('slideShow__container')[0];
@@ -590,65 +584,52 @@
             dots = document.getElementsByClassName('dot');
             slideAmount = slide.length;
             sliderWidth = parseInt(getComputedStyle(slider).width);
-
             slider.style.transform = 'translateX(-' + sliderWidth * clickCounter + 'px)';
             updateDots();
             currentSlide(clickCounter);
 
             _eventHandlers();
+            _startAutoSlide();
         }
-
         var _eventHandlers = function() {
             Array.from(dots).forEach(function(element, index) {
                 element.addEventListener('click', function() {
                     console.log("Dot clicked: Index " + index);
                     currentSlide(index);
+                    _restartAutoSlide();
                 });
             });
             window.addEventListener('resize', _resize, false);
         }
-
         var currentSlide = function(n) {
             clickCounter = n;
             gsap.to(slider, {duration: .9, x:-clickCounter*sliderWidth, ease: "power2.out"});
             updateDots();
         }
-
-        // var customCurrentSlide = function(n) {
-        //     var slideWidth = parseInt(getComputedStyle(slide[0]).width) + 40;
-        //     var offset = (sliderWidth - slideWidth) / 2;
-        //     clickCounter = n;
-        //     var newTranslateX = clickCounter * slideWidth - offset;
-        //     gsap.to(slider, {duration: .9, x: -newTranslateX, ease: "power2.out"});
-        //     updateDots();
-        // }
-
         var updateDots = function() {
             Array.from(dots).forEach(function(dot, index) {
                 dot.className = dot.className.replace(" active", "");
             });
             dots[clickCounter].className += " active";
         }
-
         var _resize = function() {
             sliderWidth = parseInt(getComputedStyle(slider).width);
             gsap.to(slider, {x: -clickCounter * sliderWidth});
         }
-
-        // var _resize = function() {
-        //     sliderWidth = parseInt(getComputedStyle(slider).width);
-        //     if (window.innerWidth > 991) {
-        //         customCurrentSlide(clickCounter);
-        //     } else {
-        //         currentSlide(clickCounter);
-        //     }
-        // }
-
+        var _startAutoSlide = function() {
+            interval = setInterval(function() {
+                clickCounter = (clickCounter + 1) % slideAmount;
+                currentSlide(clickCounter);
+            }, 5000);
+        }
+        var _restartAutoSlide = function() {
+            clearInterval(interval);
+            _startAutoSlide();
+        }
         return {
             init: _init
         }
     }();
-
     SlideShow.init();
 </script>
 

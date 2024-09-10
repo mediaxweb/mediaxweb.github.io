@@ -962,9 +962,18 @@ h6 {
         text-align: left !important;
     }
 }
+.post_content{
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 64px;
+}
 .post_content p {
     text-align: justify;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 400;
+    margin-bottom: 64px;
 }
 .page-our-client #about-us {
     padding-top: 146px;
@@ -1003,8 +1012,8 @@ p a:hover {
 }
 .page__home #home-title h2.title, h1.title {
     font-family: 'Noto Serif', serif;
-    font-size: 64px;
-    line-height: 68px;
+    font-size: 48px;
+    line-height: 58px;
     margin-bottom: 24px;
 }
 .page__home #home-title p.subtitle {
@@ -1341,7 +1350,15 @@ a.home-btn {
 }
 
 .post_text{
-    font-size: 27px;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+.title-rs{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
 }
 
 .home__banner .divider-center {
@@ -2166,10 +2183,6 @@ input:checked+.slider:before {
     }
     .img-logo {
         display: block!important;
-    }
-    .my-image {
-        margin-top: 12px !important;
-        margin-bottom: 32px !important;
     }
     .img{
         margin-bottom: 20px;
