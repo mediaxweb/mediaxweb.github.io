@@ -27,169 +27,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <title>MediaX - Pioneering Artificial Intelligence for Vietnam</title>
-    
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .slideShow {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: calc(100% - 24px); 
-            width: 100%;
-            max-width: 1540px;
-            margin: 0 auto;
-            overflow: visible;
-        }
-
-        .slideShow__container {
-            flex-grow: 1;             
-            height: 100%;
-            width: 100%;
-            list-style: none;
-            display: flex;
-            gap: 40px;
-            padding-left: 20px;
-            padding-right: 20px;
-            white-space: nowrap;
-            position: relative;
-        }
-
-        .slideShow__slide {
-            height: 100%;
-            flex: 0 0 auto; 
-            width: 100%;
-            display: inline-block;
-            position: relative;
-        }
-
-        .slide-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            width: 1200px;
-            padding: 20px;
-            white-space: normal;
-        }
-
-        .slideShow__image {
-            display: block;
-            padding: 0;
-            height: auto;
-            width: 100%;            
-        }
-
-        .slideShow__image img {
-            width: 100%;
-            height: 100%;
-            max-height: 800px;
-            max-width: 1540px;
-            object-fit: cover;
-        }
-
-        .dot {
-            cursor: pointer;
-            height: 8px;
-            width: 8px;
-            margin: 0 2px;
-            background-color: #404040;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #fff;
-        }
-
-        .dot-container {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            margin-top: 24px;
-            gap: 16px;
-        }
-        .home-slide-title{
-            font-size: 64px;
-            line-height: 68px;            
-        }
-        .home-slide-medium{
-            font-size: 32px;
-            line-height: 44px;
-        }
-
-        .slide-btn{
-            padding: 12px 24px;
-            background: #fff;
-            font-weight: bold;
-            color: #000 !important;
-            font-size: 16px;
-            margin-top: 32px;
-            display: inline-block;
-        }        
-    </style>
-
-    <style>
-        .home-top-banner-2 {
-            min-height: 500px;
-            padding-top: 50px;
-            padding-bottom: 96px;
-            background-color: #000;
-        }
-        @media screen and (max-width: 991px) {
-            .home-top-banner-2 {
-                padding-bottom: 0;
-                padding-top: 0;
-                min-height: 0;
-            }
-            .home-slide-title{
-                font-size: 22px;
-                line-height: 30px;
-            }
-            .home-slide-medium{
-                font-size: 14px;
-                line-height: 20px;
-            }
-            .slideShow__slide, .slideShow__image img {
-                height: 400px;
-            }            
-            .slideShow__image img {
-                object-fit: cover;
-                padding: 0 16px;
-            }
-            .slide-btn{
-                padding: 9px 16px;
-            }
-            .slideShow__container {
-                gap: 0;
-                margin: 0;
-                padding: 0;
-            }  
-            .slide-content{
-                width: 400px;
-            }
-            .menu-home{
-                padding: 4px;
-            }
-            .instruction .row {
-                display: flex;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scroll-behavior: smooth; 
-            }
-            .instruction .row::-webkit-scrollbar {
-                display: none; 
-            }
-        }
-    </style>
     <style id="svelte-166mr51-style">
         ul.svelte-166mr51 {
             display: flex;
@@ -310,16 +147,16 @@
 </head>
 
 <body>
-    <div class="wrapper" style="background-color: #000;">
+    <div class="wrapper">
         <header class="header" id="header">
             <nav class="navbar navbar-expand-lg">
                 <div class="container container-1">
                     <div class="row flex-grow-1 align-items-center">
-                        <div class="col-6 col-lg-2 menu-home">
+                        <div class="col-6 col-lg-2">
                             <div class="d-flex align-items-center">
                                 <button class="navbar-toggler mr-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-header"> 
-                                    <i class="fas fa-bars"></i>
-                                </button>
+                                        <i class="fas fa-bars"></i>
+                                    </button>
                                 <div class="logo" onclick="window.location = 'index.html'">
                                     <h1><img class="logo-header" src="../assets/images/mediax-logo.svg"/></h1>
                                 </div>
@@ -350,34 +187,20 @@
                 </div>
             </nav>
         </header>
-        <main class="page__home" style="min-height: calc(100vh - 73px); margin: 0 auto; max-width: 1920px;">
-            <article class="home-top-banner-2 d-flex align-items-center">
-                <div class="slideShow">
-                    <ul class="slideShow__container">
-                        <li class="slideShow__slide">
-                            <figure class="slideShow__image">
-                                <img src="./assets/images/slide-home-page-3.png" alt="Home Slide">
-                                <div class="slide-content">
-                                    <h1 class="home-slide-title">Empowering Vietnamese </br> Businesses and Communities with </br> State-of-the-Art AI Solutions</h1>
-                                    <div class="home-slide-medium">At MediaX, we envision a future where the Vietnamese language and culture are seamlessly integrated into the global AI landscape. We are committed to driving innovation that caters specifically to the Vietnamese market.</div>
-                                    <a href="careers.html" class="slide-btn">Get started</a>
-                                </div>
-                            </figure>
-                        </li>
-                        <li class="slideShow__slide">
-                            <figure class="slideShow__image">
-                                <img src="./assets/images/slide-home-page-2.svg" alt="Home Slide">
-                                <div class="slide-content">
-                                    <h1 class="home-slide-title">Recruitment Announcement</h1>
-                                    <div class="home-slide-medium">Our company is looking for passionate and </br>talented candidates to join our team.</div>
-                                    <a href="careers.html" class="slide-btn">View jobs</a>
-                                </div>
-                            </figure>
-                        </li>
-                    </ul>
-                    <div class="dot-container">
-                        <span class="dot" onclick="currentSlide(1)"></span> 
-                        <span class="dot" onclick="currentSlide(2)"></span> 
+        <main class="page__home" style="min-height: calc(100vh - 73px);">
+            <article class="home-top-banner d-flex align-items-center">
+                <div class="container container-1"> 
+                    <div class="row">
+                        <div class="col-lg-10">                                                              
+                            <div class="" >
+                                <h1 class="home__banner-title">Empowering Vietnamese Businesses and Communities with State-of-the-Art AI Solutions</h1>
+                                <div class="home__title-medium">At MediaX, we envision a future where the Vietnamese language and culture are seamlessly integrated into the global AI landscape. We are committed to driving innovation that caters specifically to the Vietnamese market.</div>
+                                <a href="services.html" class="home-btn">Get Started</a>
+                            </div>                                        
+                        </div>
+                        <div class="col-lg-2">
+                               
+                        </div>
                     </div>
                 </div>
             </article>
@@ -386,7 +209,7 @@
                     <div class="last-update">
                         <article class="instruction-1" id="home-title">
                             <h2 class="title">Pushing the Boundaries of AI Technology</h2>
-                            <p class="subtitle">Going beyond merely implementing existing AI technologies, we specialize in crafting innovative solutions tailored for the Vietnamese language and marketplace. Our research initiatives lead the way in seamlessly incorporating AI into the daily lives of people in Vietnam.</p>
+                            <p>Going beyond merely implementing existing AI technologies, we specialize in crafting innovative solutions tailored for the Vietnamese language and marketplace. Our research initiatives lead the way in seamlessly incorporating AI into the daily lives of people in Vietnam.</p>
                         </article>
                         <article class="instruction-2" id="home-instruction">
                             <div class="instruction ">
@@ -427,7 +250,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="our-research.html" class="home-btn">Find out more</a>
+                            <a href="our-research.html" class="home-btn">Dive into Our Research</a>
                         </article>
                     </div>
                 </div>
@@ -436,7 +259,7 @@
                 <div class="container container-1">
                     <article class="instruction-1" id="home-title">
                         <h2 class="title">About Us</h2>
-                        <p class="subtitle">Our vision is to become the leading force in AI technology in Vietnam, just as OpenAI is globally. We focus on the unique linguistic and market challenges of Vietnam to build AI solutions that are locally relevant yet globally competitive.</p>
+                        <p>Our vision is to become the leading force in AI technology in Vietnam, just as OpenAI is globally. We focus on the unique linguistic and market challenges of Vietnam to build AI solutions that are locally relevant yet globally competitive.</p>
                     </article>
                 </div>
                 <div class="img">
@@ -447,8 +270,8 @@
                 <div class="container container-1">
                     <div class="last-update">
                         <article class="instruction-1" id="home-title">
-                            <h2 class="title">Our Service</h2>
-                            <p class="subtitle">Navigate the complexities of the modern business landscape with AI solutions that are tailored to the specific challenges and opportunities within Vietnam. From natural language processing to data analytics, we offer technologies that transform how you do business.</p>
+                            <h2 class="title">Our Services</h2>
+                            <p>Navigate the complexities of the modern business landscape with AI solutions that are tailored to the specific challenges and opportunities within Vietnam. From natural language processing to data analytics, we offer technologies that transform how you do business.</p>
                         </article>
                         <article class="instruction-2" id="home-instruction">
                             <div class="instruction ">
@@ -488,7 +311,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="contact-us.html" class="home-btn">Find out more</a>
+                            <a href="contact-us.html" class="home-btn">Discover Our AI-Powered Solutions</a>
                         </article>
                     </div>
                 </div>
@@ -571,84 +394,6 @@
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/custom.menu.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-<script>
-    var SlideShow = function() {
-        var slider, slide, dots, slideAmount, sliderWidth;
-        var clickCounter = 0; 
-        var interval; 
-
-        var _init = function () {
-            slider = document.getElementsByClassName('slideShow__container')[0];
-            slide = document.getElementsByClassName('slideShow__slide');
-            dots = document.getElementsByClassName('dot');
-            slideAmount = slide.length;
-            sliderWidth = parseInt(getComputedStyle(slider).width);
-            slider.style.transform = 'translateX(-' + sliderWidth * clickCounter + 'px)';
-            updateDots();
-            currentSlide(clickCounter);
-
-            _eventHandlers();
-            _startAutoSlide();
-        }
-        var _eventHandlers = function() {
-            Array.from(dots).forEach(function(element, index) {
-                element.addEventListener('click', function() {
-                    console.log("Dot clicked: Index " + index);
-                    currentSlide(index);
-                    _restartAutoSlide();
-                });
-            });
-            window.addEventListener('resize', _resize, false);
-        }
-        var currentSlide = function(n) {
-            clickCounter = n;
-            gsap.to(slider, {duration: .9, x:-clickCounter*sliderWidth, ease: "power2.out"});
-            updateDots();
-        }
-        var updateDots = function() {
-            Array.from(dots).forEach(function(dot, index) {
-                dot.className = dot.className.replace(" active", "");
-            });
-            dots[clickCounter].className += " active";
-        }
-        var _resize = function() {
-            sliderWidth = parseInt(getComputedStyle(slider).width);
-            gsap.to(slider, {x: -clickCounter * sliderWidth});
-        }
-        var _startAutoSlide = function() {
-            interval = setInterval(function() {
-                clickCounter = (clickCounter + 1) % slideAmount;
-                currentSlide(clickCounter);
-            }, 5000);
-        }
-        var _restartAutoSlide = function() {
-            clearInterval(interval);
-            _startAutoSlide();
-        }
-        return {
-            init: _init
-        }
-    }();
-    SlideShow.init();
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    var links = document.querySelectorAll('.navbar-nav .nav-link');
-
-    var currentUrl = window.location.pathname.split('/').pop();
-
-    links.forEach(function(link) {
-        var linkUrl = link.getAttribute('href');
-        if (linkUrl === currentUrl) {
-            link.classList.add('active');
-        } else {
-            link.classList.add('inactive');
-        }
-    });
-});
-</script>
 
 </body>
 </html>
