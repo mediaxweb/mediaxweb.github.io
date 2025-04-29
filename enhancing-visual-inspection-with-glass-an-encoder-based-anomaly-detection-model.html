@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Enhancing Visual Inspection with GLASS: An Encoder-Based Anomaly Detection Model" />
+    <meta property="og:description" content="MediaX is exploring scalable AI with the GLASS framework to detect and segment visual anomalies in image datasets, showing strong real-world potential." />
+    <meta property="og:url" content="https://mediax.com.vn/" />
+    <meta property="og:site_name" content="MediaX" />
+    <meta property="og:image" content="https://mediax.com.vn/assets/images/anomaly_detection.png"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://mediax.com.vn/assets/images/anomaly_detection.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MediaX is exploring scalable AI with the GLASS framework to detect and segment visual anomalies in image datasets, showing strong real-world potential." />
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/fav-blue.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <title>Enhancing Visual Inspection with GLASS: An Encoder-Based Anomaly Detection Model</title>
+    <style id="svelte-166mr51-style">
+        ul.svelte-166mr51 {
+            display: flex;
+            flex-flow: column nowrap;
+            position: fixed;
+            font-size: 16px;
+            padding: 0 0.75em;
+            margin: 0;
+            list-style-type: none;
+            width: 20em;
+            bottom: 0;
+            right: 0;
+            font-family: 'Helvetica Neue';
+            max-height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            color: #4a4a4a;
+            background: transparent;
+            scrollbar-width: none;
+            box-sizing: border-box;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 99999999
+        }
+        
+        @media only screen and (max-width: 450px) {
+            ul.svelte-166mr51 {
+                width: 100%
+            }
+        }
+        
+        .bn-notify-custom.bn-notify-dark-mode {
+            background: #283944;
+            color: #ffffff;
+            background: rgba(40, 57, 68, 0.9)
+        }
+        
+        .bn-notify-clickable:hover {
+            cursor: pointer
+        }
+        
+        .svelte-166mr51::-webkit-scrollbar {
+            display: none
+        }
+        
+        li.svelte-166mr51 {
+            position: relative;
+            display: flex;
+            padding: 0.75em;
+            font-size: 0.889em;
+            font-family: inherit;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            color: inherit;
+            transition: background 300ms ease-in-out, color 300ms ease-in-out;
+            pointer-events: all;
+            background: #fff;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9)
+        }
+        
+        div.svelte-166mr51 {
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+            font-size: inherit;
+            font-family: inherit
+        }
+    </style>
+    <style id="svelte-7rn0pv-style">
+        div.svelte-7rn0pv {
+            height: 100%;
+            font-size: inherit;
+            font-family: inherit;
+            width: 1.5em
+        }
+    </style>
+    <style id="svelte-5f7pqk-style">
+        div.svelte-5f7pqk {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            font-size: inherit;
+            font-family: inherit;
+            margin-left: 0.75em;
+            width: 90%
+        }
+        
+        p.svelte-5f7pqk {
+            display: flex;
+            align-items: center;
+            margin: 0.5em 0 0 0;
+            opacity: 0.7;
+            font-size: 0.889em;
+            line-height: 1.15;
+            font-family: inherit
+        }
+        
+        span.svelte-5f7pqk {
+            font-family: inherit;
+            display: flex;
+            align-items: center
+        }
+    </style>
+    <style id="svelte-12gqi36-style">
+        p.svelte-12gqi36 {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit
+        }
+    </style>
+    <style id="svelte-1ociadw-style">
+        svg.svelte-1ociadw {
+            margin: 0 0.25em 0 0.5em
+        }
+    </style>
+    <style>
+        .my-image {
+            width: 1542px;
+            min-height: auto;
+            margin-bottom: 64px;
+            margin-top: 44px;
+        }
+    </style>
+    <style>
+        blockquote p {
+            margin-left: 20px;
+        }
+    </style>
+    <style>
+        h1 { color: #003366; }
+        h2 { color: #005599; }
+        ul { padding-left: 20px; }
+        .content { max-width: 800px; margin: auto; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper page-client">
+        <header class="header" id="header">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container container-1">
+                    <div class="row flex-grow-1 align-items-center">
+                        <div class="col-6 col-lg-2">
+                            <div class="d-flex align-items-center">
+                                <button class="navbar-toggler mr-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-header">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                <div class="logo" onclick="window.location = 'index.html'">
+                                    <img class="logo-header" src="../assets/images/mediax-logo.svg"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="collapse navbar-collapse" id="navbar-header">
+                                <ul class="navbar-nav menu-header ms-auto mb-2 mb-lg-0 align-items-lg-end">
+                                    <li >
+                                        <a class="nav-link" href="services.html">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="our-research.html">Our Research</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="careers.html">Careers</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="about-us.html">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact-us.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="page__home page-our-client" style="min-height: calc(100vh - 73px);background: #fff;">
+            <div id="post-research" style="background-color: #fff;">
+                <div class="container container-1">
+                    <article class="instruction-1" id="post-title">
+                        <h1 class="title">Enhancing Visual Inspection with GLASS: An Encoder-Based Anomaly Detection Model</h1>
+                        <p><em>April 2025 | By MediaX Research Team</em></p>
+                    </article>
+                    <div id="horizontal-line"></div>
+                    <div class="post_content">
+                        <p>At MediaX, we’re constantly experimenting with scalable and generalizable AI models. One of our latest research efforts involved leveraging the <strong>GLASS framework</strong>—Generalizable Local Anomaly Segmentor—to detect and segment visual anomalies in image datasets. Our evaluation demonstrates highly promising performance for real-world applications.</p>
+
+                        <h2>Framework</h2>
+                        <p>GLASS is a state-of-the-art deep learning model tailored for anomaly segmentation. It combines a powerful encoder-based architecture with local feature learning to detect subtle defects and anomalies in complex backgrounds.</p>
+
+                        <p>We trained the model on our internal <strong>MediaX Encoder Dataset</strong>, using Colab and custom shell scripts for execution and result export. The model training and evaluation were done using GLASS’s native runner (<code>run-mediax.sh</code>), integrated with our customized data pipeline.</p>
+
+                        <h2>Performance Highlights</h2>
+
+                        <h3>Image-Level Detection</h3>
+                        <ul>
+                            <li><strong>AUROC:</strong> 100.0</li>
+                            <li><strong>Average Precision (AP):</strong> 100.0</li>
+                        </ul>
+                        <p>This indicates perfect classification between normal and anomalous images.</p>
+
+                        <h3>Pixel-Level Localization</h3>
+                        <ul>
+                            <li><strong>AUROC:</strong> 96.99</li>
+                            <li><strong>Average Precision:</strong> 19.19</li>
+                            <li><strong>PRO (Per-Region Overlap):</strong> 95.03</li>
+                        </ul>
+                        <p style="margin-bottom: 30px">While the model localizes anomaly regions very effectively (high AUROC/PRO), the lower AP suggests slight noise sensitivity or over-segmentation—an area we are actively improving.</p>
+                        <img class="my-image" src="../assets/images/anomaly_detection.png" style="max-width: 100%; margin-bottom: 30px; margin-top: 0px; object-fit: contain;" alt="Enhancing Visual Inspection with GLASS: An Encoder-Based Anomaly Detection Model">                        
+
+                        <h2>Impact and Next Steps</h2>
+                        <p>This research validates the effectiveness of GLASS for industry-level visual inspection. We aim to further optimize pixel-level precision and apply the framework across broader verticals like manufacturing, logistics, and smart surveillance.</p>
+
+                        <p>To follow our latest AI research, visit the <a href="https://mediax.com.vn/our-research.html">MediaX Research Page</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <nav class="navbar navbar-expand-lg navbar-footer">
+                <div class="container container-1">
+                    <div class="row flex-grow-1 justify-content-between">
+                        <div class="col-lg-6" style="display: flex;align-items: stretch;flex-direction: column;">
+                            <div class="logo-footer">
+                                <a href="#"><img src="./assets/images/mediax-logo.svg" style="max-height: 40px;" alt=""></a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbar-footer">
+                                <ul class="menu-footer mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="services.html">Services <i class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"  href="our-research.html">Our Research <i class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"  href="careers.html">Careers<i class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"  href="about-us.html">About Us <i class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="contact-us.html" class="nav-link" href="">Contact <i class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-5">                       
+                            <div class="social-area d-flex ms-auto mb-2 mb-lg-0 justify-content-start">
+                                <ul class="social-list d-flex flex-row ">
+                                    <li><a href=""><img src="./assets/images/twiter-new-logo.svg" alt=""></a></li>
+                                    <!-- <li><a href=""><img src="./assets/images/telegram-logo.png" alt=""></a></li> -->
+                                    <li><a href="#"><img src="./assets/images/github-logo.svg" alt=""></a></li>
+                                    <li><a href="#"><img src="./assets/images/facebook-logo.svg" alt=""></a></li>
+                                </ul>
+                            </div>
+                            <div class="contact-us">
+                                <div>Contact info</div>
+                                <div class="mail">
+                                    <span class=""><img src="./assets/images/mail-logo.svg" alt=""></span>
+                                    <p><a href="mailto:example@example.com">hello@mediax.com.vn</a></p>
+                                </div>
+                                <div class="phone">
+                                    <span class=""><img src="./assets/images/phone-logo.svg" alt=""></span>
+                                    <p><a href="tel:0343488603">0343488603</a></p>
+                                </div>
+                                <div class="address">
+                                    <span class=""><img src="./assets/images/address-logo.svg" alt=""></span>
+                                    <p>5th floor V1 The Terra An Hung - La Khe - Ha Dong - HN</p>
+                                </div>
+                            </div>
+                            <div class="copy-right">
+                                <p>© 2023 MediaX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </footer>
+    </div>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Corporation",
+          "name": "MediaX - Pioneering Artificial Intelligence for Vietnam",
+          "url": "https://mediax.com.vn/",
+          "logo": "https://mediax.com.vn/assets/images/mediax-logo.svg",
+          "sameAs": "https://mediax.com.vn/"
+        }
+    </script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/custom.menu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var form = document.getElementById("form-services");
+    
+        async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+            status.innerHTML = "Your inquiry has been received! We appreciate your interest in MediaX and will be in touch shortly.";
+            form.reset()
+            } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+            })
+            }
+        }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+</body>
+</html>
