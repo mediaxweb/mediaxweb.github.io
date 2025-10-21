@@ -25,8 +25,10 @@ async def send_email(name: str = Form(...), email: str = Form(...),
     if resume.file._file.getbuffer().nbytes > 5242880:
         raise HTTPException(status_code=413, detail="File size exceeds the allowable limit of 5MB.")
 
-    sender_email = "dzung@mediax.com.vn"
-    receiver_email = "david.nguyen@mediax.com.vn"
+    # sender_email = "dzung@mediax.com.vn"
+    # receiver_email = "david.nguyen@mediax.com.vn"
+    sender_email = ""
+    receiver_email = ""
     # receiver_email = "dzung@mediax.com.vn"
     password = "rcse gcjs uqgs vahl"
 
