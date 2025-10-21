@@ -564,7 +564,7 @@
             formData.append('phone', document.getElementById('phone').value);
             formData.append('resume', document.getElementById('resume').files[0]);
 
-            fetch('https://api.mediax.com.vn/mediax/send-email', {
+            fetch('https://api.mediax.com.vn/send-email', {
                 method: 'POST',
                 body: formData
             })
