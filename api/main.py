@@ -1,42 +1,50 @@
 from fastapi import FastAPI, Form, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
-from starlette.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "MediaX API is running!", "status": "healthy"}
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok", "message": "Server is running"}
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://mediax.com.vn"], 
+    allow_origins=["https://mediax.com.vn"],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"], 
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
 )
 
 @app.post('/send-email')
-async def send_email(name: str = Form(...), email: str = Form(...), 
-                     phone: str = Form(...), resume: UploadFile = File(...)):
+async def send_email(name: str = Form(...), email: str = Form(...),
+                    phone: str = Form(...), resume: UploadFile = File(...)):
     if resume.content_type != 'application/pdf':
         raise HTTPException(status_code=400, detail="Only PDF files are accepted.")
     if resume.file._file.getbuffer().nbytes > 5242880:
         raise HTTPException(status_code=413, detail="File size exceeds the allowable limit of 5MB.")
 
-    # sender_email = "dzung@mediax.com.vn"
-    # receiver_email = "david.nguyen@mediax.com.vn"
-    sender_email = ""
-    receiver_email = ""
-    # receiver_email = "dzung@mediax.com.vn"
-    password = "rcse gcjs uqgs vahl"
+    sender_email = os.getenv("SENDER_EMAIL", "")
+    receiver_email = os.getenv("RECEIVER_EMAIL", "")
+    password = os.getenv("EMAIL_PASSWORD", "")
 
     message = MIMEMultipart()
     message['From'] = sender_email
     message['To'] = receiver_email
     message['Subject'] = "New Job Application"
-    
+
     body = f"Name: {name}\nEmail: {email}\nPhone: {phone}"
     message.attach(MIMEText(body, 'plain'))
 
@@ -57,4 +65,4 @@ async def send_email(name: str = Form(...), email: str = Form(...),
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(app, host='0.0.0.0', port=8080)
