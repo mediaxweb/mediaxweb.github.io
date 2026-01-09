@@ -237,64 +237,9 @@
                         </div>
                         
                     
-                        <div style="background-color: #F2F2F2; height: 730px; padding: 20px;">
+                        <div style="background-color: #F2F2F2; padding: 20px;">
                             <h3 style="font-size: 24px; margin-bottom: 20px;">Apply for this job</h3>
-                            <form id="apply-form" method="POST" onsubmit="return submitForm()">
-                                <label for="name" style="display: block; margin-bottom: 5px; font-weight: 500;">Name <span style="color: red;">*</span></label>
-                                <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
-                                <div id="name-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
-                                    <img src="../assets/images/jd-icon-2.svg"> The field is required
-                                </div>
-                                <label for="email" style="display: block; margin-bottom: 5px; font-weight: 500;">Email <span style="color: red;">*</span></label>
-                                <input type="email" id="email" name="email" placeholder="hello@example.com" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
-                                <div id="email-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
-                                    <img src="../assets/images/jd-icon-2.svg"> The field is required
-                                </div>
-                        
-                                <label for="phone" style="display: block; margin-bottom: 5px; font-weight: 500;">Phone number <span style="color: red;">*</span></label>
-                                <input type="tel" id="phone" name="phone" placeholder="0791234567" style="width: 100%; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px 16px">
-                                <div id="phone-error" style="display:none; color: red; margin-bottom: 16px; font-size: 14px;">
-                                    <img src="../assets/images/jd-icon-2.svg"> Phone number must contain only digits.
-                                </div>
-                        
-                                <label for="resume" style="display: block; margin-bottom: 5px; font-weight: 500;">Upload your latest resume <span style="color: red;">*</span></label>
-
-                                <div style="border: 1px dashed #000; padding: 12px 20px; margin-bottom: 32px; position: relative; font-size: 16px; display: flex; flex-direction: column; align-items: center; background-color: white;" class="resume-container">
-                                    <ul id="file-list" style="list-style: none; padding-left: 0; width: 100%; height: 50px; background-color: #E6E6E6; z-index: 2; display: flex; align-items: center; justify-content: center; flex-direction: column; margin-bottom: 6px;"></ul>
-
-                                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; position: relative;">
-                                        <input type="file" id="resume" name="resume" accept="pdf"
-                                            style="width: 100%; opacity: 0; position: absolute; height: 100%; cursor: pointer;"
-                                            onchange="handleFileUpload()">
-                                        <button type="button" onclick="document.getElementById('resume').click();" style="background-color: #eee; border: 1px solid #000; padding: 8px 16px; cursor: pointer;">Choose file</button>
-                                        <span style="padding-left: 10px; white-space: nowrap;">PDF File Only <br> Max File size: 5MB</span>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div id="resume-error" style="display:none; color: red; margin-bottom: 32px; font-size: 14px;">
-                                    <img src="../assets/images/jd-icon-2.svg"> Only accept PDF files, maximum size 5MB
-                                </div>
-                        
-                                <button type="submit" id="submit-button" style="width: 100%; background-color: #007BFF; color: white; font-size: 18px; padding: 10px 20px; position: relative; display: flex; justify-content: center; align-items: center; border: none; margin-bottom: 4px;">
-                                    Apply
-                                    <img src="../assets/images/jd-icon-1.svg" alt="Icon" style="height: 16px; width: 16px; margin-left: 16px;">
-                                </button>
-                                <div id="button-error" style="display:none; color: red; font-size: 14px;">
-                                    <img src="../assets/images/jd-icon-2.svg"> One or more fields have an error. Please check and try again.
-                                </div>
-                                <div id="button-timeout" style="display:none; align-items: center;">
-                                    <img src="../assets/images/jd-icon-2.svg" style="height: 16px; width: 16px; margin-right: 10px;">
-                                    <p style="color: red; font-size: 14px; margin: 0;">Please wait 60 seconds before applying again.</p>
-                                </div>
-                                <div id="success-message" style="display:none; align-items: center; flex-direction: column; margin-bottom: 0;">
-                                    <div style="display: flex; align-items: center;">
-                                        <img src="../assets/images/jd-icon-3.svg" style="height: 16px; width: 16px; margin-right: 10px;">
-                                        <p style="color: #289944; font-size: 14px; font-style: italic; margin: 0;">Your CV has been successfully submitted.</p>
-                                    </div>
-                                    <p style="color: #000; font-size: 14px; margin-top: 4px;">Thank you for your application. We will contact you shortly.</p>
-                                </div>                            
-                            </form>
+                            <p style="font-size: 16px; margin: 0;">Send your cv to <a href="mailto:hello@mediax.com.vn">hello@mediax.com.vn</a>.</p>
                         </div>                                    
                     </div>
 
@@ -341,7 +286,7 @@
                             </ul>
                             <h3 style="font-size: 18px; text-align: left;">How to Apply:</h3>
                             <ul style="font-size: 16px; list-style-position: inside; text-align: left">
-                                <li>Please submit your resume and a cover letter outlining your interest in the role and your relevant experience. Include any projects or work samples that showcase your machine learning skills.</li>
+                                <li>Send your cv to <a href="mailto:hello@mediax.com.vn">hello@mediax.com.vn</a>.</li>
                             </ul>
                         </article>
                     </div>                    
