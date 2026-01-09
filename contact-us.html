@@ -197,11 +197,11 @@
                                     <div class="name-and-email">
                                         <input type="text" id="name" name="name" placeholder="Name" required>
                                         <input type="email" id="email" name="email" placeholder="Email" required>
-                                        <input type="phone number" id="phone" name="phone" placeholder="Phone" required>
                                         <input type="text" id="subject" name="subject" placeholder="Subject" required>
                                     </div> 
                                     <textarea id="description" name="message" placeholder="Question" rows="4" cols="50"></textarea><br><br>
-                            
+                                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                                    <div class="g-recaptcha" data-sitekey="6LduLUUsAAAAAMttdwQX5HcpZYB-bYoS1quttaOu"></div>
                                     <button type="submit" class="send-btn">Send</button>
                                     <p id="my-form-status"></p>
                                 </form>
@@ -306,34 +306,27 @@
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/custom.menu.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script type="text/javascript">
+      emailjs.init('wByFH4YuEi6zsWlyS')
+    </script>
     <script>
         var form = document.getElementById("form-contact");
     
         async function handleSubmit(event) {
         event.preventDefault();
         var status = document.getElementById("my-form-status");
-        var data = new FormData(event.target);
-        fetch(event.target.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-            status.innerHTML = "Your inquiry has been received! We appreciate your interest in MediaX and will be in touch shortly.";
-            form.reset()
-            } else {
-            response.json().then(data => {
-                if (Object.hasOwn(data, 'errors')) {
-                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-                } else {
-                status.innerHTML = "Oops! There was a problem submitting your form"
-                }
-            })
-            }
-        }).catch(error => {
-            status.innerHTML = "Oops! There was a problem submitting your form"
+        const serviceID = 'default_service';
+        const templateID = 'template_w4m0z18';
+        
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                status.innerHTML = "Your inquiry has been received! We appreciate your interest in MediaX and will be in touch shortly.";
+                form.reset()
+            }, (err) => {
+              status.innerHTML = "Oops! There was a problem submitting your form"
         });
         }
         form.addEventListener("submit", handleSubmit)
