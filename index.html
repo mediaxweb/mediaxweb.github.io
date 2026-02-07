@@ -561,6 +561,22 @@
     <script src="../assets/js/custom.menu.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script>
+        (function () {
+            try {
+                var path = window.location.pathname || '';
+                if (path.indexOf('/vi/') === 0) return;
+                var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+                var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+                var langLower = (lang || '').toLowerCase();
+                var isVi = langLower.startsWith('vi') || langLower.indexOf('vi-') !== -1 || tz === 'Asia/Ho_Chi_Minh' || tz === 'Asia/Saigon';
+                if (isVi) {
+                    var target = '/vi/' + window.location.search + window.location.hash;
+                    window.location.replace(target);
+                }
+            } catch (e) {}
+        })();
+    </script>
 <script>
     var SlideShow = function() {
         var slider, slide, dots, slideAmount, sliderWidth;

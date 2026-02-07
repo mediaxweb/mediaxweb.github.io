@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="vi_VN" property="og:locale"/>
+<meta content="website" property="og:type">
+<meta content="Nghiên cứu - MediaX" property="og:title"/>
+<meta content="vi_VN" property="og:locale"/>
+<meta content="Khám phá nghiên cứu cùng MediaX - nơi công nghệ và AI thắp sáng tương lai!" property="og:description"/>
+<meta content="https://mediax.com.vn/" property="og:url"/>
+<meta content="MediaX" property="og:site_name"/>
+<meta content="https://mediax.com.vn/assets/images/banner-img.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Khám phá nghiên cứu cùng MediaX - nơi công nghệ và AI thắp sáng tương lai!" name="description"/>
+<meta content="max-image-preview:large" name="robots"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet">
+<link href="../assets/images/fav-blue.png" rel="shortcut icon" type="image/x-icon"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<title>Nghiên cứu - MediaX</title>
+<style id="svelte-166mr51-style">
+        ul.svelte-166mr51 {
+            display: flex;
+            flex-flow: column nowrap;
+            position: fixed;
+            font-size: 16px;
+            padding: 0 0.75em;
+            margin: 0;
+            list-style-type: none;
+            width: 20em;
+            bottom: 0;
+            right: 0;
+            font-family: 'Helvetica Neue';
+            max-height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            color: #4a4a4a;
+            background: transparent;
+            scrollbar-width: none;
+            box-sizing: border-box;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 99999999
+        }
+        
+        @media only screen and (max-width: 450px) {
+            ul.svelte-166mr51 {
+                width: 100%
+            }
+        }
+        
+        .bn-notify-custom.bn-notify-dark-mode {
+            background: #283944;
+            color: #ffffff;
+            background: rgba(40, 57, 68, 0.9)
+        }
+        
+        .bn-notify-clickable:hover {
+            cursor: pointer
+        }
+        
+        .svelte-166mr51::-webkit-scrollbar {
+            display: none
+        }
+        
+        li.svelte-166mr51 {
+            position: relative;
+            display: flex;
+            padding: 0.75em;
+            font-size: 0.889em;
+            font-family: inherit;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            color: inherit;
+            transition: background 300ms ease-in-out, color 300ms ease-in-out;
+            pointer-events: all;
+            background: #ffffff;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9)
+        }
+        
+        div.svelte-166mr51 {
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+            font-size: inherit;
+            font-family: inherit
+        }
+    </style>
+<style id="svelte-7rn0pv-style">
+        div.svelte-7rn0pv {
+            height: 100%;
+            font-size: inherit;
+            font-family: inherit;
+            width: 1.5em
+        }
+    </style>
+<style id="svelte-5f7pqk-style">
+        div.svelte-5f7pqk {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            font-size: inherit;
+            font-family: inherit;
+            margin-left: 0.75em;
+            width: 90%
+        }
+        
+        p.svelte-5f7pqk {
+            display: flex;
+            align-items: center;
+            margin: 0.5em 0 0 0;
+            opacity: 0.7;
+            font-size: 0.889em;
+            line-height: 1.15;
+            font-family: inherit
+        }
+        
+        span.svelte-5f7pqk {
+            font-family: inherit;
+            display: flex;
+            align-items: center
+        }
+    </style>
+<style id="svelte-12gqi36-style">
+        p.svelte-12gqi36 {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit
+        }
+    </style>
+<style id="svelte-1ociadw-style">
+        svg.svelte-1ociadw {
+            margin: 0 0.25em 0 0.5em
+        }
+    </style>
+</link></meta></head>
+<body>
+<div class="wrapper page-client">
+<header class="header" id="header">
+<nav class="navbar navbar-expand-lg">
+<div class="container container-1">
+<div class="row flex-grow-1 align-items-center">
+<div class="col-6 col-lg-2">
+<div class="d-flex align-items-center">
+<button class="navbar-toggler mr-3" data-bs-target="#navbar-header" data-bs-toggle="collapse" type="button">
+<i class="fas fa-bars"></i>
+</button>
+<div class="logo" onclick="window.location = '/vi/'">
+<img class="logo-header" src="../assets/images/mediax-logo.svg"/>
+</div>
+</div>
+</div>
+<div class="col-lg-10">
+<div class="collapse navbar-collapse" id="navbar-header">
+<ul class="navbar-nav menu-header ms-auto mb-2 mb-lg-0 align-items-lg-end">
+<li>
+<a class="nav-link" href="services.html">Dịch vụ</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="our-research.html">Nghiên cứu</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="careers.html">Tuyển dụng</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about-us.html">Về chúng tôi</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact-us.html">Liên hệ</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="page__home page-contact-us" style="min-height: calc(100vh - 73px);background: #fff;">
+<div style="background-color: #fff;">
+<div class="titlers" id="home-title" style="background-color: #0075F2;">
+<p class="title-careers2">Nghiên cứu</p>
+<h1 class="client-title">Dive into Nghiên cứu</h1>
+<p class="client-subtitle">Khám phá nghiên cứu cùng MediaX - nơi công nghệ và AI thắp sáng tương lai!</p>
+</div>
+<div class="container container-1">
+<div class="row">
+<a href="enhancing-image-similarity-search-with-an-ai-embedding-and-image-retrieval-system.html" style="text-decoration: none; color: inherit;">
+<div class="col-lg-12" id="lg12">
+<img alt="Hệ thống tìm kiếm độ tương tự hình ảnh" class="imgrs" src="../assets/images/image-similarity-error-2.jpg" style="height: 200px; object-fit: cover;"/>
+<div class="postrs">
+<div class="posttime">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.625 20.625C2.625 21.0398 2.96016 21.375 3.375 21.375H20.625C21.0398 21.375 21.375 21.0398 21.375 20.625V10.7812H2.625V20.625ZM20.625 4.3125H16.6875V2.8125C16.6875 2.70937 16.6031 2.625 16.5 2.625H15.1875C15.0844 2.625 15 2.70937 15 2.8125V4.3125H9V2.8125C9 2.70937 8.91563 2.625 8.8125 2.625H7.5C7.39687 2.625 7.3125 2.70937 7.3125 2.8125V4.3125H3.375C2.96016 4.3125 2.625 4.64766 2.625 5.0625V9.1875H21.375V5.0625C21.375 4.64766 21.0398 4.3125 20.625 4.3125Z" fill="#868686"></path>
+</svg>
+<p style="color:#868686;">Ngày 09 tháng 1 năm 2026</p>
+</div>
+<div>
+<h2 class="title-rs">Tăng cường tìm kiếm tương tự hình ảnh bằng hệ thống truy xuất hình ảnh và nhúng AI</h2>
+<p>MediaX đánh giá hệ thống tìm kiếm tương tự hình ảnh CLIP + ChromaDB để truy xuất sản phẩm thực tế, mạnh mẽ.</p>
+</div>
+<div>
+<a class="buttonpost" href="enhancing-image-similarity-search-with-an-ai-embedding-and-image-retrieval-system.html">ĐỌC THÊM</a>
+</div>
+</div>
+</div>
+</a>
+<hr id="lg12-line"/>
+<a href="enhancing-visual-inspection-with-glass-an-encoder-based-anomaly-detection-model.html" style="text-decoration: none; color: inherit;">
+<div class="col-lg-12" id="lg12">
+<img alt="OWL-ViT và SAHI" class="imgrs" src="../assets/images/anomaly_detection.png" style="height: 200px; object-fit: cover;"/>
+<div class="postrs">
+<div class="posttime">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.625 20.625C2.625 21.0398 2.96016 21.375 3.375 21.375H20.625C21.0398 21.375 21.375 21.0398 21.375 20.625V10.7812H2.625V20.625ZM20.625 4.3125H16.6875V2.8125C16.6875 2.70937 16.6031 2.625 16.5 2.625H15.1875C15.0844 2.625 15 2.70937 15 2.8125V4.3125H9V2.8125C9 2.70937 8.91563 2.625 8.8125 2.625H7.5C7.39687 2.625 7.3125 2.70937 7.3125 2.8125V4.3125H3.375C2.96016 4.3125 2.625 4.64766 2.625 5.0625V9.1875H21.375V5.0625C21.375 4.64766 21.0398 4.3125 20.625 4.3125Z" fill="#868686"></path>
+</svg>
+<p style="color:#868686;">Ngày 29 tháng 4 năm 2025</p>
+</div>
+<div>
+<h2 class="title-rs">Tăng cường kiểm tra trực quan bằng GLASS: Mô hình phát hiện bất thường dựa trên bộ mã hóa</h2>
+<p>Một trong những nỗ lực nghiên cứu mới nhất của chúng tôi liên quan đến việc tận dụng khung GLASS—Phân đoạn dị thường cục bộ có thể tổng quát hóa—để phát hiện và phân đoạn các điểm bất thường về hình ảnh trong tập dữ liệu hình ảnh.</p>
+</div>
+<div>
+<a class="buttonpost" href="enhancing-visual-inspection-with-glass-an-encoder-based-anomaly-detection-model.html">ĐỌC THÊM</a>
+</div>
+</div>
+</div>
+</a>
+<hr id="lg12-line"/>
+<a href="mediax-research-advances-drone-technology-with-owl-vit-and-sahi.html" style="text-decoration: none; color: inherit;">
+<div class="col-lg-12" id="lg12">
+<img alt="OWL-ViT và SAHI" class="imgrs" src="../assets/images/owl-vit-sahi-demo-1.png"/>
+<div class="postrs">
+<div class="posttime">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.625 20.625C2.625 21.0398 2.96016 21.375 3.375 21.375H20.625C21.0398 21.375 21.375 21.0398 21.375 20.625V10.7812H2.625V20.625ZM20.625 4.3125H16.6875V2.8125C16.6875 2.70937 16.6031 2.625 16.5 2.625H15.1875C15.0844 2.625 15 2.70937 15 2.8125V4.3125H9V2.8125C9 2.70937 8.91563 2.625 8.8125 2.625H7.5C7.39687 2.625 7.3125 2.70937 7.3125 2.8125V4.3125H3.375C2.96016 4.3125 2.625 4.64766 2.625 5.0625V9.1875H21.375V5.0625C21.375 4.64766 21.0398 4.3125 20.625 4.3125Z" fill="#868686"></path>
+</svg>
+<p style="color:#868686;">Ngày 09 tháng 4 năm 2024</p>
+</div>
+<div>
+<h2 class="title-rs">Nghiên cứu MediaX nâng cao công nghệ máy bay không người lái với OWL-ViT và SAHI</h2>
+<p>Trong bước tiến mới nhất trong lĩnh vực AI và công nghệ máy bay không người lái, nghiên cứu của MediaX do Nguyễn Thị Thu Thủy dẫn dắt đã giới thiệu một phương pháp tiên phong nhằm cải thiện khả năng phát hiện vật thể kích thước nhỏ trong ảnh chụp từ drone. Đột phá này đặc biệt quan trọng với các ứng dụng đòi hỏi độ chính xác và chi tiết cao như giám sát, theo dõi môi trường và quy hoạch đô thị.</p>
+</div>
+<div>
+<a class="buttonpost" href="mediax-research-advances-drone-technology-with-owl-vit-and-sahi.html">ĐỌC THÊM</a>
+</div>
+</div>
+</div>
+</a>
+<hr id="lg12-line"/>
+<a href="/vn/phuong-phap-moi-cho-bai-toan-tom-tat-tin-tuc-tieng-viet-bang-AI-mo-hinh-BERT-LSTM-LSTM.html" style="text-decoration: none; color: inherit;">
+<div class="col-lg-12" id="lg12">
+<img alt="Mô hình BERT-LSTM-LSTM" class="imgrs" src="../assets/images/The BERT-LSTM-LSTM Model.png"/>
+<div class="postrs">
+<div class="posttime">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.625 20.625C2.625 21.0398 2.96016 21.375 3.375 21.375H20.625C21.0398 21.375 21.375 21.0398 21.375 20.625V10.7812H2.625V20.625ZM20.625 4.3125H16.6875V2.8125C16.6875 2.70937 16.6031 2.625 16.5 2.625H15.1875C15.0844 2.625 15 2.70937 15 2.8125V4.3125H9V2.8125C9 2.70937 8.91563 2.625 8.8125 2.625H7.5C7.39687 2.625 7.3125 2.70937 7.3125 2.8125V4.3125H3.375C2.96016 4.3125 2.625 4.64766 2.625 5.0625V9.1875H21.375V5.0625C21.375 4.64766 21.0398 4.3125 20.625 4.3125Z" fill="#868686"></path>
+</svg>
+<p style="color:#868686;">Ngày 05 tháng 3 năm 2024</p>
+</div>
+<div>
+<h2 class="title-rs">Phương pháp mới cho bài toán tóm tắt tin tức tiếng Việt bằng AI: Mô hình BERT-LSTM-LSTM</h2>
+<p>Trong thời đại kỹ thuật số phát triển nhanh chóng như ngày nay, một lượng lớn tin tức trực tuyến khiến việc cập nhật thông tin ngày càng trở nên khó khăn. Tại MediaX, chúng tôi tự hào công bố nghiên cứu mới này giúp thay đổi cách tiếp nhận tin tức Tiếng Việt. Được dẫn dắt bởi Nguyễn Đình Tuấn, nhóm nghiên cứu của chúng tôi đã phát triển một phương pháp mới để tóm tắt tin tức, khai thác sức mạnh của mô hình BERT để tạo ra các bản tóm tắt ngắn gọn, giàu thông tin cho các bài báo tiếng Việt.</p>
+</div>
+<div>
+<a class="buttonpost" href="/vn/phuong-phap-moi-cho-bai-toan-tom-tat-tin-tuc-tieng-viet-bang-AI-mo-hinh-BERT-LSTM-LSTM.html">ĐỌC THÊM</a>
+</div>
+</div>
+</div>
+</a>
+<hr id="lg12-line"/>
+<a href="revolutionizing-vietnamese-news-summarization-with-ai-the-BERT-LSTM-LSTM-model.html" style="text-decoration: none; color: inherit;">
+<div class="col-lg-12" id="lg12">
+<img alt="Mô hình BERT-LSTM-LSTM" class="imgrs" src="../assets/images/The BERT-LSTM-LSTM Model.png"/>
+<div class="postrs">
+<div class="posttime">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.625 20.625C2.625 21.0398 2.96016 21.375 3.375 21.375H20.625C21.0398 21.375 21.375 21.0398 21.375 20.625V10.7812H2.625V20.625ZM20.625 4.3125H16.6875V2.8125C16.6875 2.70937 16.6031 2.625 16.5 2.625H15.1875C15.0844 2.625 15 2.70937 15 2.8125V4.3125H9V2.8125C9 2.70937 8.91563 2.625 8.8125 2.625H7.5C7.39687 2.625 7.3125 2.70937 7.3125 2.8125V4.3125H3.375C2.96016 4.3125 2.625 4.64766 2.625 5.0625V9.1875H21.375V5.0625C21.375 4.64766 21.0398 4.3125 20.625 4.3125Z" fill="#868686"></path>
+</svg>
+<p style="color:#868686;">Ngày 04 tháng 3 năm 2024</p>
+</div>
+<div>
+<h2 class="title-rs">Cách mạng hóa việc tóm tắt tin tức tiếng Việt bằng AI: Mô hình BERT-LSTM-LSTM</h2>
+<p>Trong kỷ nguyên số phát triển nhanh, làn sóng tin tức trực tuyến khiến việc cập nhật thông tin trở nên khó khăn nếu không bị quá tải. Tại MediaX, chúng tôi tự hào giới thiệu nghiên cứu đột phá thay đổi cách người Việt tiếp nhận tin tức. Dưới sự dẫn dắt của Nguyễn Đình Tuấn, nhóm nghiên cứu của chúng tôi đã phát triển một phương pháp tóm tắt tin mới khai thác sức mạnh của mô hình BERT để tạo ra các bản tóm tắt ngắn gọn và giàu thông tin cho tin tức tiếng Việt.</p>
+</div>
+<div>
+<a class="buttonpost" href="revolutionizing-vietnamese-news-summarization-with-ai-the-BERT-LSTM-LSTM-model.html">ĐỌC THÊM</a>
+</div>
+</div>
+</div>
+</a>
+<hr id="lg12-line"/>
+<a href="/vn/coinstation-noi-ai-va-con-nguoi-hop-tac-trong-linh-vuc-bao-chi-cho-tien-dien-tu.html" style="text-decoration: none; color: inherit;">
+<div class="col-lg-12" id="lg12">
+<img alt="trạm tiền xu" class="imgrs" src="../assets/images/coinstation.png"/>
+<div class="postrs">
+<div class="posttime">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.625 20.625C2.625 21.0398 2.96016 21.375 3.375 21.375H20.625C21.0398 21.375 21.375 21.0398 21.375 20.625V10.7812H2.625V20.625ZM20.625 4.3125H16.6875V2.8125C16.6875 2.70937 16.6031 2.625 16.5 2.625H15.1875C15.0844 2.625 15 2.70937 15 2.8125V4.3125H9V2.8125C9 2.70937 8.91563 2.625 8.8125 2.625H7.5C7.39687 2.625 7.3125 2.70937 7.3125 2.8125V4.3125H3.375C2.96016 4.3125 2.625 4.64766 2.625 5.0625V9.1875H21.375V5.0625C21.375 4.64766 21.0398 4.3125 20.625 4.3125Z" fill="#868686"></path>
+</svg>
+<p style="color:#868686;">Ngày 05 tháng 1 năm 2024</p>
+</div>
+<div>
+<h2 class="title-rs">CoinStation.vn: Nơi AI và Con Người hợp tác trong lĩnh vực báo chí cho Tiền Điện Tử</h2>
+<p>Chào mừng đến với CoinStation.vn, sản phẩm đầu tiên của MediaX (Công Ty khởi nghiệp của Việt Nam tập trung vào công nghệ AI), CoinStation thể hiện sự kết hợp hoàn hảo giữa công nghệ AI và trí tuệ con người trong lĩnh vực tin tức Tiền Điện Tử. Chúng tôi sử dụng Mô hình Ngôn ngữ Lớn (LLM) để thu thập và tổng hợp tin tức tiền điện tử toàn cầu, sau đó được các chuyên gia am hiểu ngôn ngữ và lĩnh vực tiền điện tử của Việt Nam kiểm chứng và tạo ra các tin tức Tiếng Việt.</p>
+</div>
+<div>
+<a class="buttonpost" href="/vn/coinstation-noi-ai-va-con-nguoi-hop-tac-trong-linh-vuc-bao-chi-cho-tien-dien-tu.html">ĐỌC THÊM</a>
+</div>
+</div>
+</div>
+</a>
+<hr id="lg12-line"/>
+<a href="coinstation-bridging-ai-and-human-expertise-in-crypto-journalism.html" style="display: block; text-decoration: none; color: inherit;">
+<div class="col-lg-12" id="lg12">
+<img alt="trạm tiền xu" class="imgrs" src="../assets/images/coinstation.png"/>
+<div class="postrs">
+<div class="posttime">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M2.625 20.625C2.625 21.0398 2.96016 21.375 3.375 21.375H20.625C21.0398 21.375 21.375 21.0398 21.375 20.625V10.7812H2.625V20.625ZM20.625 4.3125H16.6875V2.8125C16.6875 2.70937 16.6031 2.625 16.5 2.625H15.1875C15.0844 2.625 15 2.70937 15 2.8125V4.3125H9V2.8125C9 2.70937 8.91563 2.625 8.8125 2.625H7.5C7.39687 2.625 7.3125 2.70937 7.3125 2.8125V4.3125H3.375C2.96016 4.3125 2.625 4.64766 2.625 5.0625V9.1875H21.375V5.0625C21.375 4.64766 21.0398 4.3125 20.625 4.3125Z" fill="#868686"></path>
+</svg>
+<p style="color:#868686;">Ngày 04 tháng 1 năm 2024</p>
+</div>
+<div>
+<h2 class="title-rs">CoinStation.vn: Kết nối AI và chuyên môn con người trong báo chí tiền điện tử</h2>
+<p>Chào mừng bạn đến với CoinStation.vn, một sản phẩm có tầm nhìn của MediaX, là hình ảnh thu nhỏ của sự tích hợp liền mạch giữa công nghệ AI tiên tiến và trí tuệ con người trong lĩnh vực tin tức tiền điện tử. Nền tảng này, tiên phong trong lĩnh vực này, sử dụng Mô hình ngôn ngữ lớn (LLM) bằng tiếng Anh để quét và đối chiếu tin tức về tiền điện tử toàn cầu, sau đó được xác minh và dịch tỉ mỉ sang tiếng Việt bởi các chuyên gia am hiểu cả tiếng Việt và sự phức tạp của tiền điện tử.</p>
+</div>
+<div>
+<a class="buttonpost" href="coinstation-bridging-ai-and-human-expertise-in-crypto-journalism.html">ĐỌC THÊM</a>
+</div>
+</div>
+</div>
+</a>
+<hr id="lg12-line"/>
+<div class="rowbt">
+<button class="btrs btn-previous">Trước</button>
+<p>Trang 1/1</p>
+<button class="btrs btn-next">Kế tiếp</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer">
+<nav class="navbar navbar-expand-lg navbar-footer">
+<div class="container container-1">
+<div class="row flex-grow-1 justify-content-between">
+<div class="col-lg-6" style="display: flex;align-items: stretch;flex-direction: column;">
+<div class="logo-footer">
+<a href="/vi/">
+<img alt="" src="../assets/images/mediax-logo.svg" style="max-height: 40px;"/></a>
+</div>
+<div class="collapse navbar-collapse" id="navbar-footer">
+<ul class="menu-footer mb-2 mb-lg-0">
+<li class="nav-item">
+<a class="nav-link" href="services.html">Dịch vụ <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="our-research.html">Nghiên cứu <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="careers.html">Tuyển dụng<i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about-us.html">Về chúng tôi <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact-us.html">Liên hệ <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-1"></div>
+<div class="col-lg-5">
+<div class="social-area d-flex ms-auto mb-2 mb-lg-0 justify-content-start">
+<ul class="social-list d-flex flex-row"><!-- <li><a href=""><img src="../assets/images/telegram-logo.png" alt=""></a></li> --></ul>
+</div>
+<div class="contact-us">
+<div>Thông tin liên hệ</div>
+<div class="mail">
+<span class=""><img alt="" src="../assets/images/mail-logo.svg"/></span>
+<p><a href="mailto:hello@mediax.com.vn">hello@mediax.com.vn</a></p>
+</div>
+<div class="phone">
+<span class=""><img alt="" src="../assets/images/phone-logo.svg"/></span>
+<p><a href="tel:0343488603">0343488603</a></p>
+</div>
+<div class="address">
+<span class=""><img alt="" src="../assets/images/address-logo.svg"/></span>
+<p>Tầng 5 V1 The Terra An Hưng - La Khe - Hà Đông - HN</p>
+</div>
+</div>
+<div class="copy-right">
+<p>© 2023 - 2026 MediaX</p>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</footer>
+</div>
+<script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Corporation",
+          "name": "MediaX - Pioneering Artificial Intelligence for Vietnam",
+          "url": "https://mediax.com.vn/",
+          "logo": "https://mediax.com.vn/assets/images/mediax-logo.svg",
+          "sameAs": "https://mediax.com.vn/"
+        }
+    </script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/custom.js"></script>
+<script src="../assets/js/custom.menu.js"></script>
+<script crossorigin="anonymous" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+<script>
+        var form = document.getElementById("form-contact");
+    
+        async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+            status.innerHTML = "Your inquiry has been received! We appreciate your interest in MediaX and will be in touch shortly.";
+            form.reset()
+            } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+            })
+            }
+        }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+        var links = document.querySelectorAll('.navbar-nav .nav-link');
+
+        var currentUrl = window.location.pathname.split('/').pop();
+
+        links.forEach(function(link) {
+            var linkUrl = link.getAttribute('href');
+            if (linkUrl === currentUrl) {
+                link.classList.add('active');
+            } else {
+                link.classList.add('inactive');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

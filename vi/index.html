@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="vi_VN" property="og:locale"/>
+<meta content="website" property="og:type">
+<meta content="MediaX - Trí tuệ nhân tạo tiên phong cho Việt Nam" property="og:title"/>
+<meta content="vi_VN" property="og:locale"/>
+<meta content="Trao quyền cho doanh nghiệp và cộng đồng Việt Nam bằng các giải pháp AI tiên tiến" property="og:description"/>
+<meta content="https://mediax.com.vn/" property="og:url"/>
+<meta content="MediaX" property="og:site_name"/>
+<meta content="https://mediax.com.vn/assets/images/banner.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Trao quyền cho doanh nghiệp và cộng đồng Việt Nam bằng các giải pháp AI tiên tiến" name="description"/>
+<meta content="max-image-preview:large" name="robots"/>
+<meta content="google951ca81f79883045.html" name="google-site-verification">
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet">
+<link href="../assets/images/fav.png" rel="shortcut icon" type="image/x-icon"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<title>MediaX - Trí tuệ nhân tạo tiên phong cho Việt Nam</title>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
+<style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .slideShow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100% - 24px); 
+            width: 100%;
+            max-width: 1540px;
+            margin: 0 auto;
+            overflow: visible;
+        }
+
+        .slideShow__container {
+            flex-grow: 1;             
+            height: 100%;
+            width: 100%;
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .slideShow__slide {
+            height: 100%;
+            flex: 0 0 auto; 
+            width: 100%;
+            display: inline-block;
+            position: relative;
+        }
+
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 1200px;
+            padding: 20px;
+            white-space: normal;
+        }
+
+        .slideShow__image {
+            display: block;
+            padding: 0;
+            height: auto;
+            width: 100%;            
+        }
+
+        .slideShow__image img {
+            width: 100%;
+            height: 100%;
+            max-height: 800px;
+            max-width: 1540px;
+            object-fit: cover;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 8px;
+            width: 8px;
+            margin: 0 2px;
+            background-color: #404040;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #fff;
+        }
+
+        .dot-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 24px;
+            gap: 16px;
+        }
+        .home-slide-title{
+            font-size: 48px;
+            line-height: 58px;   
+            font-weight: 500;         
+        }
+        .home-slide-medium{
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 500;
+        }
+
+        .slide-btn{
+            padding: 12px 24px;
+            background: #fff;
+            font-weight: bold;
+            color: #000 !important;
+            font-size: 16px;
+            margin-top: 32px;
+            display: inline-block;
+        }        
+    </style>
+<style>
+        .home-top-banner-2 {
+            min-height: 500px;
+            padding-top: 50px;
+            padding-bottom: 96px;
+            background-color: #000;
+        }
+        @media screen and (max-width: 991px) {
+            .home-top-banner-2 {
+                padding-bottom: 0;
+                padding-top: 0;
+                min-height: 0;
+            }
+            .home-slide-title{
+                font-size: 22px;
+                line-height: 30px;
+            }
+            .home-slide-medium{
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .slideShow__slide, .slideShow__image img {
+                height: 400px;
+            }            
+            .slideShow__image img {
+                object-fit: cover;
+                padding: 0 16px;
+            }
+            .slide-btn{
+                padding: 9px 16px;
+            }
+            .slideShow__container {
+                gap: 0;
+                margin: 0;
+                padding: 0;
+            }  
+            .slide-content{
+                width: 400px;
+            }
+            .menu-home{
+                padding: 4px;
+            }
+            .instruction .row {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth; 
+            }
+            .instruction .row::-webkit-scrollbar {
+                display: none; 
+            }
+        }
+    </style>
+<style id="svelte-166mr51-style">
+        ul.svelte-166mr51 {
+            display: flex;
+            flex-flow: column nowrap;
+            position: fixed;
+            font-size: 16px;
+            padding: 0 0.75em;
+            margin: 0;
+            list-style-type: none;
+            width: 20em;
+            bottom: 0;
+            right: 0;
+            font-family: 'Helvetica Neue';
+            max-height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            color: #4a4a4a;
+            background: transparent;
+            scrollbar-width: none;
+            box-sizing: border-box;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 99999999
+        }
+        
+        @media only screen and (max-width: 450px) {
+            ul.svelte-166mr51 {
+                width: 100%
+            }
+        }
+        
+        .bn-notify-custom.bn-notify-dark-mode {
+            background: #283944;
+            color: #ffffff;
+            background: rgba(40, 57, 68, 0.9)
+        }
+        
+        .bn-notify-clickable:hover {
+            cursor: pointer
+        }
+        
+        .svelte-166mr51::-webkit-scrollbar {
+            display: none
+        }
+        
+        li.svelte-166mr51 {
+            position: relative;
+            display: flex;
+            padding: 0.75em;
+            font-size: 0.889em;
+            font-family: inherit;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            color: inherit;
+            transition: background 300ms ease-in-out, color 300ms ease-in-out;
+            pointer-events: all;
+            background: #ffffff;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        div.svelte-166mr51 {
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+            font-size: inherit;
+            font-family: inherit
+        }
+    </style>
+<style id="svelte-7rn0pv-style">
+        div.svelte-7rn0pv {
+            height: 100%;
+            font-size: inherit;
+            font-family: inherit;
+            width: 1.5em
+        }
+    </style>
+<style id="svelte-5f7pqk-style">
+        div.svelte-5f7pqk {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            font-size: inherit;
+            font-family: inherit;
+            margin-left: 0.75em;
+            width: 90%
+        }
+        
+        p.svelte-5f7pqk {
+            display: flex;
+            align-items: center;
+            margin: 0.5em 0 0 0;
+            opacity: 0.7;
+            font-size: 0.889em;
+            line-height: 1.15;
+            font-family: inherit
+        }
+        
+        span.svelte-5f7pqk {
+            font-family: inherit;
+            display: flex;
+            align-items: center
+        }
+    </style>
+<style id="svelte-12gqi36-style">
+        p.svelte-12gqi36 {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit
+        }
+    </style>
+<style id="svelte-1ociadw-style">
+        svg.svelte-1ociadw {
+            margin: 0 0.25em 0 0.5em
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper" style="background-color: #000;">
+<header class="header" id="header">
+<nav class="navbar navbar-expand-lg">
+<div class="container container-1">
+<div class="row flex-grow-1 align-items-center">
+<div class="col-6 col-lg-2 menu-home">
+<div class="d-flex align-items-center">
+<button class="navbar-toggler mr-3" data-bs-target="#navbar-header" data-bs-toggle="collapse" type="button">
+<i class="fas fa-bars"></i>
+</button>
+<div class="logo" onclick="window.location = '/vi/'">
+<h1><img class="logo-header" src="../assets/images/mediax-logo.svg"/></h1>
+</div>
+</div>
+</div>
+<div class="col-lg-10">
+<div class="collapse navbar-collapse" id="navbar-header">
+<ul class="navbar-nav menu-header ms-auto mb-2 mb-lg-0 align-items-lg-end">
+<li>
+<a class="nav-link" href="services.html">Dịch vụ</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="our-research.html">Nghiên cứu</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="careers.html">Tuyển dụng</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about-us.html">Về chúng tôi</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact-us.html">Liên hệ</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="page__home" style="min-height: calc(100vh - 73px); margin: 0 auto; max-width: 1920px;">
+<article class="home-top-banner-2 d-flex align-items-center">
+<div class="slideShow">
+<ul class="slideShow__container">
+<li class="slideShow__slide">
+<figure class="slideShow__image">
+<img alt="Trang chủ" src="../assets/images/slide-home-page-3.png"/>
+<div class="slide-content">
+<h1 class="home-slide-title">Trao quyền cho doanh nghiệp và cộng đồng Việt Nam bằng đổi mới AI</h1>
+<div class="home-slide-medium">Tại MediaX, chúng tôi hình dung một tương lai nơi ngôn ngữ và văn hóa Việt Nam phát triển mạnh trong bối cảnh AI toàn cầu, mang đến các giải pháp phù hợp cho thị trường địa phương.</div>
+<a class="slide-btn" href="careers.html">Bắt đầu</a>
+</div>
+</figure>
+</li>
+<li class="slideShow__slide">
+<figure class="slideShow__image">
+<img alt="Trang chủ" src="../assets/images/slide-home-page-2.svg"/>
+<div class="slide-content">
+<h1 class="home-slide-title">Thông báo tuyển dụng</h1>
+<div class="home-slide-medium">Công ty chúng tôi đang tìm kiếm những ứng viên đam mê và tài năng để gia nhập đội ngũ.</div>
+<a class="slide-btn" href="careers.html">Xem vị trí</a>
+</div>
+</figure>
+</li>
+</ul>
+<div class="dot-container">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+</div>
+</div>
+</article>
+<div id="last-update" style="background-color: #000;">
+<div class="container container-1">
+<div class="last-update">
+<article class="instruction-1" id="home-title">
+<h2 class="title">Mở rộng giới hạn công nghệ AI</h2>
+<p class="subtitle">Chúng tôi chuyên tạo ra các giải pháp AI đổi mới, được thiết kế riêng cho ngôn ngữ và thị trường Việt Nam, vượt xa các công nghệ hiện có. Nghiên cứu của chúng tôi dẫn dắt việc tích hợp AI liền mạch vào đời sống hằng ngày của người Việt Nam.</p>
+</article>
+<article class="instruction-2" id="home-instruction">
+<div class="instruction">
+<div class="row">
+<div class="col-lg-4">
+<a href="enhancing-image-similarity-search-with-an-ai-embedding-and-image-retrieval-system.html">
+<div class="update-info">
+<div class="img">
+<img alt="Kết quả tìm kiếm tương đồng hình ảnh" src="../assets/images/image-similarity-error-2.jpg" style="height: 216.39px; object-fit: cover;"/>
+</div>
+<span class="time">Ngày 09 tháng 1 năm 2026</span>
+<h4 class="title">Nâng cao tìm kiếm tương đồng hình ảnh với hệ thống nhúng AI và truy hồi ảnh</h4>
+</div>
+</a>
+</div>
+<div class="col-lg-4">
+<a href="enhancing-visual-inspection-with-glass-an-encoder-based-anomaly-detection-model.html">
+<div class="update-info">
+<div class="img">
+<img alt="" src="../assets/images/anomaly_detection.png" style="height: 216.39px; object-fit: cover;"/>
+</div>
+<span class="time">Ngày 29 tháng 4 năm 2025</span>
+<h4 class="title">Nâng cao kiểm tra thị giác với GLASS: mô hình phát hiện bất thường dựa trên bộ mã hóa</h4>
+</div>
+</a>
+</div>
+<div class="col-lg-4">
+<a href="revolutionizing-vietnamese-news-summarization-with-ai-the-BERT-LSTM-LSTM-model.html">
+<div class="update-info">
+<div class="img">
+<img alt="" src="../assets/images/The BERT-LSTM-LSTM Model.png"/>
+</div>
+<span class="time">Ngày 04 tháng 3 năm 2024</span>
+<h4 class="title">Cách mạng hóa tóm tắt tin tức tiếng Việt bằng AI: mô hình BERT-LSTM-LSTM</h4>
+</div>
+</a>
+</div>
+</div>
+</div>
+<a class="home-btn" href="our-research.html">Tìm hiểu thêm</a>
+</article>
+</div>
+</div>
+</div>
+<div id="about-us" style="background-color: #000;">
+<div class="container container-1">
+<article class="instruction-1" id="home-title">
+<h2 class="title">Về chúng tôi</h2>
+<p class="subtitle">Tầm nhìn của chúng tôi là trở thành lực lượng dẫn đầu về công nghệ AI tại Việt Nam, giống như OpenAI trên phạm vi toàn cầu. Chúng tôi tập trung vào những thách thức đặc thù về ngôn ngữ và thị trường Việt Nam để xây dựng các giải pháp AI phù hợp trong nước nhưng vẫn cạnh tranh toàn cầu.</p>
+</article>
+</div>
+<div class="img">
+<img alt="" src="../assets/images/about-us.png"/>
+</div>
+</div>
+<div id="section" style="background-color: #000;">
+<div class="container container-1">
+<div class="last-update">
+<article class="instruction-1" id="home-title">
+<h2 class="title">Dịch vụ của chúng tôi</h2>
+<p class="subtitle">Chúng tôi cung cấp năng lực AI và phần mềm thực tiễn giúp nâng cao chất lượng dịch vụ, tinh gọn vận hành và hỗ trợ ra quyết định tốt hơn từ dữ liệu hiện có.</p>
+</article>
+<article class="instruction-2" id="home-instruction">
+<div class="instruction">
+<div class="row g-4">
+<div class="col-lg-6">
+<a href="custom-ai-agent-services.html">
+<div class="update-info" style="background: #101010; border: 1px solid #2a2a2a; border-radius: 14px; padding: 12px;">
+<div class="img">
+<img alt="Tác nhân AI tùy chỉnh cho doanh nghiệp" src="../assets/images/update-1.png" style="height: 240px; object-fit: cover; border-radius: 10px;"/>
+</div>
+<span class="time" style="letter-spacing: 0.8px;">Dịch vụ 01</span>
+<h4 class="title" style="margin-bottom: 10px;">Tác nhân AI tùy chỉnh cho doanh nghiệp</h4>
+<p style="color: #CFCFCF; margin-bottom: 0;">Thiết kế và triển khai các tác nhân AI cho hỗ trợ khách hàng B2B, vận hành nội bộ và quy trình tri thức.</p>
+</div>
+</a>
+</div>
+<div class="col-lg-6">
+<a href="custom-software-and-ai-integration.html">
+<div class="update-info" style="background: #101010; border: 1px solid #2a2a2a; border-radius: 14px; padding: 12px;">
+<div class="img">
+<img alt="Phát triển phần mềm tùy chỉnh và tích hợp AI" src="../assets/images/update-2.png" style="height: 240px; object-fit: cover; border-radius: 10px;"/>
+</div>
+<span class="time" style="letter-spacing: 0.8px;">Dịch vụ 02</span>
+<h4 class="title" style="margin-bottom: 10px;">Phát triển phần mềm tùy chỉnh &amp; tích hợp AI</h4>
+<p style="color: #CFCFCF; margin-bottom: 0;">Nâng cấp hệ thống quản trị hiện có và tích hợp AI để tự động hóa quy trình và khai mở các góc nhìn sâu hơn.</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+<a class="home-btn" href="services.html">Xem tất cả dịch vụ</a>
+</article>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer">
+<nav class="navbar navbar-expand-lg navbar-footer">
+<div class="container container-1">
+<div class="row flex-grow-1 justify-content-between">
+<div class="col-lg-6" style="display: flex;align-items: stretch;flex-direction: column;">
+<div class="logo-footer">
+<a href="/vi/">
+<img alt="" src="../assets/images/mediax-logo.svg" style="max-height: 40px;"/></a>
+</div>
+<div class="collapse navbar-collapse" id="navbar-footer">
+<ul class="menu-footer mb-2 mb-lg-0">
+<li class="nav-item">
+<a class="nav-link" href="services.html">Dịch vụ <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="our-research.html">Nghiên cứu <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="careers.html">Tuyển dụng<i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about-us.html">Về chúng tôi <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact-us.html">Liên hệ <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-1"></div>
+<div class="col-lg-5">
+<div class="social-area d-flex ms-auto mb-2 mb-lg-0 justify-content-start">
+<ul class="social-list d-flex flex-row">
+<!-- <li><a href=""><img src="../assets/images/telegram-logo.png" alt=""></a></li> -->
+</ul>
+</div>
+<div class="contact-us">
+<div>Thông tin liên hệ</div>
+<div class="mail">
+<span class=""><img alt="" src="../assets/images/mail-logo.svg"/></span>
+<p><a href="mailto:hello@mediax.com.vn">hello@mediax.com.vn</a></p>
+</div>
+<div class="phone">
+<span class=""><img alt="" src="../assets/images/phone-logo.svg"/></span>
+<p><a href="tel:0343488603">0343488603</a></p>
+</div>
+<div class="address">
+<span class=""><img alt="" src="../assets/images/address-logo.svg"/></span>
+<p>Tầng 5 V1 The Terra An Hưng - La Khe - Hà Đông - HN</p>
+</div>
+</div>
+<div class="copy-right">
+<p>© 2023 - 2026 MediaX</p>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</footer>
+</div>
+<script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Corporation",
+          "name": "MediaX - Trí tuệ nhân tạo tiên phong cho Việt Nam",
+          "url": "https://mediax.com.vn/",
+          "logo": "https://mediax.com.vn/assets/images/mediax-logo.svg",
+          "sameAs": "https://mediax.com.vn/"
+        }
+    </script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/custom.js"></script>
+<script src="../assets/js/custom.menu.js"></script>
+<script crossorigin="anonymous" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script>
+    var SlideShow = function() {
+        var slider, slide, dots, slideAmount, sliderWidth;
+        var clickCounter = 0; 
+        var interval; 
+
+        var _init = function () {
+            slider = document.getElementsByClassName('slideShow__container')[0];
+            slide = document.getElementsByClassName('slideShow__slide');
+            dots = document.getElementsByClassName('dot');
+            slideAmount = slide.length;
+            sliderWidth = parseInt(getComputedStyle(slider).width);
+            slider.style.transform = 'translateX(-' + sliderWidth * clickCounter + 'px)';
+            updateDots();
+            currentSlide(clickCounter);
+
+            _eventHandlers();
+            _startAutoSlide();
+        }
+        var _eventHandlers = function() {
+            Array.from(dots).forEach(function(element, index) {
+                element.addEventListener('click', function() {
+                    console.log("Dot clicked: Index " + index);
+                    currentSlide(index);
+                    _restartAutoSlide();
+                });
+            });
+            window.addEventListener('resize', _resize, false);
+        }
+        var currentSlide = function(n) {
+            clickCounter = n;
+            gsap.to(slider, {duration: .9, x:-clickCounter*sliderWidth, ease: "power2.out"});
+            updateDots();
+        }
+        var updateDots = function() {
+            Array.from(dots).forEach(function(dot, index) {
+                dot.className = dot.className.replace(" active", "");
+            });
+            dots[clickCounter].className += " active";
+        }
+        var _resize = function() {
+            sliderWidth = parseInt(getComputedStyle(slider).width);
+            gsap.to(slider, {x: -clickCounter * sliderWidth});
+        }
+        var _startAutoSlide = function() {
+            interval = setInterval(function() {
+                clickCounter = (clickCounter + 1) % slideAmount;
+                currentSlide(clickCounter);
+            }, 5000);
+        }
+        var _restartAutoSlide = function() {
+            clearInterval(interval);
+            _startAutoSlide();
+        }
+        return {
+            init: _init
+        }
+    }();
+    SlideShow.init();
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    var links = document.querySelectorAll('.navbar-nav .nav-link');
+
+    var currentUrl = window.location.pathname.split('/').pop();
+
+    links.forEach(function(link) {
+        var linkUrl = link.getAttribute('href');
+        if (linkUrl === currentUrl) {
+            link.classList.add('active');
+        } else {
+            link.classList.add('inactive');
+        }
+    });
+});
+</script>
+</body>
+</html>
