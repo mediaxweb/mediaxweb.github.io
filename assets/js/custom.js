@@ -1,9 +1,9 @@
+var header = document.getElementById("header");
+var sticky = header ? header.offsetTop : 0;
 window.onscroll = function() { myFunction() };
 
-var header = document.getElementById("header");
-var sticky = header.offsetTop;
-
 function myFunction() {
+    if (!header) return;
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky-header");
     } else {
@@ -51,6 +51,12 @@ if (transactionSettingClicked) {
 
         var pref = null;
         try { pref = localStorage.getItem(PREF_KEY); } catch (e) {}
+        var debug = {
+            path: path,
+            isViPath: isViPath,
+            currentLang: currentLang,
+            pref: pref
+        };
 
         // Respect stored preference
         if (pref === 'en' || pref === 'vi') {
@@ -61,8 +67,11 @@ if (transactionSettingClicked) {
                     file = 'index.html';
                 }
                 var target = pref === 'vi' ? ('/vi/' + file) : ('/' + file);
+                debug.redirectTarget = target;
+                window.__mediaxLangDebug = debug;
                 window.location.replace(target + window.location.search + window.location.hash);
             }
+            window.__mediaxLangDebug = debug;
             return;
         }
 
@@ -72,13 +81,19 @@ if (transactionSettingClicked) {
             var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
             var langLower = (lang || '').toLowerCase();
             var isVi = langLower.startsWith('vi') || langLower.indexOf('vi-') !== -1 || tz === 'Asia/Ho_Chi_Minh' || tz === 'Asia/Saigon';
+            debug.lang = lang;
+            debug.tz = tz;
+            debug.isVi = isVi;
             if (isVi) {
                 var file2 = path.replace(/^\\//, '');
                 if (!file2 || file2 === '') {
                     file2 = 'index.html';
                 }
+                debug.redirectTarget = '/vi/' + file2;
+                window.__mediaxLangDebug = debug;
                 window.location.replace('/vi/' + file2 + window.location.search + window.location.hash);
             }
         }
+        window.__mediaxLangDebug = debug;
     } catch (e) {}
 })();
