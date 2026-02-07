@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="vi_VN" property="og:locale"/>
 <meta content="website" property="og:type">
-<meta content="Tăng cường tìm kiếm tương tự hình ảnh bằng hệ thống truy xuất hình ảnh và nhúng AI" property="og:title"/>
+<meta content="Nâng cao tìm kiếm hình ảnh tương đồng bằng hệ thống embedding AI và truy xuất hình ảnh" property="og:title"/>
 <meta content="MediaX đánh giá hệ thống tìm kiếm tương tự hình ảnh CLIP + ChromaDB để truy xuất sản phẩm thực tế, mạnh mẽ." property="og:description"/>
 <meta content="https://mediax.com.vn/" property="og:url"/>
 <meta content="MediaX" property="og:site_name"/>
@@ -23,7 +23,7 @@
 <link href="../assets/images/fav-blue.png" rel="shortcut icon" type="image/x-icon"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-<title>Tăng cường tìm kiếm tương tự hình ảnh bằng hệ thống truy xuất hình ảnh và nhúng AI</title>
+<title>Nâng cao tìm kiếm hình ảnh tương đồng bằng hệ thống embedding AI và truy xuất hình ảnh</title>
 <style id="svelte-166mr51-style">
         ul.svelte-166mr51 {
             display: flex;
@@ -216,35 +216,35 @@
 <div id="post-research" style="background-color: #fff;">
 <div class="container container-1">
 <article class="instruction-1" id="post-title">
-<h1 class="title">Tăng cường tìm kiếm tương tự hình ảnh bằng hệ thống truy xuất hình ảnh và nhúng AI</h1>
-<p><em>Ngày 09 tháng 1 năm 2026 | Đoàn Thái, MediaX</em></p>
+<h1 class="title">Nâng cao tìm kiếm hình ảnh tương đồng bằng hệ thống embedding AI và truy xuất hình ảnh</h1>
+<p><em>09/01/2026 | Doan Thai, MediaX</em></p>
 </article>
 <div id="horizontal-line"></div>
 <div class="post_content">
-<p>Tại MediaX, tôi tập trung nghiên cứu và phát triển các hệ thống AI có khả năng mở rộng, mạnh mẽ và có tính ứng dụng cao trong các tình huống thực tế. Trong nghiên cứu này, tôi đã thiết kế và đánh giá hệ thống tìm kiếm độ tương tự hình ảnh được hỗ trợ bởi AI dựa trên các mô hình nhúng trực quan, nhắm mục tiêu các trường hợp sử dụng như tra cứu sản phẩm, kiểm tra hình ảnh và hỗ trợ vận hành thông minh.</p>
-<h2>Tổng quan về hệ thống</h2>
-<p>Hệ thống được xây dựng trên kiến ​​trúc nhúng hình ảnh + tìm kiếm vectơ, trong đó mỗi hình ảnh sản phẩm được chuyển thành vectơ đặc trưng chiều cao thể hiện các đặc điểm hình ảnh của nó. Các vectơ này được lưu trữ và truy vấn một cách hiệu quả bằng cơ sở dữ liệu vectơ, cho phép truy xuất nhanh các hình ảnh tương tự về mặt trực quan.</p>
-<p>Tôi đã làm việc<a href="https://github.com/openai/CLIP">CLIP (Ngôn ngữ tương phản-Đào tạo trước hình ảnh)</a>mô hình với kiến ​​trúc bộ mã hóa trực quan để tạo ra các hình ảnh nhúng, kết hợp với<a href="https://www.trychroma.com/">ChromaDB</a>để lưu trữ vector và tìm kiếm tương tự. Siêu dữ liệu sản phẩm được quản lý song song bằng cách sử dụng<a href="https://www.mongodb.com/">MongoDB</a>, đảm bảo khả năng mở rộng và tích hợp liền mạch với cơ sở hạ tầng phụ trợ hiện có.</p>
-<h2>Thiết lập thử nghiệm</h2>
-<p>Tập dữ liệu hình ảnh được sắp xếp thành các nhóm sản phẩm (Nike, Adidas, Converse), dùng làm nhãn tham khảo trong quá trình đánh giá. Đối với mỗi hình ảnh gốc, nhiều phiên bản nâng cao đã được tạo ra—bao gồm xoay, lật, điều chỉnh màu sắc và biến thể ánh sáng—để mô phỏng những thay đổi hình ảnh phổ biến trong thế giới thực.</p>
-<p>Những hình ảnh tăng cường này được sử dụng làm đầu vào truy vấn, trong khi cơ sở dữ liệu vectơ chỉ chứa các hình ảnh gốc. Mục tiêu đánh giá là đo lường khả năng của hệ thống trong việc truy xuất chính xác hình ảnh gốc tương ứng ở vị trí trên cùng, từ đó đánh giá tính ổn định và mạnh mẽ của biểu diễn nhúng dưới các nhiễu loạn thị giác.</p>
+<p>Tại MediaX, tôi tập trung vào nghiên cứu và phát triển các hệ thống AI có khả năng mở rộng, ổn định và ứng dụng cao trong các tình huống thực tế. Trong nghiên cứu này, tôi thiết kế và đánh giá một hệ thống tìm kiếm hình ảnh tương đồng sử dụng AI dựa trên các mô hình embedding hình ảnh, nhằm phục vụ các trường hợp như tra cứu sản phẩm, kiểm tra hình ảnh và hỗ trợ vận hành thông minh.</p>
+<h2>Tổng quan hệ thống</h2>
+<p>Hệ thống được xây dựng dựa trên kiến trúc embedding hình ảnh + tìm kiếm vector, trong đó mỗi ảnh sản phẩm được chuyển đổi thành một vector đặc trưng nhiều chiều đại diện cho đặc điểm hình ảnh của nó. Các vector này được lưu trữ và truy vấn hiệu quả bằng cơ sở dữ liệu vector, giúp truy xuất nhanh các ảnh tương đồng về mặt thị giác.</p>
+<p>Tôi sử dụng mô hình <a href="https://github.com/openai/CLIP">CLIP (Contrastive Language–Image Pretraining)</a> với kiến trúc mã hoá hình ảnh để tạo embedding ảnh, kết hợp với <a href="https://www.trychroma.com/">ChromaDB</a> để lưu trữ và tìm kiếm tương đồng. Metadata sản phẩm được quản lý song song bằng <a href="https://www.mongodb.com/">MongoDB</a>, đảm bảo tính mở rộng và tích hợp liền mạch với hạ tầng backend hiện có.</p>
+<h2>Thiết lập thí nghiệm</h2>
+<p>Bộ dữ liệu hình ảnh được tổ chức thành các nhóm sản phẩm (Nike, Adidas, Converse), đóng vai trò làm nhãn tham chiếu trong quá trình đánh giá. Với mỗi ảnh gốc, nhiều phiên bản được tạo ra—bao gồm xoay, lật, điều chỉnh màu sắc và biến đổi ánh sáng—để mô phỏng các biến đổi hình ảnh thực tế thường gặp.</p>
+<p>Các ảnh được tăng cường này được sử dụng làm truy vấn, trong khi cơ sở dữ liệu vector chỉ chứa ảnh gốc. Mục tiêu đánh giá là đo khả năng hệ thống truy xuất đúng ảnh gốc tương ứng ở vị trí top-1, từ đó đánh giá độ ổn định và độ bền của biểu diễn embedding dưới các nhiễu hình ảnh.</p>
 <h2>Kết quả đánh giá</h2>
-<h3>Độ ổn định khi truy xuất (Độ chính xác tự truy xuất được tăng cường hàng đầu)</h3>
-<p>Việc đánh giá được thực hiện trên một tập hợp con gồm 700 hình ảnh sản phẩm gốc, được lấy mẫu đồng đều trên ba thương hiệu (Nike, Adidas, Converse). Đối với mỗi hình ảnh gốc, năm biến thể tăng cường đã được tạo bằng cách sử dụng các phép biến đổi như lật ngang, xoay, thay đổi màu sắc và thay đổi độ sáng, dẫn đến tổng cộng 3.500 hình ảnh truy vấn được tăng cường.</p>
-<p>Những hình ảnh tăng cường này được sử dụng làm đầu vào truy vấn, trong khi cơ sở dữ liệu vectơ chỉ chứa các hình ảnh gốc. Việc truy xuất được coi là chính xác nếu kết quả top 1 khớp chính xác với hình ảnh gốc tương ứng, từ đó đo lường độ bền của hệ thống trong điều kiện nhiễu loạn thị giác.</p>
+<h3>Độ ổn định truy xuất (Độ chính xác truy xuất tự động Top-1 với hình ảnh tăng cường)</h3>
+<p>Việc đánh giá được thực hiện trên một tập con gồm 700 ảnh sản phẩm gốc, được lấy mẫu đồng đều trên ba thương hiệu (Nike, Adidas, Converse). Với mỗi ảnh gốc, năm biến thể tăng cường được tạo ra bằng các phép biến đổi như lật ngang, xoay, thay đổi màu sắc và thay đổi ánh sáng, tạo thành tổng cộng 3.500 ảnh truy vấn tăng cường.</p>
+<p>Các ảnh tăng cường này được sử dụng làm truy vấn, trong khi cơ sở dữ liệu vector chỉ chứa ảnh gốc. Truy xuất được xem là chính xác nếu kết quả top-1 khớp đúng ảnh gốc tương ứng, từ đó đo lường độ bền của hệ thống dưới các nhiễu hình ảnh.</p>
 <p>Hệ thống đạt được độ chính xác truy xuất cao nhất quán trên tất cả các nhóm sản phẩm:</p>
 <ul>
-<li><strong>Nike:</strong> ~0.97</li>
-<li><strong>Adidas:</strong> ~0.97</li>
-<li><strong>Ngược lại:</strong> ~0.96</li>
+<li><strong>Nike:</strong> ~0,97</li>
+<li><strong>Adidas:</strong> ~0,97</li>
+<li><strong>Converse:</strong> ~0,96</li>
 </ul>
-<p>Những kết quả này chứng minh rằng mô hình nhúng duy trì khả năng bảo toàn nhận dạng hình ảnh mạnh mẽ, ngay cả khi hình ảnh đầu vào trải qua các biến thể phổ biến trong thế giới thực như lật, dịch chuyển màu và thay đổi ánh sáng.</p>
-<h2>Phân tích lỗi</h2>
-<p>Tất cả các trường hợp truy xuất không thành công đều được ghi lại bằng cách lưu trữ cả ảnh gốc và phiên bản tăng cường tương ứng của chúng. Phân tích các lỗi này cho thấy rằng lỗi chủ yếu là do:</p>
+<p>Những kết quả này chứng tỏ rằng mô hình embedding duy trì khả năng bảo tồn danh tính hình ảnh mạnh mẽ, ngay cả khi ảnh đầu vào trải qua các biến đổi hình ảnh thường gặp như lật, thay đổi màu sắc và ánh sáng.</p>
+<h2>Phân tích sai số</h2>
+<p>Tất cả các trường hợp truy xuất thất bại được ghi lại bằng cách lưu cả ảnh gốc và các phiên bản ảnh tăng cường tương ứng. Phân tích những lỗi này cho thấy nguyên nhân chính của việc thất bại là do:</p>
 <ul>
-<li>tăng cường quá mạnh mẽ đã loại bỏ các tính năng hình ảnh quan trọng</li>
-<li>độ tương đồng trực quan cực kỳ cao giữa các mẫu sản phẩm khác nhau</li>
-<li>nhiễu màu hoặc biến dạng độ tương phản làm giảm khả năng phân biệt đối tượng cục bộ</li>
+<li>các biến đổi quá mạnh làm mất các đặc trưng hình ảnh quan trọng</li>
+<li>độ tương đồng thị giác cực cao giữa các mẫu sản phẩm khác nhau</li>
+<li>nhiễu màu hoặc biến dạng độ tương phản làm giảm khả năng phân biệt đặc trưng tại chỗ</li>
 </ul>
 <p>Hình ảnh ví dụ có kết quả tìm kiếm không chính xác:</p>
 <div class="image-grid">
@@ -252,18 +252,18 @@
 <img alt="Ví dụ truy xuất không chính xác với sản phẩm nằm phẳng" src="../assets/images/image-similarity-error-2.jpg"/>
 <img alt="Ví dụ truy xuất không chính xác với sneaker phản chiếu" src="../assets/images/image-similarity-error-3.jpg"/>
 </div>
-<h2>Thảo luận và công việc trong tương lai</h2>
-<p>Kết quả thử nghiệm chứng minh rằng hệ thống tìm kiếm hình ảnh AI của MediaX rất mạnh mẽ, có khả năng khái quát hóa và rất phù hợp cho các tác vụ truy xuất hình ảnh trong thế giới thực. Tuy nhiên, một số hướng để cải thiện hơn nữa đã được xác định.</p>
-<p>Một cải tiến đầy hứa hẹn liên quan đến việc tích hợp mô hình phát hiện đối tượng như YOLO để thực hiện việc định vị và cắt xén đối tượng tự động trước khi tạo nhúng. Bằng cách tách biệt vùng sản phẩm chính và giảm nhiễu nền, phương pháp này được kỳ vọng sẽ cải thiện tính nhất quán khi nhúng và độ chính xác truy xuất, đặc biệt trong các tình huống có nền lộn xộn hoặc các điều kiện chụp khác nhau.</p>
-<p>Những cải tiến bổ sung trong tương lai bao gồm:</p>
+<h2>Thảo luận và công việc tương lai</h2>
+<p>Kết quả thí nghiệm cho thấy hệ thống tìm kiếm hình ảnh AI của MediaX bền vững, có khả năng tổng quát tốt và phù hợp với các nhiệm vụ truy xuất hình ảnh trong thế giới thực. Tuy nhiên, một số hướng cải tiến đã được xác định.</p>
+<p>Một cải tiến tiềm năng là tích hợp mô hình phát hiện đối tượng như YOLO để thực hiện định vị đối tượng tự động và cắt trước khi tạo embedding. Bằng cách tách vùng sản phẩm chính và giảm nhiễu nền, phương pháp này được kỳ vọng sẽ cải thiện tính nhất quán của embedding và độ chính xác truy xuất, đặc biệt trong các tình huống có nền phức tạp hoặc điều kiện chụp khác nhau.</p>
+<p>Các cải tiến tương lai khác bao gồm:</p>
 <ul>
-<li>tinh chỉnh các chiến lược tăng cường để cân bằng tốt hơn độ bền và bảo toàn các tính năng hình ảnh quan trọng</li>
-<li>đánh giá các mô hình nhúng có độ phân giải cao hơn hoặc biểu cảm hơn để nắm bắt các chi tiết chi tiết</li>
-<li>kết hợp các tín hiệu siêu dữ liệu bổ sung (ví dụ: thương hiệu, danh mục, thuộc tính) để xếp hạng lại và phân biệt kết quả</li>
+<li>tinh chỉnh các chiến lược tăng cường để cân bằng tốt hơn giữa độ bền và bảo toàn các đặc trưng hình ảnh quan trọng</li>
+<li>đánh giá các mô hình embedding có độ phân giải cao hơn hoặc biểu đạt phong phú hơn để nắm bắt các chi tiết tinh vi</li>
+<li>kết hợp thêm các tín hiệu metadata (ví dụ: thương hiệu, danh mục, thuộc tính) để xếp hạng lại và phân biệt kết quả</li>
 </ul>
-<p>Trong các giai đoạn tiếp theo, nghiên cứu này sẽ được mở rộng theo hướng đo điểm chuẩn mạnh mẽ trong các điều kiện thị giác khác nhau, phân tích độ tương tự chi tiết và tối ưu hóa hiệu suất toàn diện cho môi trường sản xuất, với mục tiêu cung cấp giải pháp tìm kiếm trực quan đáng tin cậy và có thể mở rộng.</p>
+<p>Trong các giai đoạn tiếp theo, nghiên cứu này sẽ được mở rộng theo hướng đo lường độ bền trong các điều kiện thị giác đa dạng, phân tích tương đồng chi tiết và tối ưu hiệu năng toàn diện cho môi trường sản xuất, với mục tiêu cung cấp giải pháp tìm kiếm hình ảnh có thể mở rộng và đáng tin cậy.</p>
 <p>Nghiên cứu này là một phần trong chiến lược rộng lớn hơn của MediaX nhằm phát triển các giải pháp AI thị giác máy tính thực tế, có thể mở rộng, nhằm xây dựng các hệ thống thông minh có khả năng ứng dụng và tác động lâu dài.</p>
-<p><a href="https://mediax.com.vn/our-research.html">Tìm hiểu thêm về nghiên cứu của chúng tôi.</a></p>
+<p><a href="our-research.html">Tìm hiểu thêm về nghiên cứu của chúng tôi.</a></p>
 </div>
 </div>
 </div>
@@ -316,7 +316,7 @@
 </div>
 <div class="address">
 <span class=""><img alt="" src="../assets/images/address-logo.svg"/></span>
-<p>Terra An Hung - Tôi Sẽ Ở Đó - HN - HN - Tôi Là</p>
+<p>Tầng 5, toà V1 The Terra An Hưng - La Khê - Hà Đông - Hà Nội</p>
 </div>
 </div>
 <div class="copy-right">

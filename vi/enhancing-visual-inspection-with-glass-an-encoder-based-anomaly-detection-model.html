@@ -206,33 +206,39 @@
 <div id="post-research" style="background-color: #fff;">
 <div class="container container-1">
 <article class="instruction-1" id="post-title">
-<h1 class="title">Tăng cường kiểm tra trực quan bằng GLASS: Mô hình phát hiện bất thường dựa trên bộ mã hóa</h1>
-<p><em>Tháng 4 năm 2025 | Bởi nhóm nghiên cứu MediaX</em></p>
+<h1 class="title">Nâng cao kiểm tra hình ảnh với GLASS: Mô hình phát hiện bất thường dựa trên Encoder</h1>
+<p><em>Tháng 04/2025 | Nhóm Nghiên cứu MediaX</em></p>
 </article>
 <div id="horizontal-line"></div>
 <div class="post_content">
-<p>Tại MediaX, chúng tôi liên tục thử nghiệm các mô hình AI có thể mở rộng và khái quát hóa. Một trong những nỗ lực nghiên cứu mới nhất của chúng tôi liên quan đến việc tận dụng<strong><a href="https://github.com/cqylunlun/GLASS" rel="noopener noreferrer" target="_blank">THỦY TINH</a>khuôn khổ</strong>—Phân đoạn bất thường cục bộ có thể tổng quát hóa—để phát hiện và phân đoạn các điểm bất thường về hình ảnh trong tập dữ liệu hình ảnh. Đánh giá của chúng tôi cho thấy hiệu suất đầy hứa hẹn cho các ứng dụng trong thế giới thực.</p>
-<h2>Khung</h2>
-<p style="margin-bottom: 30px"><a href="https://github.com/cqylunlun/GLASS" rel="noopener noreferrer" target="_blank">THỦY TINH</a>là một mô hình học sâu tiên tiến được thiết kế riêng cho phân khúc bất thường. Nó kết hợp kiến ​​trúc dựa trên bộ mã hóa mạnh mẽ với tính năng học tập tính năng cục bộ để phát hiện các khiếm khuyết và điểm bất thường tinh vi trong nền phức tạp.</p>
-<p>Chúng tôi đã đào tạo mô hình trên nội bộ của mình<strong>Bộ dữ liệu bộ mã hóa MediaX</strong>, sử dụng Colab và tập lệnh shell tùy chỉnh để thực thi và xuất kết quả. Việc đào tạo và đánh giá mô hình được thực hiện bằng cách sử dụng trình chạy gốc của GLASS, được tích hợp với đường dẫn dữ liệu tùy chỉnh của chúng tôi.</p>
-<h2>Điểm nổi bật về hiệu suất</h2>
-<h3>Phát hiện mức hình ảnh</h3>
+<p>Tại MediaX, chúng tôi liên tục thử nghiệm các mô hình AI có khả năng mở rộng và tổng quát hoá tốt. Một trong những nghiên cứu gần đây của chúng tôi là ứng dụng framework GLASS — Generalizable Local Anomaly Segmentor — để phát hiện và phân đoạn các bất thường thị giác trên bộ dữ liệu hình ảnh. Kết quả đánh giá cho thấy hiệu năng rất hứa hẹn cho các ứng dụng thực tế.</p>
+
+<h2>Framework</h2>
+<p style="margin-bottom: 30px"><a href="https://github.com/cqylunlun/GLASS" rel="noopener noreferrer" target="_blank">GLASS</a> là mô hình học sâu tiên tiến được thiết kế cho bài toán phân đoạn bất thường. Mô hình kết hợp kiến trúc dựa trên encoder mạnh mẽ với cơ chế học đặc trưng cục bộ để phát hiện các lỗi nhỏ và bất thường trong bối cảnh nền phức tạp.</p>
+
+<p>Chúng tôi huấn luyện mô hình trên bộ dữ liệu nội bộ <strong>MediaX Encoder Dataset</strong>, sử dụng Colab và các shell script tuỳ biến để chạy và xuất kết quả. Quá trình huấn luyện và đánh giá được thực hiện bằng runner mặc định của GLASS, đồng thời tích hợp với pipeline dữ liệu tuỳ chỉnh của chúng tôi.</p>
+
+<h2>Điểm nổi bật về hiệu năng</h2>
+
+<h3>Phát hiện ở mức ảnh (Image-level)</h3>
 <ul>
 <li><strong>AUROC:</strong> 100.0</li>
 <li><strong>Độ chính xác trung bình (AP):</strong> 100.0</li>
 </ul>
-<p>Điều này cho thấy sự phân loại hoàn hảo giữa hình ảnh bình thường và hình ảnh bất thường.</p>
-<h3>Bản địa hóa cấp pixel</h3>
+<p>Điều này cho thấy khả năng phân loại hoàn hảo giữa ảnh bình thường và ảnh bất thường.</p>
+
+<h3>Định vị ở mức điểm ảnh (Pixel-level)</h3>
 <ul>
 <li><strong>AUROC:</strong> 96.99</li>
 <li><strong>Độ chính xác trung bình:</strong> 19.19</li>
 <li><strong>PRO (Chồng chéo theo vùng):</strong> 95.03</li>
 </ul>
-<p style="margin-bottom: 30px">Mặc dù mô hình định vị các vùng bất thường rất hiệu quả (AUROC/PRO cao), AP thấp hơn cho thấy độ nhạy nhiễu nhẹ hoặc phân đoạn quá mức—một lĩnh vực chúng tôi đang tích cực cải thiện.</p>
-<img alt="Tăng cường kiểm tra trực quan bằng GLASS: Mô hình phát hiện bất thường dựa trên bộ mã hóa" class="my-image" src="../assets/images/anomaly_detection.png" style="max-width: 100%; margin-bottom: 30px; margin-top: 0px; object-fit: contain;"/>
-<h2>Tác động và các bước tiếp theo</h2>
-<p>Nghiên cứu này xác nhận tính hiệu quả của<a href="https://github.com/cqylunlun/GLASS" rel="noopener noreferrer" target="_blank">THỦY TINH</a>để kiểm tra trực quan cấp ngành. Chúng tôi mong muốn tối ưu hóa hơn nữa độ chính xác ở cấp độ pixel và áp dụng khuôn khổ trên các ngành dọc rộng hơn như sản xuất, hậu cần và giám sát thông minh.</p>
-<p>Để theo dõi nghiên cứu AI mới nhất của chúng tôi, hãy truy cập<a href="https://mediax.com.vn/our-research.html">Trang nghiên cứu MediaX</a>.</p>
+<p style="margin-bottom: 30px">Mặc dù mô hình định vị vùng bất thường rất hiệu quả (AUROC/PRO cao), nhưng AP thấp hơn cho thấy mô hình có thể nhạy với nhiễu nhẹ hoặc bị phân đoạn quá mức — đây là điểm chúng tôi đang tích cực cải thiện.</p>
+<img alt="Nâng cao kiểm tra hình ảnh với GLASS: Mô hình phát hiện bất thường dựa trên Encoder" class="my-image" src="../assets/images/anomaly_detection.png" style="max-width: 100%; margin-bottom: 30px; margin-top: 0px; object-fit: contain;"/>
+
+<h2>Tác động và bước tiếp theo</h2>
+<p>Nghiên cứu này xác thực hiệu quả của <a href="https://github.com/cqylunlun/GLASS" rel="noopener noreferrer" target="_blank">GLASS</a> cho bài toán kiểm tra hình ảnh ở cấp độ công nghiệp. Chúng tôi sẽ tiếp tục tối ưu độ chính xác ở mức điểm ảnh và triển khai framework này cho nhiều lĩnh vực hơn như sản xuất, logistics và giám sát thông minh.</p>
+<p>Để theo dõi các nghiên cứu AI mới nhất, hãy truy cập <a href="our-research.html">trang Nghiên cứu của MediaX</a>.</p>
 </div>
 </div>
 </div>
@@ -283,7 +289,7 @@
 </div>
 <div class="address">
 <span class=""><img alt="" src="../assets/images/address-logo.svg"/></span>
-<p>Tầng 5 V1 The Terra An Hưng - La Khe - Hà Đông - HN</p>
+<p>Tầng 5, V1 The Terra An Hưng - La Khê - Hà Đông - Hà Nội</p>
 </div>
 </div>
 <div class="copy-right">

@@ -205,25 +205,26 @@
 <div id="post-research" style="background-color: #fff;">
 <div class="container container-1">
 <article class="instruction-1" id="post-title">
-<h1 class="title">Nghiên cứu MediaX nâng cao công nghệ máy bay không người lái</h1>
-<p>Với OWL-ViT và SAHI</p>
+<h1 class="title">Nghiên cứu của MediaX thúc đẩy công nghệ drone với OWL-ViT và SAHI</h1>
+<p><em>09/04/2024</em></p>
 </article>
 <div id="horizontal-line"></div>
 <div class="post_content">
-<p>Trong bước tiến mới nhất trong lĩnh vực AI và công nghệ máy bay không người lái, nghiên cứu của MediaX do Nguyễn Thị Thu Thủy dẫn dắt đã giới thiệu một phương pháp tiên phong nhằm cải thiện khả năng phát hiện vật thể kích thước nhỏ trong ảnh chụp từ drone. Đột phá này đặc biệt quan trọng với các ứng dụng đòi hỏi độ chính xác và chi tiết cao như giám sát, theo dõi môi trường và quy hoạch đô thị.</p>
+<p>Trong nghiên cứu này, chúng tôi khảo sát các phương pháp nâng cao hiệu năng phát hiện đối tượng cho các vật thể nhỏ và vừa trong ảnh chụp từ trên không — một thách thức phổ biến trong các ứng dụng drone tự hành. Chúng tôi nghiên cứu kết hợp OWL-ViT — một mô hình transformer thị giác với khả năng nhận diện từ vựng mở mạnh mẽ — và SAHI, một framework hỗ trợ suy luận siêu cắt. Kết quả thí nghiệm cho thấy cải thiện đáng kể hiệu năng khi áp dụng cách tiếp cận kết hợp này.</p>
 <img alt="OWL-ViT và SAHI DEMO" class="my-image" src="../assets/images/owl-vit-sahi-demo-3.png" style="max-width: 100%; margin-bottom: 10px; object-fit: contain;"/>
-<h2 class="post_text">Ra mắt thử thách</h2>
-<p>Các mô hình phát hiện vật thể truyền thống thường kém hiệu quả khi nhận diện vật thể nhỏ từ góc nhìn trên không. Hạn chế này cản trở việc ứng dụng drone rộng rãi cho các nhiệm vụ giám sát chi tiết và chính xác. Nghiên cứu của Thủy nhằm giải quyết trực diện thách thức này, tận dụng việc tích hợp các công nghệ OWL-ViT và SAHI để cải thiện đáng kể độ chính xác phát hiện.</p>
-<h2 class="post_text">Cách tiếp cận đổi mới</h2>
-<p>Mô hình OWL-ViT, được biết đến với khả năng phát hiện đối tượng từ vựng mở, cho phép nhận dạng các đối tượng bên ngoài tập dữ liệu huấn luyện của nó. Tuy nhiên, hiệu quả của nó trong việc phát hiện các vật thể nhỏ trong ảnh chụp từ trên không rộng lớn vẫn còn hạn chế. Ở đây, kỹ thuật SAHI phát huy tác dụng, chia hình ảnh thành các phân đoạn có thể quản lý được, do đó cho phép mô hình OWL-ViT phát hiện các vật thể nhỏ hơn với độ chính xác chưa từng có.</p>
+<h2 class="post_text">Bối cảnh &amp; Động lực</h2>
+<p>Phát hiện đối tượng trong ảnh chụp trên không thường gặp giảm hiệu năng đối với các vật thể nhỏ và vừa do che khuất, biến đổi tỷ lệ và nhiễu nền. Các mạng nơ-ron tích chập truyền thống gặp khó khăn trong việc duy trì khả năng biểu diễn trên các tỷ lệ khác nhau. Sự phát triển gần đây của các mô hình nhận diện từ vựng mở như OWL-ViT cho thấy tiềm năng trong việc nhận diện và định vị các loại đối tượng đa dạng hơn ngoài các nhãn cố định.</p>
+<h2 class="post_text">Phương pháp nghiên cứu</h2>
+<h3>OWL-ViT</h3>
+<p>OWL-ViT là một mô hình transformer thị giác có khả năng phát hiện đối tượng với từ vựng mở. Nó kết hợp kiến trúc ViT làm backbone với các đầu phân loại hỗ trợ tập nhãn linh hoạt.</p>
+<h3>SAHI</h3>
+<p>SAHI (Slicing Aided Hyper Inference) là một framework cắt ảnh lớn thành các mảnh chồng chéo và gộp dự đoán để tăng cường phát hiện cho các vật thể nhỏ.</p>
 <img alt="DEMO SAHI" class="my-image" src="../assets/images/sahi.png" style="max-width: 70%; margin: 0 auto; display: block; object-fit: contain;"/>
-<h2 class="post_text">Kết quả đáng chú ý</h2>
-<p>Mô hình OWL-ViT + SAHI kết hợp đã chứng minh những cải tiến đáng kể so với các phương pháp truyền thống. Trong một nghiên cứu so sánh liên quan đến bộ dữ liệu VisDrone2019-Detection, phương pháp tích hợp đã đạt được Độ chính xác trung bình (mAP) trung bình là 28,5% trên tất cả các đối tượng, với mức tăng đáng kể trong việc phát hiện các đối tượng nhỏ (17,5% mAP) và cỡ trung bình (43,2% mAP). Khi so sánh với mô hình OWL-ViT ban đầu và các mô hình khác được tích hợp với SAHI, phương pháp này nổi bật nhờ tỷ lệ phát hiện được cải thiện, đặc biệt đối với các vật thể nhỏ, nhấn mạnh tiềm năng của sự kết hợp mới lạ này.</p>
-<h2 class="post_text">Ý nghĩa cho tương lai</h2>
-<p>Nghiên cứu này không chỉ đánh dấu bước tiến vượt bậc trong công nghệ máy bay không người lái mà còn mở ra những hướng mới cho việc ứng dụng AI trong việc phân tích hình ảnh trên không. Bằng cách cải thiện đáng kể khả năng phát hiện các vật thể quy mô nhỏ, máy bay không người lái có thể được sử dụng hiệu quả hơn trong nhiều ứng dụng quan trọng, từ nỗ lực bảo tồn môi trường đến quy hoạch phát triển đô thị.</p>
+<h2 class="post_text">Thí nghiệm &amp; Kết quả</h2>
+<p>Chúng tôi đánh giá cách kết hợp OWL-ViT + SAHI trên các bộ dữ liệu ảnh chụp trên không chứa xe cộ và các vật thể ngoài trời. Kết quả cho thấy cách tiếp cận này cải thiện hiệu năng phát hiện thành công, đặc biệt đối với các vật thể nhỏ và vừa mà mô hình truyền thống gặp khó khăn. Điều này củng cố tiềm năng của các kỹ thuật nhận diện từ vựng mở và dựa trên phân mảnh cho các nhiệm vụ nhận thức drone trong thế giới thực.</p>
+<h2 class="post_text">Công việc tương lai</h2>
+<p>Hướng nghiên cứu tiếp theo bao gồm tích hợp các mạng backbone tiên tiến hơn và khảo sát ngữ cảnh thời gian cho nhận thức trên ảnh/video chụp từ trên không. Chúng tôi kỳ vọng những cải tiến này sẽ nâng cao hơn nữa hiệu năng cho hệ thống nhận thức drone.</p>
 <img alt="OWL-ViT và SAHI DEMO" class="my-image" src="../assets/images/owl-vit-sahi-demo-2.png" style="max-width: 100%; margin-bottom: 10px; object-fit: contain;"/>
-<h2 class="post_text">Phần kết luận</h2>
-<p>Dưới sự dẫn dắt của Nguyễn Thị Thu Thủy, nghiên cứu của MediaX đã mở đường cho việc phát hiện vật thể chính xác và chi tiết hơn trong ảnh chụp từ drone. Đổi mới này hứa hẹn sẽ cách mạng hóa việc sử dụng drone, nâng cao giá trị ứng dụng trong nhiều lĩnh vực. MediaX tiếp tục cam kết khám phá và tích hợp các giải pháp AI tiên tiến, củng cố vị thế dẫn đầu trong bức tranh công nghệ AI tại Việt Nam.</p>
 </div>
 </div>
 </div>
@@ -274,7 +275,7 @@
 </div>
 <div class="address">
 <span class=""><img alt="" src="../assets/images/address-logo.svg"/></span>
-<p>Tầng 5 V1 The Terra An Hưng - La Khe - Hà Đông - HN</p>
+<p>Tầng 5, V1 The Terra An Hưng - La Khê - Hà Đông - Hà Nội</p>
 </div>
 </div>
 <div class="copy-right">
