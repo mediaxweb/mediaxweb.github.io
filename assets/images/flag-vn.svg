@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Vietnam">
+  <rect width="300" height="200" fill="#da251d" />
+  <g fill="#ffdc00">
+    <polygon points="150,42 162.7,82.8 205.5,82.8 171.4,106.4 184.1,147.2 150,123.6 115.9,147.2 128.6,106.4 94.5,82.8 137.3,82.8" />
+  </g>
+</svg>
