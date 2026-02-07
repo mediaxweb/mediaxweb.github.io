@@ -687,17 +687,17 @@ h6 {
 }
 
 .page-client .header .navbar-expand-lg .navbar-nav.menu-header {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
-    row-gap: 8px;
+    row-gap: 0;
 }
 
 .page-client .header .navbar-expand-lg .navbar-nav.menu-header .nav-item {
-    margin-left: 32px;
+    margin-left: 51.5px;
 }
 
 .page-client .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.lang-switcher {
-    margin-left: 16px;
+    margin-left: 24px;
 }
 
 .header .navbar-expand-lg .navbar-nav.menu-header-swap .nav-item {
