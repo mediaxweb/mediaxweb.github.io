@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="vi_VN" property="og:locale"/>
+<meta content="website" property="og:type">
+<meta content="Tăng cường tìm kiếm tương tự hình ảnh bằng hệ thống truy xuất hình ảnh và nhúng AI" property="og:title"/>
+<meta content="MediaX đánh giá hệ thống tìm kiếm tương tự hình ảnh CLIP + ChromaDB để truy xuất sản phẩm thực tế, mạnh mẽ." property="og:description"/>
+<meta content="https://mediax.com.vn/" property="og:url"/>
+<meta content="MediaX" property="og:site_name"/>
+<meta content="https://mediax.com.vn/assets/images/image-similarity-error-2.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://mediax.com.vn/assets/images/image-similarity-error-2.jpg" name="twitter:image"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="MediaX đánh giá hệ thống tìm kiếm tương tự hình ảnh CLIP + ChromaDB để truy xuất sản phẩm thực tế, mạnh mẽ." name="description"/>
+<meta content="max-image-preview:large" name="robots"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet">
+<link href="../assets/images/fav-blue.png" rel="shortcut icon" type="image/x-icon"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<title>Tăng cường tìm kiếm tương tự hình ảnh bằng hệ thống truy xuất hình ảnh và nhúng AI</title>
+<style id="svelte-166mr51-style">
+        ul.svelte-166mr51 {
+            display: flex;
+            flex-flow: column nowrap;
+            position: fixed;
+            font-size: 16px;
+            padding: 0 0.75em;
+            margin: 0;
+            list-style-type: none;
+            width: 20em;
+            bottom: 0;
+            right: 0;
+            font-family: 'Helvetica Neue';
+            max-height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            color: #4a4a4a;
+            background: transparent;
+            scrollbar-width: none;
+            box-sizing: border-box;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 99999999
+        }
+        
+        @media only screen and (max-width: 450px) {
+            ul.svelte-166mr51 {
+                width: 100%
+            }
+        }
+        
+        .bn-notify-custom.bn-notify-dark-mode {
+            background: #283944;
+            color: #ffffff;
+            background: rgba(40, 57, 68, 0.9)
+        }
+        
+        .bn-notify-clickable:hover {
+            cursor: pointer
+        }
+        
+        .svelte-166mr51::-webkit-scrollbar {
+            display: none
+        }
+        
+        li.svelte-166mr51 {
+            position: relative;
+            display: flex;
+            padding: 0.75em;
+            font-size: 0.889em;
+            font-family: inherit;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            color: inherit;
+            transition: background 300ms ease-in-out, color 300ms ease-in-out;
+            pointer-events: all;
+            background: #fff;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9)
+        }
+        
+        div.svelte-166mr51 {
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+            font-size: inherit;
+            font-family: inherit
+        }
+    </style>
+<style id="svelte-7rn0pv-style">
+        div.svelte-7rn0pv {
+            height: 100%;
+            font-size: inherit;
+            font-family: inherit;
+            width: 1.5em
+        }
+    </style>
+<style id="svelte-5f7pqk-style">
+        div.svelte-5f7pqk {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            font-size: inherit;
+            font-family: inherit;
+            margin-left: 0.75em;
+            width: 90%
+        }
+        
+        p.svelte-5f7pqk {
+            display: flex;
+            align-items: center;
+            margin: 0.5em 0 0 0;
+            opacity: 0.7;
+            font-size: 0.889em;
+            line-height: 1.15;
+            font-family: inherit
+        }
+        
+        span.svelte-5f7pqk {
+            font-family: inherit;
+            display: flex;
+            align-items: center
+        }
+    </style>
+<style id="svelte-12gqi36-style">
+        p.svelte-12gqi36 {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit
+        }
+    </style>
+<style id="svelte-1ociadw-style">
+        svg.svelte-1ociadw {
+            margin: 0 0.25em 0 0.5em
+        }
+    </style>
+<style>
+        .my-image {
+            width: 1542px;
+            min-height: auto;
+            margin-bottom: 32px;
+            margin-top: 32px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+            margin-bottom: 32px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+    </style>
+</link></meta></head>
+<body>
+<div class="wrapper page-client">
+<header class="header" id="header">
+<nav class="navbar navbar-expand-lg">
+<div class="container container-1">
+<div class="row flex-grow-1 align-items-center">
+<div class="col-6 col-lg-2">
+<div class="d-flex align-items-center">
+<button class="navbar-toggler mr-3" data-bs-target="#navbar-header" data-bs-toggle="collapse" type="button">
+<i class="fas fa-bars"></i>
+</button>
+<div class="logo" onclick="window.location = '/vi/'">
+<img class="logo-header" src="../assets/images/mediax-logo.svg"/>
+</div>
+</div>
+</div>
+<div class="col-lg-10">
+<div class="collapse navbar-collapse" id="navbar-header">
+<ul class="navbar-nav menu-header ms-auto mb-2 mb-lg-0 align-items-lg-end">
+<li>
+<a class="nav-link" href="services.html">Dịch vụ</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="our-research.html">Nghiên cứu</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="careers.html">Tuyển dụng</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about-us.html">Về chúng tôi</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact-us.html">Liên hệ</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="page__home page-our-client" style="min-height: calc(100vh - 73px);background: #fff;">
+<div id="post-research" style="background-color: #fff;">
+<div class="container container-1">
+<article class="instruction-1" id="post-title">
+<h1 class="title">Tăng cường tìm kiếm tương tự hình ảnh bằng hệ thống truy xuất hình ảnh và nhúng AI</h1>
+<p><em>Ngày 09 tháng 1 năm 2026 | Đoàn Thái, MediaX</em></p>
+</article>
+<div id="horizontal-line"></div>
+<div class="post_content">
+<p>Tại MediaX, tôi tập trung nghiên cứu và phát triển các hệ thống AI có khả năng mở rộng, mạnh mẽ và có tính ứng dụng cao trong các tình huống thực tế. Trong nghiên cứu này, tôi đã thiết kế và đánh giá hệ thống tìm kiếm độ tương tự hình ảnh được hỗ trợ bởi AI dựa trên các mô hình nhúng trực quan, nhắm mục tiêu các trường hợp sử dụng như tra cứu sản phẩm, kiểm tra hình ảnh và hỗ trợ vận hành thông minh.</p>
+<h2>Tổng quan về hệ thống</h2>
+<p>Hệ thống được xây dựng trên kiến ​​trúc nhúng hình ảnh + tìm kiếm vectơ, trong đó mỗi hình ảnh sản phẩm được chuyển thành vectơ đặc trưng chiều cao thể hiện các đặc điểm hình ảnh của nó. Các vectơ này được lưu trữ và truy vấn một cách hiệu quả bằng cơ sở dữ liệu vectơ, cho phép truy xuất nhanh các hình ảnh tương tự về mặt trực quan.</p>
+<p>Tôi đã làm việc<a href="https://github.com/openai/CLIP">CLIP (Ngôn ngữ tương phản-Đào tạo trước hình ảnh)</a>mô hình với kiến ​​trúc bộ mã hóa trực quan để tạo ra các hình ảnh nhúng, kết hợp với<a href="https://www.trychroma.com/">ChromaDB</a>để lưu trữ vector và tìm kiếm tương tự. Siêu dữ liệu sản phẩm được quản lý song song bằng cách sử dụng<a href="https://www.mongodb.com/">MongoDB</a>, đảm bảo khả năng mở rộng và tích hợp liền mạch với cơ sở hạ tầng phụ trợ hiện có.</p>
+<h2>Thiết lập thử nghiệm</h2>
+<p>Tập dữ liệu hình ảnh được sắp xếp thành các nhóm sản phẩm (Nike, Adidas, Converse), dùng làm nhãn tham khảo trong quá trình đánh giá. Đối với mỗi hình ảnh gốc, nhiều phiên bản nâng cao đã được tạo ra—bao gồm xoay, lật, điều chỉnh màu sắc và biến thể ánh sáng—để mô phỏng những thay đổi hình ảnh phổ biến trong thế giới thực.</p>
+<p>Những hình ảnh tăng cường này được sử dụng làm đầu vào truy vấn, trong khi cơ sở dữ liệu vectơ chỉ chứa các hình ảnh gốc. Mục tiêu đánh giá là đo lường khả năng của hệ thống trong việc truy xuất chính xác hình ảnh gốc tương ứng ở vị trí trên cùng, từ đó đánh giá tính ổn định và mạnh mẽ của biểu diễn nhúng dưới các nhiễu loạn thị giác.</p>
+<h2>Kết quả đánh giá</h2>
+<h3>Độ ổn định khi truy xuất (Độ chính xác tự truy xuất được tăng cường hàng đầu)</h3>
+<p>Việc đánh giá được thực hiện trên một tập hợp con gồm 700 hình ảnh sản phẩm gốc, được lấy mẫu đồng đều trên ba thương hiệu (Nike, Adidas, Converse). Đối với mỗi hình ảnh gốc, năm biến thể tăng cường đã được tạo bằng cách sử dụng các phép biến đổi như lật ngang, xoay, thay đổi màu sắc và thay đổi độ sáng, dẫn đến tổng cộng 3.500 hình ảnh truy vấn được tăng cường.</p>
+<p>Những hình ảnh tăng cường này được sử dụng làm đầu vào truy vấn, trong khi cơ sở dữ liệu vectơ chỉ chứa các hình ảnh gốc. Việc truy xuất được coi là chính xác nếu kết quả top 1 khớp chính xác với hình ảnh gốc tương ứng, từ đó đo lường độ bền của hệ thống trong điều kiện nhiễu loạn thị giác.</p>
+<p>Hệ thống đạt được độ chính xác truy xuất cao nhất quán trên tất cả các nhóm sản phẩm:</p>
+<ul>
+<li><strong>Nike:</strong> ~0.97</li>
+<li><strong>Adidas:</strong> ~0.97</li>
+<li><strong>Ngược lại:</strong> ~0.96</li>
+</ul>
+<p>Những kết quả này chứng minh rằng mô hình nhúng duy trì khả năng bảo toàn nhận dạng hình ảnh mạnh mẽ, ngay cả khi hình ảnh đầu vào trải qua các biến thể phổ biến trong thế giới thực như lật, dịch chuyển màu và thay đổi ánh sáng.</p>
+<h2>Phân tích lỗi</h2>
+<p>Tất cả các trường hợp truy xuất không thành công đều được ghi lại bằng cách lưu trữ cả ảnh gốc và phiên bản tăng cường tương ứng của chúng. Phân tích các lỗi này cho thấy rằng lỗi chủ yếu là do:</p>
+<ul>
+<li>tăng cường quá mạnh mẽ đã loại bỏ các tính năng hình ảnh quan trọng</li>
+<li>độ tương đồng trực quan cực kỳ cao giữa các mẫu sản phẩm khác nhau</li>
+<li>nhiễu màu hoặc biến dạng độ tương phản làm giảm khả năng phân biệt đối tượng cục bộ</li>
+</ul>
+<p>Hình ảnh ví dụ có kết quả tìm kiếm không chính xác:</p>
+<div class="image-grid">
+<img alt="Ví dụ truy xuất không chính xác với giày dép tương tự" src="../assets/images/image-similarity-error-1.jpg"/>
+<img alt="Ví dụ truy xuất không chính xác với sản phẩm nằm phẳng" src="../assets/images/image-similarity-error-2.jpg"/>
+<img alt="Ví dụ truy xuất không chính xác với sneaker phản chiếu" src="../assets/images/image-similarity-error-3.jpg"/>
+</div>
+<h2>Thảo luận và công việc trong tương lai</h2>
+<p>Kết quả thử nghiệm chứng minh rằng hệ thống tìm kiếm hình ảnh AI của MediaX rất mạnh mẽ, có khả năng khái quát hóa và rất phù hợp cho các tác vụ truy xuất hình ảnh trong thế giới thực. Tuy nhiên, một số hướng để cải thiện hơn nữa đã được xác định.</p>
+<p>Một cải tiến đầy hứa hẹn liên quan đến việc tích hợp mô hình phát hiện đối tượng như YOLO để thực hiện việc định vị và cắt xén đối tượng tự động trước khi tạo nhúng. Bằng cách tách biệt vùng sản phẩm chính và giảm nhiễu nền, phương pháp này được kỳ vọng sẽ cải thiện tính nhất quán khi nhúng và độ chính xác truy xuất, đặc biệt trong các tình huống có nền lộn xộn hoặc các điều kiện chụp khác nhau.</p>
+<p>Những cải tiến bổ sung trong tương lai bao gồm:</p>
+<ul>
+<li>tinh chỉnh các chiến lược tăng cường để cân bằng tốt hơn độ bền và bảo toàn các tính năng hình ảnh quan trọng</li>
+<li>đánh giá các mô hình nhúng có độ phân giải cao hơn hoặc biểu cảm hơn để nắm bắt các chi tiết chi tiết</li>
+<li>kết hợp các tín hiệu siêu dữ liệu bổ sung (ví dụ: thương hiệu, danh mục, thuộc tính) để xếp hạng lại và phân biệt kết quả</li>
+</ul>
+<p>Trong các giai đoạn tiếp theo, nghiên cứu này sẽ được mở rộng theo hướng đo điểm chuẩn mạnh mẽ trong các điều kiện thị giác khác nhau, phân tích độ tương tự chi tiết và tối ưu hóa hiệu suất toàn diện cho môi trường sản xuất, với mục tiêu cung cấp giải pháp tìm kiếm trực quan đáng tin cậy và có thể mở rộng.</p>
+<p>Nghiên cứu này là một phần trong chiến lược rộng lớn hơn của MediaX nhằm phát triển các giải pháp AI thị giác máy tính thực tế, có thể mở rộng, nhằm xây dựng các hệ thống thông minh có khả năng ứng dụng và tác động lâu dài.</p>
+<p><a href="https://mediax.com.vn/our-research.html">Tìm hiểu thêm về nghiên cứu của chúng tôi.</a></p>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer">
+<nav class="navbar navbar-expand-lg navbar-footer">
+<div class="container container-1">
+<div class="row flex-grow-1 justify-content-between">
+<div class="col-lg-6" style="display: flex;align-items: stretch;flex-direction: column;">
+<div class="logo-footer">
+<a href="/vi/">
+<img alt="" src="../assets/images/mediax-logo.svg" style="max-height: 40px;"/></a>
+</div>
+<div class="collapse navbar-collapse" id="navbar-footer">
+<ul class="menu-footer mb-2 mb-lg-0">
+<li class="nav-item">
+<a class="nav-link" href="services.html">Dịch vụ <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="our-research.html">Nghiên cứu <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="careers.html">Tuyển dụng<i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about-us.html">Về chúng tôi <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact-us.html">Liên hệ <i class="fa-solid fa-arrow-right"></i></a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-1"></div>
+<div class="col-lg-5">
+<div class="social-area d-flex ms-auto mb-2 mb-lg-0 justify-content-start">
+<ul class="social-list d-flex flex-row">
+<!-- <li><a href=""><img src="../assets/images/telegram-logo.png" alt=""></a></li> -->
+</ul>
+</div>
+<div class="contact-us">
+<div>Thông tin liên hệ</div>
+<div class="mail">
+<span class=""><img alt="" src="../assets/images/mail-logo.svg"/></span>
+<p><a href="mailto:hello@mediax.com.vn">hello@mediax.com.vn</a></p>
+</div>
+<div class="phone">
+<span class=""><img alt="" src="../assets/images/phone-logo.svg"/></span>
+<p><a href="tel:0343488603">0343488603</a></p>
+</div>
+<div class="address">
+<span class=""><img alt="" src="../assets/images/address-logo.svg"/></span>
+<p>Terra An Hung - Tôi Sẽ Ở Đó - HN - HN - Tôi Là</p>
+</div>
+</div>
+<div class="copy-right">
+<p>© 2023 - 2026 MediaX</p>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</footer>
+</div>
+<script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Corporation",
+          "name": "MediaX - Pioneering Artificial Intelligence for Vietnam",
+          "url": "https://mediax.com.vn/",
+          "logo": "https://mediax.com.vn/assets/images/mediax-logo.svg",
+          "sameAs": "https://mediax.com.vn/"
+        }
+    </script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/custom.js"></script>
+<script src="../assets/js/custom.menu.js"></script>
+<script crossorigin="anonymous" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+<script>
+        var form = document.getElementById("form-services");
+    
+        async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+            status.innerHTML = "Your inquiry has been received! We appreciate your interest in MediaX and will be in touch shortly.";
+            form.reset()
+            } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+            })
+            }
+        }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+</body>
+</html>
