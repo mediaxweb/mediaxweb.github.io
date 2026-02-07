@@ -678,6 +678,28 @@ h6 {
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+.header .navbar-expand-lg .navbar-nav.menu-header .lang-link {
+    opacity: 0.55;
+}
+
+.header .navbar-expand-lg .navbar-nav.menu-header .lang-link.active {
+    opacity: 1;
+}
+
+.page-client .header .navbar-expand-lg .navbar-nav.menu-header {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 8px;
+}
+
+.page-client .header .navbar-expand-lg .navbar-nav.menu-header .nav-item {
+    margin-left: 32px;
+}
+
+.page-client .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.lang-switcher {
+    margin-left: 16px;
+}
+
 .header .navbar-expand-lg .navbar-nav.menu-header-swap .nav-item {
     margin: 0 2px;
 }
