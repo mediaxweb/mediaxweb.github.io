@@ -652,6 +652,32 @@ h6 {
     opacity: 1; 
 }
 
+.header .navbar-expand-lg .navbar-nav.menu-header .nav-item.lang-switcher {
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header .navbar-expand-lg .navbar-nav.menu-header .nav-link.lang-link {
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+.header .navbar-expand-lg .navbar-nav.menu-header .lang-separator {
+    color: #fff;
+    opacity: 0.6;
+}
+
+.header .navbar-expand-lg .navbar-nav.menu-header .lang-flag {
+    width: 20px;
+    height: 14px;
+    border-radius: 2px;
+    display: inline-block;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
 .header .navbar-expand-lg .navbar-nav.menu-header-swap .nav-item {
     margin: 0 2px;
 }
