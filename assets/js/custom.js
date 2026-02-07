@@ -89,6 +89,7 @@ if (transactionSettingClicked) {
                 if (!file2 || file2 === '') {
                     file2 = 'index.html';
                 }
+                try { localStorage.setItem(PREF_KEY, 'vi'); } catch (e) {}
                 debug.redirectTarget = '/vi/' + file2;
                 window.__mediaxLangDebug = debug;
                 window.location.replace('/vi/' + file2 + window.location.search + window.location.hash);
