@@ -198,11 +198,11 @@
 <div class="form-contact">
 <form action="https://formspree.io/f/mleyaqej" id="form-contact" method="POST">
 <div class="name-and-email">
-<input id="name" name="name" placeholder="Tên" required="" type="text"/>
-<input id="email" name="email" placeholder="E-mail" required="" type="email"/>
-<input id="subject" name="subject" placeholder="Chủ nhà có thể" required="" type="text"/>
+<input id="name" name="name" placeholder="Họ và tên" required="" type="text"/>
+<input id="email" name="email" placeholder="Email" required="" type="email"/>
+<input id="subject" name="subject" placeholder="Tiêu đề" required="" type="text"/>
 </div>
-<textarea cols="50" id="description" name="message" placeholder="Câu hỏi" rows="4"></textarea><br/><br/>
+<textarea cols="50" id="description" name="message" placeholder="Nội dung câu hỏi" rows="4"></textarea><br/><br/>
 <script async="" defer="" src="https://www.google.com/recaptcha/api.js"></script>
 <div class="g-recaptcha" data-sitekey="6LduLUUsAAAAAMttdwQX5HcpZYB-bYoS1quttaOu"></div>
 <br/>
@@ -318,10 +318,10 @@
         
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
-                status.innerHTML = "Your inquiry has been received! We appreciate your interest in MediaX and will be in touch shortly.";
+                status.innerHTML = "Chúng tôi đã nhận được yêu cầu của bạn! Cảm ơn bạn đã quan tâm đến MediaX, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.";
                 form.reset()
             }, (err) => {
-              status.innerHTML = "Oops! There was a problem submitting your form"
+              status.innerHTML = "Rất tiếc! Đã xảy ra lỗi khi gửi biểu mẫu liên hệ. Vui lòng thử lại sau hoặc liên hệ với chúng tôi qua email nếu sự cố vẫn tiếp diễn."
         });
         }
         form.addEventListener("submit", handleSubmit)
