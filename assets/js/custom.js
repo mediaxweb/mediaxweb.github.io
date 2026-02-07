@@ -61,8 +61,8 @@ if (transactionSettingClicked) {
         // Respect stored preference
         if (pref === 'en' || pref === 'vi') {
             if (pref !== currentLang) {
-                var file = path.replace(/^\\//, '');
-                if (isViPath) file = file.replace(/^vi\\//, '');
+                var file = path.replace(/^\//, '');
+                if (isViPath) file = file.replace(/^vi\//, '');
                 if (!file || file === '') {
                     file = 'index.html';
                 }
@@ -85,7 +85,7 @@ if (transactionSettingClicked) {
             debug.tz = tz;
             debug.isVi = isVi;
             if (isVi) {
-                var file2 = path.replace(/^\\//, '');
+                var file2 = path.replace(/^\//, '');
                 if (!file2 || file2 === '') {
                     file2 = 'index.html';
                 }
