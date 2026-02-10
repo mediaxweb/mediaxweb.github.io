@@ -1128,6 +1128,9 @@ p a:hover {
 }
 .page__home .last-update .instruction-2 .update-info .img {
     margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .page__home .last-update .instruction-2 .update-info span.time {
     font-size: 16px;
