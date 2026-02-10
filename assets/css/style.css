@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+@media screen and (max-width: 500px) {
+    #contact-us .contact-info p {
+        font-size: 20px;
+    }
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -1307,7 +1313,7 @@ p a:hover {
     margin-right: 24px;
 }
 #contact-us .contact-info p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 27px;
     margin-bottom: 40px;
 }
@@ -2348,6 +2354,7 @@ input:checked+.slider:before {
     }
     #contact-us .contact-info {
         margin-top: 30px;
+        padding: 50px;
     }
     .page-our-client #show-case .instruction .item .description h4.title {
         font-size: 30px;
