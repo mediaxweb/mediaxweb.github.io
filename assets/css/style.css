@@ -1114,6 +1114,14 @@ p a:hover {
     line-height: 22px;
     font-weight: 500;
 }
+.page__home #home-title .service-hero-title {
+    font-size: 44px;
+    line-height: 1.1;
+}
+.page__home #home-title .service-hero-subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+}
 .page__home #home-title h1.title-services, h2.title-services {
     font-family: 'Noto Serif', serif;
     font-size: 48px;
@@ -2491,9 +2499,18 @@ input:checked+.slider:before {
     .footer .social-area {
         margin-top: 0;
     }
-    .page__home #home-title h2.title, h1.title, h1.client-title, h2.title-services{
-        font-size: 28px;
-        line-height: 32px;
+    .page__home #home-title h1.title,
+    .page__home #home-title h1.client-title {
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 16px;
+        font-weight: 700;
+        text-align: start;
+    }
+    .page__home #home-title h2.title,
+    .page__home #home-title h2.title-services {
+        font-size: 24px;
+        line-height: 28px;
         margin-bottom: 16px;
         font-weight: 700;
         text-align: start;
@@ -2503,6 +2520,21 @@ input:checked+.slider:before {
         line-height: 22px!important;
         font-weight: 400!important;
         text-align: start;
+    }
+    .page__home #home-title .service-hero-title {
+        font-size: 30px;
+        line-height: 34px;
+    }
+    .page__home #home-title .service-hero-subtitle {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .page__home .post_content {
+        padding-top: 24px;
+    }
+    .post_text {
+        font-size: 22px;
+        line-height: 28px;
     }
     .page__home p.subtitle{
         font-size: 16px;
@@ -2643,8 +2675,8 @@ input:checked+.slider:before {
         padding: 9px 16px;
     }
     .page__home #home-title h1.title-services {
-        font-size: 20px;
-        line-height: 35px;
+        font-size: 30px;
+        line-height: 34px;
         margin-bottom: 16px;
     }
     .page__home #home-title p.subtitle-services {
