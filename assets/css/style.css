@@ -2532,6 +2532,9 @@ input:checked+.slider:before {
     .page__home .post_content {
         padding-top: 24px;
     }
+    .post_content p {
+        margin-bottom: 18px;
+    }
     .post_text {
         font-size: 22px;
         line-height: 28px;
