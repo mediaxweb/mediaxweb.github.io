@@ -2048,7 +2048,37 @@ input:checked+.slider:before {
 .custom-career-row .text-careers {
     white-space: nowrap;
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 988px) {
+    .custom-career-row {
+        flex-direction: column;
+        align-items: stretch;
+        row-gap: 6px;
+    }
+    .custom-career-row > [class*="col-"] {
+        width: 100%;
+        max-width: 100%;
+    }
+    .custom-career-row > [class*="col-"]:not(:last-child) {
+        margin-bottom: 6px;
+    }
+    .custom-career-row > [class*="col-"]:not(:first-child) {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+    .custom-career-row > [class*="col-"]:not(:first-child) img {
+        flex-shrink: 0;
+    }
+    .custom-career-row .text-careers {
+        white-space: normal;
+    }
+    .custom-career-row .text-careers.text-center {
+        text-align: left !important;
+        justify-content: flex-start;
+    }
+}
+@media screen and (min-width: 989px) and (max-width: 1024px) {
     .custom-career-row > [class*="col-"] {
         padding-left: 6px !important;
         padding-right: 6px !important;
@@ -2077,7 +2107,7 @@ input:checked+.slider:before {
         font-size: 14px;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 989px) {
     .custom-career-row > [class*="col-"] {
         padding-left: 8px !important;
         padding-right: 8px !important;
@@ -2230,6 +2260,9 @@ input:checked+.slider:before {
     .header #navbar-header {
         padding-left: 0;
     }
+    .header .navbar .row.flex-grow-1 {
+        align-items: flex-start;
+    }
     .home-top-banner {
         padding-top: 100px;
     }
@@ -2278,6 +2311,11 @@ input:checked+.slider:before {
     }
     .page-client .header {
         background-color: rgb(0 123 255 / 70%);
+    }
+    .page-client .header .navbar-expand-lg .navbar-nav.menu-header {
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
     }
 
     .page-careers #about-us {
@@ -2559,6 +2597,16 @@ input:checked+.slider:before {
     .home-btn {
         max-width: 60%;
         display: block;
+    }
+    .page-our-client #about-us .home-btn {
+        display: inline-flex;
+        align-items: center;
+        width: auto;
+        max-width: 100%;
+        white-space: nowrap;
+    }
+    .page-our-client #about-us #home-title {
+        text-align: left;
     }
     .page-our-client #show-case .instruction .item {
         padding: 40px 0;
