@@ -107,11 +107,24 @@ if (transactionSettingClicked) {
     var mql = window.matchMedia('(max-width: 991px)');
     var isMobile = function () { return mql.matches; };
 
+    var updatePanelHeight = function (item) {
+        if (!item) return;
+        var panel = item.querySelector('.nav-dropdown');
+        if (!panel) return;
+        if (!isMobile()) {
+            panel.style.removeProperty('--nav-dropdown-height');
+            return;
+        }
+        panel.style.setProperty('--nav-dropdown-height', panel.scrollHeight + 'px');
+    };
+
     var setOpen = function (item, open) {
         if (!item) return;
+        updatePanelHeight(item);
         item.classList.toggle('is-open', open);
         var link = item.querySelector('.nav-link');
         if (link) {
+            link.classList.toggle('is-open', open);
             link.setAttribute('aria-expanded', open ? 'true' : 'false');
         }
     };
@@ -132,6 +145,7 @@ if (transactionSettingClicked) {
         }
         link.setAttribute('aria-controls', panel.id);
         link.setAttribute('aria-expanded', 'false');
+        updatePanelHeight(item);
 
         link.addEventListener('click', function (e) {
             if (!isMobile()) return;
@@ -160,11 +174,26 @@ if (transactionSettingClicked) {
 
     if (mql.addEventListener) {
         mql.addEventListener('change', function (e) {
-            if (!e.matches) closeAll();
+            if (!e.matches) {
+                closeAll();
+                dropdownItems.forEach(function (item) { updatePanelHeight(item); });
+                return;
+            }
+            dropdownItems.forEach(function (item) { updatePanelHeight(item); });
         });
     } else if (mql.addListener) {
         mql.addListener(function (e) {
-            if (!e.matches) closeAll();
+            if (!e.matches) {
+                closeAll();
+                dropdownItems.forEach(function (item) { updatePanelHeight(item); });
+                return;
+            }
+            dropdownItems.forEach(function (item) { updatePanelHeight(item); });
         });
     }
+
+    window.addEventListener('resize', function () {
+        if (!isMobile()) return;
+        dropdownItems.forEach(function (item) { updatePanelHeight(item); });
+    });
 })();

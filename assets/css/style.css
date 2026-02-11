@@ -737,11 +737,11 @@ h6 {
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown .dropdown-item {
     display: block;
-    padding: 10px 24px;
+    padding: 10px 20px 10px 32px;
     color: #111;
     font-weight: 400;
     text-align: left;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 20px;
     text-decoration: none;
     white-space: nowrap;
@@ -761,38 +761,52 @@ h6 {
         position: static;
         width: 100%;
         max-width: none;
-        transform: none;
         box-shadow: none;
+        max-height: 0;
+        overflow: hidden;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: none;
-        display: none;
+        display: block;
         margin-top: 6px;
         background: transparent;
         padding: 0;
-        text-align: center;
+        text-align: left;
+        transform: translateY(-6px);
+        transition: max-height 0.34s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.34s;
+        will-change: max-height, opacity, transform;
     }
 
     .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown.is-open .nav-dropdown {
+        max-height: var(--nav-dropdown-height, 220px);
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        display: block;
+        transform: translateY(0);
+        transition: max-height 0.34s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0s;
     }
 
-    .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown.is-open > .nav-link::after {
+    .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown:focus-within > .nav-link::after {
+        transform: rotate(45deg) translateY(-1px);
+    }
+
+    .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown.is-open > .nav-link::after,
+    .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown > .nav-link[aria-expanded="true"]::after {
         transform: rotate(-135deg) translateY(1px);
     }
 
     .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown .dropdown-item {
-        display: inline-block;
-        padding: 6px 20px 6px 36px;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 14px;
-        line-height: 20px;
+        display: block;
+        padding: 8px 20px 8px 36px;
+        margin: 0;
+        color: #fff;
+        opacity: 1;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
         background: transparent;
         text-align: left;
+        white-space: normal;
     }
 
     .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown .dropdown-item:hover,
@@ -803,6 +817,12 @@ h6 {
 
     .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown .nav-dropdown::before {
         display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 991px) {
+    .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown .nav-dropdown {
+        transition: none;
     }
 }
 
@@ -2758,6 +2778,18 @@ input:checked+.slider:before {
         text-align: center;
         border-radius: 12px;
         display: inline-block;
+    }
+
+    .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown {
+        text-align: left;
+    }
+
+    .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown > .nav-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        margin: 0;
     }
 
     .header .navbar-expand-lg .navbar-nav.menu-header .nav-item:hover .nav-link {
