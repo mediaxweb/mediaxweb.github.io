@@ -4671,6 +4671,10 @@ a.canvasjs-chart-credit {
 }
 
 @media (max-width: 991px) {
+    .product-page .container-1 {
+        padding: 0 16px;
+    }
+
     .product-hero {
         padding: 96px 0;
     }
