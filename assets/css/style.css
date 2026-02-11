@@ -4420,7 +4420,7 @@ a.canvasjs-chart-credit {
 }
 
 .product-hero {
-    padding: 96px 0 96px;
+    padding: 146px 0 96px;
     text-align: center;
     background: #efeff6;
 }
@@ -4458,7 +4458,7 @@ a.canvasjs-chart-credit {
     font-size: 24px;
     line-height: 32px;
     max-width: 880px;
-    margin: 0 auto 24px;
+    margin: 0 auto 40px;
 }
 
 .product-btn {
@@ -4567,7 +4567,7 @@ a.canvasjs-chart-credit {
 }
 
 .product-benefits {
-    background: #ffffff;
+    background: #F6F7F9;
     padding: 96px 0;
 }
 
@@ -4696,7 +4696,7 @@ a.canvasjs-chart-credit {
 
 @media (max-width: 991px) {
     .product-hero {
-        padding: 72px 0 64px;
+        padding: 96px 0;
     }
 
     .product-hero-title {
