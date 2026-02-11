@@ -674,7 +674,7 @@ h6 {
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown .nav-dropdown {
     position: absolute;
-    top: calc(100% + 13px);
+    top: 100%;
     left: 50%;
     width: 160px;
     max-width: calc(100vw - 32px);
@@ -698,8 +698,8 @@ h6 {
     position: absolute;
     left: 0;
     right: 0;
-    top: -12px;
-    height: 12px;
+    top: -6px;
+    height: 6px;
 }
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown:hover .nav-dropdown,
