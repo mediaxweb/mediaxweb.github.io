@@ -71,8 +71,8 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            width: 1200px;
-            padding: 20px;
+            width: min(1200px, 100%);
+            padding: 0 clamp(16px, 4vw, 40px);
             white-space: normal;
         }
 
@@ -114,14 +114,20 @@
             gap: 16px;
         }
         .home-slide-title{
-            font-size: 48px;
-            line-height: 58px;   
-            font-weight: 500;         
+            font-size: clamp(22px, 3.5vw, 48px);
+            line-height: clamp(30px, 4.6vw, 58px);
+            font-weight: 500;
+            max-width: 980px;
+            margin: 0 auto;
+            text-wrap: balance;
         }
         .home-slide-medium{
-            font-size: 24px;
-            line-height: 32px;
+            font-size: clamp(14px, 2vw, 22px);
+            line-height: clamp(20px, 3vw, 30px);
             font-weight: 500;
+            max-width: 980px;
+            margin: 12px auto 0;
+            text-wrap: balance;
         }
 
         .slide-btn{
@@ -147,14 +153,6 @@
                 padding-top: 0;
                 min-height: 0;
             }
-            .home-slide-title{
-                font-size: 22px;
-                line-height: 30px;
-            }
-            .home-slide-medium{
-                font-size: 14px;
-                line-height: 20px;
-            }
             .slideShow__slide, .slideShow__image img {
                 height: 400px;
             }            
@@ -171,7 +169,8 @@
                 padding: 0;
             }  
             .slide-content{
-                width: 400px;
+                width: min(400px, 100%);
+                padding: 0 16px;
             }
             .menu-home{
                 padding: 4px;
@@ -637,6 +636,106 @@
         }
     });
 });
+</script>
+<script>
+    (function () {
+        function setupAutoSlide(row) {
+            if (!row || row.dataset.autoSlideInit) {
+                return;
+            }
+            row.dataset.autoSlideInit = "1";
+
+            var items = row.querySelectorAll(':scope > [class*="col-"]');
+            if (items.length <= 1) {
+                return;
+            }
+
+            var index = 0;
+            var timerId = null;
+            var paused = false;
+
+            var getGap = function () {
+                var styles = getComputedStyle(row);
+                var gap = parseFloat(styles.columnGap || styles.gap || 0);
+                return Number.isNaN(gap) ? 0 : gap;
+            };
+
+            var getStep = function () {
+                var first = items[0];
+                if (!first) {
+                    return row.clientWidth;
+                }
+                return first.getBoundingClientRect().width + getGap();
+            };
+
+            var scrollToIndex = function (idx) {
+                var step = getStep();
+                row.scrollTo({ left: step * idx, behavior: "smooth" });
+            };
+
+            var next = function () {
+                if (paused) {
+                    return;
+                }
+                index = (index + 1) % items.length;
+                scrollToIndex(index);
+            };
+
+            var start = function () {
+                if (timerId) {
+                    return;
+                }
+                timerId = setInterval(next, 3500);
+            };
+
+            var stop = function () {
+                if (timerId) {
+                    clearInterval(timerId);
+                    timerId = null;
+                }
+            };
+
+            var pause = function () {
+                paused = true;
+                stop();
+            };
+
+            var resume = function () {
+                paused = false;
+                start();
+            };
+
+            row.addEventListener("pointerdown", pause);
+            row.addEventListener("pointerup", resume);
+            row.addEventListener("touchstart", pause, { passive: true });
+            row.addEventListener("touchend", resume);
+            row.addEventListener("mouseenter", pause);
+            row.addEventListener("mouseleave", resume);
+
+            row.addEventListener("scroll", function () {
+                var step = getStep();
+                if (step > 0) {
+                    index = Math.round(row.scrollLeft / step);
+                }
+            }, { passive: true });
+
+            start();
+        }
+
+        function initAutoSlides() {
+            if (!window.matchMedia("(max-width: 991px)").matches) {
+                return;
+            }
+            setupAutoSlide(document.querySelector("#last-update .instruction-2 .row"));
+            setupAutoSlide(document.querySelector("#section .instruction-2 .row"));
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAutoSlides);
+        } else {
+            initAutoSlides();
+        }
+    })();
 </script>
 </body>
 </html>

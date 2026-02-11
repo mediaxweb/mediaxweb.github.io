@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+@media screen and (max-width: 500px) {
+    #contact-us .contact-info p {
+        font-size: 20px;
+    }
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -799,10 +805,21 @@ h6 {
 
 #lg12{
     display: flex;
-    width: 1200px;
-    padding: 64px 0px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 64px 0;
     align-items: center;
     gap: 64px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.imgrs{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    display: block;
 }
 
 #lg12-line {
@@ -820,10 +837,15 @@ h6 {
 
 .rowbt{
     display: flex;
-    width: 1543px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding-bottom: 30px;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .rowbt p {
@@ -895,6 +917,12 @@ h6 {
     margin-bottom: 0px;
     font-weight: 300;
     font-size: 18px;
+}
+@media (min-width: 1200px) {
+    .footer .contact-us .address p {
+        white-space: nowrap;
+        font-size: 18px;
+    }
 }
 .footer .logo-footer {
     margin-bottom: 24px;
@@ -1092,6 +1120,14 @@ p a:hover {
     line-height: 22px;
     font-weight: 500;
 }
+.page__home #home-title .service-hero-title {
+    font-size: 44px;
+    line-height: 1.1;
+}
+.page__home #home-title .service-hero-subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+}
 .page__home #home-title h1.title-services, h2.title-services {
     font-family: 'Noto Serif', serif;
     font-size: 48px;
@@ -1128,6 +1164,9 @@ p a:hover {
 }
 .page__home .last-update .instruction-2 .update-info .img {
     margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .page__home .last-update .instruction-2 .update-info span.time {
     font-size: 16px;
@@ -1141,6 +1180,29 @@ p a:hover {
     font-family: 'Noto Sans';
     line-height: 24px;
     margin-top: 8px;
+}
+#last-update .instruction-2 .row > [class*="col-"] {
+    display: flex;
+}
+#last-update .instruction-2 .row > [class*="col-"] > a {
+    display: flex;
+    width: 100%;
+}
+#last-update .instruction-2 .update-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#last-update .instruction-2 .update-info .img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+#last-update .instruction-2 .update-info .img img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
 }
 .page-our-client #show-case .show-case {
     padding: 96px 0;
@@ -1251,7 +1313,7 @@ p a:hover {
     margin-right: 24px;
 }
 #contact-us .contact-info p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 27px;
     margin-bottom: 40px;
 }
@@ -1990,6 +2052,101 @@ input:checked+.slider:before {
     font-size: 16px; 
     line-height: 22px;
 }
+.custom-career-row img {
+    margin-right: 6px;
+}
+.custom-career-row .apply-now-icon img {
+    margin-right: 0;
+    margin-left: 6px;
+}
+.custom-career-row .text-careers {
+    white-space: nowrap;
+}
+@media screen and (max-width: 988px) {
+    .custom-career-row {
+        flex-direction: column;
+        align-items: stretch;
+        row-gap: 6px;
+    }
+    .custom-career-row > [class*="col-"] {
+        width: 100%;
+        max-width: 100%;
+    }
+    .custom-career-row > [class*="col-"]:not(:last-child) {
+        margin-bottom: 6px;
+    }
+    .custom-career-row > [class*="col-"]:not(:first-child) {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+    .custom-career-row > [class*="col-"]:not(:first-child) img {
+        flex-shrink: 0;
+    }
+    .custom-career-row .text-careers {
+        white-space: normal;
+    }
+    .custom-career-row .text-careers.text-center {
+        text-align: left !important;
+        justify-content: flex-start;
+    }
+}
+@media screen and (min-width: 989px) and (max-width: 1024px) {
+    .custom-career-row > [class*="col-"] {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+    .custom-career-row > div:nth-child(1) {
+        flex: 0 0 33%;
+        max-width: 33%;
+    }
+    .custom-career-row > div:nth-child(2) {
+        flex: 0 0 24%;
+        max-width: 24%;
+    }
+    .custom-career-row > div:nth-child(3) {
+        flex: 0 0 11%;
+        max-width: 11%;
+    }
+    .custom-career-row > div:nth-child(4) {
+        flex: 0 0 16%;
+        max-width: 16%;
+    }
+    .custom-career-row > div:nth-child(5) {
+        flex: 0 0 16%;
+        max-width: 16%;
+    }
+    .custom-career-row .apply-now-text {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 989px) {
+    .custom-career-row > [class*="col-"] {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+    .custom-career-row > div:nth-child(1) {
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+    .custom-career-row > div:nth-child(2) {
+        flex: 0 0 22%;
+        max-width: 22%;
+    }
+    .custom-career-row > div:nth-child(3) {
+        flex: 0 0 10%;
+        max-width: 10%;
+    }
+    .custom-career-row > div:nth-child(4) {
+        flex: 0 0 15%;
+        max-width: 15%;
+    }
+    .custom-career-row > div:nth-child(5) {
+        flex: 0 0 18%;
+        max-width: 18%;
+    }
+}
 .input-transaction-slippage {
     width: 100%;
     padding-right: 18px;
@@ -2078,8 +2235,47 @@ input:checked+.slider:before {
         font-size: 13px;
         line-height: 18px;
     }
+    #last-update .instruction-2 .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 16px;
+        padding: 0 8px 8px;
+        margin: 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    #last-update .instruction-2 .row::-webkit-scrollbar {
+        display: none;
+    }
+    #last-update .instruction-2 .row > [class*="col-"] {
+        flex: 0 0 80%;
+        max-width: 80%;
+        scroll-snap-align: start;
+    }
+    #section .instruction-2 .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 16px;
+        padding: 0 8px 8px;
+        margin: 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    #section .instruction-2 .row::-webkit-scrollbar {
+        display: none;
+    }
+    #section .instruction-2 .row > [class*="col-"] {
+        flex: 0 0 80%;
+        max-width: 80%;
+        scroll-snap-align: start;
+    }
     .header #navbar-header {
         padding-left: 0;
+    }
+    .header .navbar .row.flex-grow-1 {
+        align-items: flex-start;
     }
     .home-top-banner {
         padding-top: 100px;
@@ -2116,12 +2312,24 @@ input:checked+.slider:before {
     .footer .navbar-expand-lg .navbar-nav.menu-footer .nav-item {
         margin: 24px 0 0 0;
     }
+    .footer .container-1 {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .footer .row {
+        --bs-gutter-x: 2rem;
+    }
     .header {
         background: #000;
         position: unset;
     }
     .page-client .header {
         background-color: rgb(0 123 255 / 70%);
+    }
+    .page-client .header .navbar-expand-lg .navbar-nav.menu-header {
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
     }
 
     .page-careers #about-us {
@@ -2146,6 +2354,7 @@ input:checked+.slider:before {
     }
     #contact-us .contact-info {
         margin-top: 30px;
+        padding: 50px;
     }
     .page-our-client #show-case .instruction .item .description h4.title {
         font-size: 30px;
@@ -2154,6 +2363,10 @@ input:checked+.slider:before {
         padding: 20px 0 0 0;
     }
     .header .navbar-expand-lg .navbar-nav.menu-header .nav-item {
+        margin: 24px 0 0 0;
+    }
+    .page-client .header .navbar-expand-lg .navbar-nav.menu-header .nav-item,
+    .page-client .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.lang-switcher {
         margin: 24px 0 0 0;
     }
     .header .navbar-expand-lg .navbar-nav.menu-header .nav-link {
@@ -2242,7 +2455,8 @@ input:checked+.slider:before {
     #lg12 {
         flex-direction: column; 
         gap: 20px; 
-        width: auto;
+        width: 100%;
+        align-items: stretch;
     }
     .btns {
         display: none;
@@ -2251,9 +2465,17 @@ input:checked+.slider:before {
         padding: 24px 16px 0;
         align-items:flex-start;
     }
+    .page-careers #home-title{
+        text-align: left;
+    }
     #lg12{
-        padding: 40px 4px;
+        padding: 40px 16px;
         gap: 24px;
+    }
+    .rowbt{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
     }
     .btrs{
         display: flex;
@@ -2264,15 +2486,38 @@ input:checked+.slider:before {
         border: none;
         cursor: pointer;
     }
+    .page-research .rowbt{
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 12px;
+    }
+    .page-research .rowbt p{
+        flex: 1;
+    }
+    .page-research .btrs{
+        width: auto;
+        min-width: 96px;
+        padding: 10px 12px;
+    }
     .careers-client {
         padding-top: 80px !important;
     }
     .footer .social-area {
         margin-top: 0;
     }
-    .page__home #home-title h2.title, h1.title, h1.client-title, h2.title-services{
-        font-size: 28px;
-        line-height: 32px;
+    .page__home #home-title h1.title,
+    .page__home #home-title h1.client-title {
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 16px;
+        font-weight: 700;
+        text-align: start;
+    }
+    .page__home #home-title h2.title,
+    .page__home #home-title h2.title-services {
+        font-size: 24px;
+        line-height: 28px;
         margin-bottom: 16px;
         font-weight: 700;
         text-align: start;
@@ -2282,6 +2527,24 @@ input:checked+.slider:before {
         line-height: 22px!important;
         font-weight: 400!important;
         text-align: start;
+    }
+    .page__home #home-title .service-hero-title {
+        font-size: 30px;
+        line-height: 34px;
+    }
+    .page__home #home-title .service-hero-subtitle {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .page__home .post_content {
+        padding-top: 24px;
+    }
+    .post_content p {
+        margin-bottom: 18px;
+    }
+    .post_text {
+        font-size: 22px;
+        line-height: 28px;
     }
     .page__home p.subtitle{
         font-size: 16px;
@@ -2305,6 +2568,30 @@ input:checked+.slider:before {
     .page-our-client #contact-us {
         padding: 64px 0;
     }
+    .page-our-client #contact-us #home-title h2.title-services,
+    .page-our-client #contact-us #home-title p.subtitle-services,
+    .page-our-client #contact-us .form-contact p {
+        text-align: center;
+    }
+    .page-our-client #contact-us .form-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .page-our-client #contact-us .form-contact p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 520px;
+    }
+    .page-our-client #contact-us .form-contact .send-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 220px;
+        padding: 10px 20px;
+        margin-left: 0 !important;
+    }
     .benefit-column {
         font-size: 16px;
         line-height: 22px;
@@ -2327,18 +2614,62 @@ input:checked+.slider:before {
         text-align: start;
         margin-bottom: 8px;
     }
+    .page-our-client .container-1 {
+        padding: 0 16px;
+    }
+    .page-our-client #about-us {
+        padding-top: 96px;
+        padding-bottom: 32px;
+    }
+    .page-our-client #about-us .client-title span {
+        white-space: normal !important;
+    }
+    .page-our-client #about-us .img {
+        margin-top: 24px;
+    }
     a.careers-btn{
         padding: 9px 16px;
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        width: auto;
+        max-width: 100%;
+        white-space: nowrap;
         text-align: start;
-        max-width: 29%;
     }
     .home-btn {
         max-width: 60%;
         display: block;
     }
+    .page-our-client #about-us .home-btn {
+        display: inline-flex;
+        align-items: center;
+        width: auto;
+        max-width: 100%;
+        white-space: nowrap;
+    }
+    .page-our-client #about-us #home-title {
+        text-align: left;
+    }
     .page-our-client #show-case .instruction .item {
         padding: 40px 0;
+    }
+    .page-our-client #show-case .instruction .item .row {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .page-our-client #show-case .instruction .item .row > .col-lg-1 {
+        display: none;
+    }
+    .page-our-client #show-case .instruction .item .row > .col-lg-6 {
+        order: 1;
+    }
+    .page-our-client #show-case .instruction .item .row > .col-lg-5 {
+        order: 2;
+    }
+    .page-our-client #show-case .instruction .item .img,
+    .page-our-client #show-case .instruction .item .img-services {
+        max-width: 100% !important;
+        margin: 0 auto;
     }
     .page-our-client #show-case .instruction .item .description h2.title{
         font-size: 28px;
@@ -2354,8 +2685,8 @@ input:checked+.slider:before {
         padding: 9px 16px;
     }
     .page__home #home-title h1.title-services {
-        font-size: 20px;
-        line-height: 35px;
+        font-size: 30px;
+        line-height: 34px;
         margin-bottom: 16px;
     }
     .page__home #home-title p.subtitle-services {
@@ -2421,7 +2752,7 @@ input:checked+.slider:before {
     }
     #lg12 {
         flex-direction: column; 
-        width: auto;
+        width: 100%;
     }
     .btns {
         display: none;
@@ -2431,7 +2762,13 @@ input:checked+.slider:before {
         align-items:flex-start;
     }
     #lg12{
-        padding: 40px 4px;
+        padding: 40px 16px;
+    }
+    .btrs{
+        width: 100%;
+    }
+    .page-research .btrs{
+        width: auto;
     }
 }
 

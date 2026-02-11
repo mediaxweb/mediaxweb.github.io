@@ -165,6 +165,38 @@
             border-radius: 8px;
             object-fit: cover;
         }
+
+        @media screen and (min-width: 992px) {
+            .page-client .post_content p.mb-18-desktop {
+                margin-bottom: 18px;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .page-client.wrapper {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .page-client #post-title .title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+
+            .page-client .post_content {
+                padding-top: 24px;
+            }
+
+            .page-client .post_content p {
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 24px;
+            }
+
+            .page-client .image-grid {
+                gap: 16px;
+            }
+        }
     </style>
 </head>
 
@@ -238,7 +270,7 @@
                         <h3>Retrieval Stability (Top-1 Augmented Self-Retrieval Accuracy)</h3>
                         <p>The evaluation was conducted on a subset of 700 original product images, evenly sampled across three brands (Nike, Adidas, Converse). For each original image, five augmented variants were generated using transformations such as horizontal flipping, rotation, color jittering, and illumination changes, resulting in a total of 3,500 augmented query images.</p>
                         <p>These augmented images were used as query inputs, while the vector database contained only the original images. A retrieval was considered correct if the top-1 result matched the exact corresponding original image, thereby measuring the system’s robustness under visual perturbations.</p>
-                        <p>The system achieved consistently high retrieval accuracy across all product groups:</p>
+                        <p class="mb-18-desktop">The system achieved consistently high retrieval accuracy across all product groups:</p>
                         <ul>
                             <li><strong>Nike:</strong> ~0.97</li>
                             <li><strong>Adidas:</strong> ~0.97</li>
@@ -263,7 +295,7 @@
                         <h2>Discussion and Future Work</h2>
                         <p>The experimental results demonstrate that MediaX’s AI image search system is robust, generalizable, and well-suited for real-world image retrieval tasks. Nevertheless, several directions for further improvement have been identified.</p>
                         <p>One promising enhancement involves integrating an object detection model such as YOLO to perform automatic object localization and cropping prior to embedding generation. By isolating the main product region and reducing background noise, this approach is expected to improve embedding consistency and retrieval accuracy, particularly in scenarios with cluttered backgrounds or varying shooting conditions.</p>
-                        <p>Additional future improvements include:</p>
+                        <p class="mb-18-desktop">Additional future improvements include:</p>
                         <ul>
                             <li>refining augmentation strategies to better balance robustness and preservation of critical visual features</li>
                             <li>evaluating higher-resolution or more expressive embedding models to capture fine-grained details</li>

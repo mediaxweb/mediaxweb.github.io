@@ -163,6 +163,46 @@
             margin-bottom: 20px;
             position: relative;
         }
+        @media (min-width: 1200px) {
+            .page-junior {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+        @media (max-width: 1199px) {
+            .page-junior {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+        @media (max-width: 991px) {
+            .page-junior .title {
+                margin-top: 96px;
+                margin-bottom: 16px;
+            }
+            .page-junior #contact-us .row {
+                row-gap: 24px;
+            }
+            .page-junior #contact-us .job-detail {
+                padding: 12px 0;
+            }
+            .page-junior #contact-us article h3 {
+                margin-top: 20px;
+                margin-bottom: 8px;
+            }
+            .page-junior #contact-us article p {
+                margin-bottom: 12px;
+            }
+            .page-junior #contact-us article ul {
+                margin-bottom: 12px;
+                padding-left: 18px;
+                list-style-position: outside !important;
+            }
+            .page-junior #contact-us article ul li {
+                margin-bottom: 6px;
+                line-height: 1.5;
+            }
+        }
     </style>
        
 </head>
@@ -216,9 +256,9 @@
         </header>
         <main class="page__home page-our-client page-junior" style="min-height: calc(100vh - 73px);background: #fff; max-width: 1200px; margin: 0 auto;">
             <h2 class="title" style="font-size: 32px; text-align: left; margin-top: 160px;">Machine Learning Explorer (Junior Level)</h2>          
-            <div id="contact-us" style="background-color: #ffff; display: flex; justify-content: space-between; padding-top: 0;">
+            <div id="contact-us" style="background-color: #ffff; padding-top: 0;">
                 <div class="row">
-                    <div class="container col-md-4 col-12" style="padding: 12px;">
+                    <div class="col-md-4 col-12">
                         <div style="background-color: #FFFFFF; padding-bottom: 20px;">
                             <div class="job-detail" style="border-bottom: 1px solid #D9D9D9; padding: 10px;">
                                 <img src="../assets/images/recruitment-icon-3.svg" alt="Level Icon" style="vertical-align: middle;">
@@ -249,7 +289,7 @@
                         </div>                                    
                     </div>
 
-                    <div class="container col-md-8 col-12" style="padding: 12px; text-align: left;">
+                    <div class="col-md-8 col-12" style="text-align: left;">
                         <article class="instruction-1" id="home-title">
                             <h3 style="font-size: 18px; text-align: left;">About MediaX:</h3>
                             <p style="font-size: 16px; text-align: left; font-weight: normal;">MediaX is an innovative AI startup based in Vietnam. We are passionate about leveraging AI and machine learning to drive business transformation and create cutting-edge digital solutions. As a growing company, we offer a unique opportunity to be part of a collaborative team where you can make a real impact, learn quickly, and contribute to projects that push the boundaries of technology. Join us on the journey of shaping the future of AI!</p>

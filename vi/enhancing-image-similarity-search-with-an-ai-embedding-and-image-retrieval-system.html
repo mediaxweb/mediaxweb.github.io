@@ -163,6 +163,47 @@
             border-radius: 8px;
             object-fit: cover;
         }
+
+        @media screen and (min-width: 992px) {
+            .page-client .post_content p.mb-18-desktop {
+                margin-bottom: 18px;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .page-client.wrapper {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .page-client #post-title .title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+
+            .page-client .post_content {
+                padding-top: 24px;
+            }
+
+            .page-client .post_content p {
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 24px;
+            }
+
+            .page-client .post_content ul {
+                margin-bottom: 24px;
+                padding-left: 20px;
+            }
+
+            .page-client .post_content li {
+                margin-bottom: 8px;
+            }
+
+            .page-client .image-grid {
+                gap: 16px;
+            }
+        }
     </style>
 </link></meta></head>
 <body>
@@ -232,7 +273,7 @@
 <h3>Độ ổn định truy xuất (Độ chính xác truy xuất tự động Top-1 với hình ảnh tăng cường)</h3>
 <p>Việc đánh giá được thực hiện trên một tập con gồm 700 ảnh sản phẩm gốc, được lấy mẫu đồng đều trên ba thương hiệu (Nike, Adidas, Converse). Với mỗi ảnh gốc, năm biến thể tăng cường được tạo ra bằng các phép biến đổi như lật ngang, xoay, thay đổi màu sắc và thay đổi ánh sáng, tạo thành tổng cộng 3.500 ảnh truy vấn tăng cường.</p>
 <p>Các ảnh tăng cường này được sử dụng làm truy vấn, trong khi cơ sở dữ liệu vector chỉ chứa ảnh gốc. Truy xuất được xem là chính xác nếu kết quả top-1 khớp đúng ảnh gốc tương ứng, từ đó đo lường độ bền của hệ thống dưới các nhiễu hình ảnh.</p>
-<p>Hệ thống đạt được độ chính xác truy xuất cao nhất quán trên tất cả các nhóm sản phẩm:</p>
+<p class="mb-18-desktop">Hệ thống đạt được độ chính xác truy xuất cao nhất quán trên tất cả các nhóm sản phẩm:</p>
 <ul>
 <li><strong>Nike:</strong> ~0,97</li>
 <li><strong>Adidas:</strong> ~0,97</li>
@@ -255,7 +296,7 @@
 <h2>Thảo luận và công việc tương lai</h2>
 <p>Kết quả thí nghiệm cho thấy hệ thống tìm kiếm hình ảnh AI của MediaX bền vững, có khả năng tổng quát tốt và phù hợp với các nhiệm vụ truy xuất hình ảnh trong thế giới thực. Tuy nhiên, một số hướng cải tiến đã được xác định.</p>
 <p>Một cải tiến tiềm năng là tích hợp mô hình phát hiện đối tượng như YOLO để thực hiện định vị đối tượng tự động và cắt trước khi tạo embedding. Bằng cách tách vùng sản phẩm chính và giảm nhiễu nền, phương pháp này được kỳ vọng sẽ cải thiện tính nhất quán của embedding và độ chính xác truy xuất, đặc biệt trong các tình huống có nền phức tạp hoặc điều kiện chụp khác nhau.</p>
-<p>Các cải tiến tương lai khác bao gồm:</p>
+<p class="mb-18-desktop">Các cải tiến tương lai khác bao gồm:</p>
 <ul>
 <li>tinh chỉnh các chiến lược tăng cường để cân bằng tốt hơn giữa độ bền và bảo toàn các đặc trưng hình ảnh quan trọng</li>
 <li>đánh giá các mô hình embedding có độ phân giải cao hơn hoặc biểu đạt phong phú hơn để nắm bắt các chi tiết tinh vi</li>
