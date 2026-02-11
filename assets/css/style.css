@@ -4638,36 +4638,12 @@ a.canvasjs-chart-credit {
     margin: 0;
 }
 
-.benefit-image-bg {
-    position: relative;
-}
-
-.benefit-image-bg::before {
-    content: "";
-    position: absolute;
-    inset: -26px -32px;
-    background: #e5e7eb;
-    border-radius: 16px;
-    transform: rotate(4.9deg) skewX(-1.67deg);
-    z-index: 0;
-}
-
-.benefit-image-wrap {
-    position: relative;
-    z-index: 1;
-    background: #ffffff;
-    border: 1px solid #f3f4f6;
-    border-radius: 16px;
-    padding: 1px;
-    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
-        0px 8px 10px -6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.benefit-image-wrap img {
-    width: 100%;
+.benefit-image img {
+    width: 115%;
+    max-width: none;
     height: auto;
     display: block;
+    margin-left: -7.5%;
 }
 
 .product-cta {
@@ -4745,8 +4721,9 @@ a.canvasjs-chart-credit {
         grid-template-columns: 1fr;
     }
 
-    .benefit-image-bg::before {
-        inset: -16px;
+    .benefit-image img {
+        width: 100%;
+        margin-left: 0;
     }
 
     .product-cta {
