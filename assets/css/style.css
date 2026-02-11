@@ -4446,6 +4446,12 @@ a.canvasjs-chart-credit {
     color: #5a4eb3;
 }
 
+@media (min-width: 992px) {
+    .product-hero-title span {
+        white-space: nowrap;
+    }
+}
+
 .product-hero-desc {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
@@ -4457,8 +4463,8 @@ a.canvasjs-chart-credit {
 
 .product-btn {
     display: inline-block;
-    background: #ffffff;
-    color: #131314;
+    background: #5a4eb3;
+    color: #ffffff;
     padding: 12px 24px;
     font-size: 16px;
     font-weight: 500;
@@ -4468,7 +4474,7 @@ a.canvasjs-chart-credit {
 }
 
 .product-btn:hover {
-    color: #131314;
+    color: #ffffff;
     text-decoration: none;
 }
 
