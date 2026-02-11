@@ -98,3 +98,73 @@ if (transactionSettingClicked) {
         window.__mediaxLangDebug = debug;
     } catch (e) {}
 })();
+
+// Mobile header dropdown toggle (Products)
+(function () {
+    var dropdownItems = document.querySelectorAll('.header .nav-item-dropdown');
+    if (!dropdownItems.length) return;
+
+    var mql = window.matchMedia('(max-width: 991px)');
+    var isMobile = function () { return mql.matches; };
+
+    var setOpen = function (item, open) {
+        if (!item) return;
+        item.classList.toggle('is-open', open);
+        var link = item.querySelector('.nav-link');
+        if (link) {
+            link.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+    };
+
+    var closeAll = function (except) {
+        dropdownItems.forEach(function (item) {
+            if (item !== except) setOpen(item, false);
+        });
+    };
+
+    dropdownItems.forEach(function (item, index) {
+        var link = item.querySelector('.nav-link');
+        var panel = item.querySelector('.nav-dropdown');
+        if (!link || !panel) return;
+
+        if (!panel.id) {
+            panel.id = 'nav-dropdown-panel-' + (index + 1);
+        }
+        link.setAttribute('aria-controls', panel.id);
+        link.setAttribute('aria-expanded', 'false');
+
+        link.addEventListener('click', function (e) {
+            if (!isMobile()) return;
+            e.preventDefault();
+            var isOpen = item.classList.contains('is-open');
+            if (!isOpen) closeAll(item);
+            setOpen(item, !isOpen);
+        });
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!isMobile()) return;
+        var target = e.target;
+        if (!target || !target.closest) return;
+        if (!target.closest('.nav-item-dropdown')) {
+            closeAll();
+        }
+    });
+
+    var collapse = document.getElementById('navbar-header');
+    if (collapse && collapse.addEventListener) {
+        collapse.addEventListener('hidden.bs.collapse', function () {
+            closeAll();
+        });
+    }
+
+    if (mql.addEventListener) {
+        mql.addEventListener('change', function (e) {
+            if (!e.matches) closeAll();
+        });
+    } else if (mql.addListener) {
+        mql.addListener(function (e) {
+            if (!e.matches) closeAll();
+        });
+    }
+})();
