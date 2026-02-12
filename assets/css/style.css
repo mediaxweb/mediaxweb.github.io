@@ -600,10 +600,11 @@ h6 {
     right: 0;
     z-index: 20;
     background-color: var(--header-bg-color) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    opacity: 0.88 !important;
-    transition: background-color 0.2s ease, opacity 0.2s ease, backdrop-filter 0.2s ease, -webkit-backdrop-filter 0.2s ease;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.16) 100%) !important;
+    backdrop-filter: blur(8px) saturate(130%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(130%) !important;
+    border-bottom: 0;
+    transition: background-color 0.2s ease, backdrop-filter 0.2s ease, -webkit-backdrop-filter 0.2s ease, background-image 0.2s ease;
 }
 
 .header:hover,
@@ -611,9 +612,9 @@ h6 {
 .header.navbar-strong,
 .header.navbar-expanded {
     background-color: var(--header-bg-solid) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    opacity: 1 !important;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
+    backdrop-filter: blur(2px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(2px) saturate(120%) !important;
 }
 
 .page-client .header.sticky-header {
@@ -2968,7 +2969,8 @@ input:checked+.slider:before {
     .header {
         --header-bg-color: rgb(0 0 0 / 70%);
         --header-bg-solid: #000;
-        background: var(--header-bg-color);
+        background-color: var(--header-bg-color);
+        background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.16) 100%);
         position: unset;
     }
 
