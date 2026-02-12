@@ -1069,7 +1069,6 @@ body.mega-menu-open::before {
 
     .header .mega-feature-card,
     .header .mega-menu-section {
-        display: block;
         border: 0;
         border-radius: 0;
         background: transparent;
@@ -1079,9 +1078,17 @@ body.mega-menu-open::before {
         text-decoration: none;
     }
 
+    .header .mega-feature-card {
+        display: none;
+    }
+
+    .header .mega-menu-section {
+        display: block;
+    }
+
     .header .mega-kicker,
     .header .mega-menu-heading {
-        display: block;
+        display: none;
         margin: 10px 20px 6px;
         font-size: 11px;
         font-weight: 700;
@@ -1102,7 +1109,7 @@ body.mega-menu-open::before {
     }
 
     .header .mega-menu-link {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .header .mega-title {
@@ -2882,6 +2889,23 @@ input:checked+.slider:before {
 }
 
 @media screen and (max-width: 991px) {
+    .header,
+    .header:hover,
+    .header:focus-within,
+    .header.navbar-strong,
+    .header.navbar-expanded {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    body::before,
+    body.mega-menu-open::before {
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        opacity: 0;
+    }
+
     #page-footer i.fa-bars {
         color: #000;
     }
@@ -4896,18 +4920,18 @@ a.canvasjs-chart-credit {
     }
 }
 
-@media (min-width: 992px) {
-    .page-careers-custom .header {
-        --header-bg-color: rgb(27 89 56 / 70%);
-        --header-bg-solid: #1b5938;
-        background-color: var(--header-bg-color);
-    }
+.header.header-careers,
+.page-careers-custom .header {
+    --header-bg-color: rgb(27 89 56 / 70%);
+    --header-bg-solid: #1b5938;
+    background-color: var(--header-bg-color);
+}
 
-    .page-careers-custom .header.sticky-header {
-        --header-bg-color: rgb(27 89 56 / 70%);
-        --header-bg-solid: #1b5938;
-        background-color: var(--header-bg-color);
-    }
+.header.header-careers.sticky-header,
+.page-careers-custom .header.sticky-header {
+    --header-bg-color: rgb(27 89 56 / 70%);
+    --header-bg-solid: #1b5938;
+    background-color: var(--header-bg-color);
 }
 /* Doc Copilot Product Page */
 .product-page {
@@ -5450,7 +5474,7 @@ a.canvasjs-chart-credit {
 
     .product-page .header .mega-kicker,
     .product-page .header .mega-menu-heading {
-        display: block;
+        display: none;
         margin: 10px 20px 6px;
         font-size: 11px;
         font-weight: 700;
@@ -5460,9 +5484,13 @@ a.canvasjs-chart-credit {
     }
 
     .product-page .header .mega-feature-card {
-        display: block;
+        display: none;
         color: #131314;
         text-decoration: none;
+    }
+
+    .product-page .header .mega-menu-section {
+        display: block;
     }
 
     .product-page .header .mega-title,
@@ -5477,7 +5505,7 @@ a.canvasjs-chart-credit {
     }
 
     .product-page .header .mega-menu-link {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .product-page .header .mega-title {
@@ -5562,6 +5590,12 @@ a.canvasjs-chart-credit {
 
     .benefit-grid {
         grid-template-columns: 1fr;
+    }
+
+    .product-page .benefit-title {
+        font-size: 21px;
+        line-height: 30px;
+        white-space: nowrap;
     }
 
     .benefit-image img {
