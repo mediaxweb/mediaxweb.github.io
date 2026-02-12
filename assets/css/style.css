@@ -686,10 +686,9 @@ h6 {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translate3d(-50%, 10px, 0) scale(0.98);
+    transform: translate3d(-50%, 0, 0) scale(1);
     transform-origin: top center;
-    transition: opacity 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 0.22s;
-    will-change: opacity, transform;
+    transition: none;
     z-index: 1000;
 }
 
@@ -708,7 +707,7 @@ h6 {
     visibility: visible;
     pointer-events: auto;
     transform: translate3d(-50%, 0, 0) scale(1);
-    transition: opacity 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 0s;
+    transition: none;
 }
 
 .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown > .nav-link::after {
@@ -772,9 +771,8 @@ h6 {
         background: transparent;
         padding: 0;
         text-align: left;
-        transform: translateY(-6px);
-        transition: max-height 0.34s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.34s;
-        will-change: max-height, opacity, transform;
+        transform: translateY(0);
+        transition: none;
     }
 
     .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown.is-open .nav-dropdown {
@@ -783,7 +781,7 @@ h6 {
         visibility: visible;
         pointer-events: auto;
         transform: translateY(0);
-        transition: max-height 0.34s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0s;
+        transition: none;
     }
 
     .header .navbar-expand-lg .navbar-nav.menu-header .nav-item.nav-item-dropdown:focus-within > .nav-link::after {
