@@ -607,6 +607,23 @@ h6 {
     transition: background-color 0.2s ease, backdrop-filter 0.2s ease, -webkit-backdrop-filter 0.2s ease, background-image 0.2s ease;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 19;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(12, 18, 27, 0.24);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: opacity 0.2s ease;
+}
+
+body.mega-menu-open::before {
+    opacity: 1;
+}
+
 .header:hover,
 .header:focus-within,
 .header.navbar-strong,
