@@ -829,11 +829,12 @@ h6 {
 
     .header .mega-feature-card-copy {
         text-align: left;
+        padding: 40px 0;
     }
 
     .header .mega-products-title {
         margin: 0;
-        font-size: 34px;
+        font-size: 32px;
         line-height: 1.12;
         font-weight: 600;
         text-align: left;
@@ -841,7 +842,7 @@ h6 {
 
     .header .mega-products-subtitle {
         margin: 6px 0 0;
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1.5;
         font-weight: 400;
         text-align: left;
@@ -951,7 +952,7 @@ h6 {
         padding: 0;
         border-radius: 0;
         color: #fff;
-        font-size: 14px;
+        font-size: 20px;
         line-height: 20px;
         font-weight: 500;
         text-decoration: none;
@@ -1081,6 +1082,10 @@ h6 {
         line-height: 22px;
         font-weight: 500;
         text-decoration: none;
+    }
+
+    .header .mega-menu-link {
+        font-size: 20px;
     }
 
     .header .mega-title {
@@ -4965,11 +4970,12 @@ a.canvasjs-chart-credit {
 
     .product-page .header .mega-feature-card-copy {
         text-align: left;
+        padding: 40px 0;
     }
 
     .product-page .header .mega-products-title {
         margin: 0;
-        font-size: 34px;
+        font-size: 32px;
         line-height: 1.12;
         font-weight: 600;
         text-align: left;
@@ -4977,7 +4983,7 @@ a.canvasjs-chart-credit {
 
     .product-page .header .mega-products-subtitle {
         margin: 6px 0 0;
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1.5;
         font-weight: 400;
         text-align: left;
@@ -5050,7 +5056,7 @@ a.canvasjs-chart-credit {
         padding: 0;
         border-radius: 0;
         color: #131314;
-        font-size: 14px;
+        font-size: 20px;
         line-height: 20px;
         font-weight: 500;
         text-decoration: none;
@@ -5451,6 +5457,10 @@ a.canvasjs-chart-credit {
         line-height: 22px;
         font-weight: 500;
         text-decoration: none;
+    }
+
+    .product-page .header .mega-menu-link {
+        font-size: 20px;
     }
 
     .product-page .header .mega-title {
