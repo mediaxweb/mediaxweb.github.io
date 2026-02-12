@@ -789,7 +789,7 @@ h6 {
         right: 0;
         width: auto;
         max-width: none;
-        padding: 10px 8px 12px;
+        padding: 14px 0 16px;
         background: var(--header-bg-solid);
         border: none;
         box-shadow: none;
@@ -808,29 +808,54 @@ h6 {
 
     .header .mega-menu-grid {
         display: grid;
-        grid-template-columns: 1.3fr 1fr;
-        gap: 12px;
+        grid-template-columns: minmax(280px, 340px) minmax(180px, 220px);
+        align-items: center;
+        gap: 44px;
+        width: min(1200px, calc(100vw - 24px));
+        padding-left: 0;
+        margin: 0 auto;
     }
 
     .header .mega-feature-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 10px;
-        min-height: 220px;
-        padding: 18px;
-        border-radius: 12px;
+        display: block;
+        min-height: 0;
+        padding: 0;
+        border-radius: 0;
         border: none;
-        background: var(--header-bg-solid);
-        background: color-mix(in srgb, var(--header-bg-solid) 84%, #ffffff 16%);
+        background: transparent;
         color: #fff;
         text-decoration: none;
     }
 
+    .header .mega-feature-card-copy {
+        text-align: left;
+    }
+
+    .header .mega-products-title {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.12;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .header .mega-products-subtitle {
+        margin: 6px 0 0;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 400;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.82);
+    }
+
+    .header .mega-products-title,
+    .header .mega-products-subtitle {
+        width: 100%;
+    }
+
     .header .mega-feature-card:hover,
     .header .mega-feature-card:focus {
-        background: var(--header-bg-solid);
-        background: color-mix(in srgb, var(--header-bg-solid) 78%, #ffffff 22%);
+        background: transparent;
         color: #fff;
     }
 
@@ -867,11 +892,11 @@ h6 {
     .header .mega-menu-section {
         display: flex;
         flex-direction: column;
-        border-radius: 12px;
+        justify-content: center;
+        border-radius: 0;
         border: none;
-        background: var(--header-bg-solid);
-        background: color-mix(in srgb, var(--header-bg-solid) 86%, #ffffff 14%);
-        padding: 14px;
+        background: transparent;
+        padding: 0;
     }
 
     .header .mega-menu-heading {
@@ -919,10 +944,12 @@ h6 {
     }
 
     .header .mega-menu-link {
-        display: block;
-        margin-bottom: 6px;
-        padding: 9px 10px;
-        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+        padding: 0;
+        border-radius: 0;
         color: #fff;
         font-size: 14px;
         line-height: 20px;
@@ -936,8 +963,17 @@ h6 {
 
     .header .mega-menu-link:hover,
     .header .mega-menu-link:focus {
-        background: var(--header-bg-solid);
-        background: color-mix(in srgb, var(--header-bg-solid) 74%, #ffffff 26%);
+        background: transparent;
+        color: rgba(255, 255, 255, 0.86);
+    }
+
+    .header .mega-menu-link .mega-link-arrow {
+        opacity: 0.86;
+        transform: translateY(1px);
+    }
+
+    .header .mega-menu-link.is-disabled {
+        opacity: 0.82;
         color: #fff;
     }
 }
@@ -4889,7 +4925,7 @@ a.canvasjs-chart-credit {
         right: 0;
         width: auto;
         max-width: none;
-        padding: 10px 8px 12px;
+        padding: 14px 0 16px;
         background: var(--header-bg-solid);
         border: none;
         box-shadow: none;
@@ -4908,27 +4944,54 @@ a.canvasjs-chart-credit {
 
     .product-page .header .mega-menu-grid {
         display: grid;
-        grid-template-columns: 1.3fr 1fr;
-        gap: 12px;
+        grid-template-columns: minmax(280px, 340px) minmax(180px, 220px);
+        align-items: center;
+        gap: 44px;
+        width: min(1200px, calc(100vw - 24px));
+        padding-left: 0;
+        margin: 0 auto;
     }
 
     .product-page .header .mega-feature-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 10px;
-        min-height: 220px;
-        padding: 18px;
-        border-radius: 12px;
-        border: 1px solid #dde5fb;
-        background: linear-gradient(160deg, #f6f8ff 0%, #edf2ff 100%);
+        display: block;
+        min-height: 0;
+        padding: 0;
+        border-radius: 0;
+        border: none;
+        background: transparent;
         color: #131314;
         text-decoration: none;
     }
 
+    .product-page .header .mega-feature-card-copy {
+        text-align: left;
+    }
+
+    .product-page .header .mega-products-title {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.12;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .product-page .header .mega-products-subtitle {
+        margin: 6px 0 0;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 400;
+        text-align: left;
+        color: #516070;
+    }
+
+    .product-page .header .mega-products-title,
+    .product-page .header .mega-products-subtitle {
+        width: 100%;
+    }
+
     .product-page .header .mega-feature-card:hover,
     .product-page .header .mega-feature-card:focus {
-        background: linear-gradient(160deg, #eef2ff 0%, #e3ebff 100%);
+        background: transparent;
         color: #131314;
     }
 
@@ -4963,10 +5026,11 @@ a.canvasjs-chart-credit {
     .product-page .header .mega-menu-section {
         display: flex;
         flex-direction: column;
-        border-radius: 12px;
-        border: 1px solid rgba(19, 19, 20, 0.08);
-        background: #fafbff;
-        padding: 14px;
+        justify-content: center;
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        padding: 0;
     }
 
     .product-page .header .mega-menu-heading {
@@ -4979,10 +5043,12 @@ a.canvasjs-chart-credit {
     }
 
     .product-page .header .mega-menu-link {
-        display: block;
-        margin-bottom: 6px;
-        padding: 9px 10px;
-        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+        padding: 0;
+        border-radius: 0;
         color: #131314;
         font-size: 14px;
         line-height: 20px;
@@ -4996,8 +5062,18 @@ a.canvasjs-chart-credit {
 
     .product-page .header .mega-menu-link:hover,
     .product-page .header .mega-menu-link:focus {
-        background: #edf2ff;
-        color: #1d4ed8;
+        background: transparent;
+        color: #334155;
+    }
+
+    .product-page .header .mega-menu-link .mega-link-arrow {
+        opacity: 0.88;
+        transform: translateY(1px);
+    }
+
+    .product-page .header .mega-menu-link.is-disabled {
+        opacity: 0.84;
+        color: #131314;
     }
 
     .product-page .header .mega-note-title {
