@@ -10,6 +10,50 @@ function myFunction() {
         header.classList.remove("sticky-header");
     }
 }
+
+// Header visual state: default blurred, becomes solid on hover/click/focus.
+(function () {
+    var headerEl = document.getElementById("header");
+    if (!headerEl) return;
+
+    var collapseEl = document.getElementById("navbar-header");
+
+    var syncHeaderState = function () {
+        var hasFocus = headerEl.contains(document.activeElement);
+        var isHover = false;
+        try {
+            isHover = headerEl.matches(":hover");
+        } catch (e) {
+            isHover = false;
+        }
+        var isExpanded = headerEl.classList.contains("navbar-expanded");
+        headerEl.classList.toggle("navbar-strong", hasFocus || isHover || isExpanded);
+    };
+
+    headerEl.addEventListener("mouseenter", syncHeaderState);
+    headerEl.addEventListener("mouseleave", syncHeaderState);
+    headerEl.addEventListener("focusin", syncHeaderState);
+    headerEl.addEventListener("focusout", function () {
+        window.setTimeout(syncHeaderState, 0);
+    });
+    headerEl.addEventListener("click", function () {
+        headerEl.classList.add("navbar-strong");
+        window.setTimeout(syncHeaderState, 120);
+    });
+
+    if (collapseEl && collapseEl.addEventListener) {
+        collapseEl.addEventListener("shown.bs.collapse", function () {
+            headerEl.classList.add("navbar-expanded");
+            headerEl.classList.add("navbar-strong");
+        });
+        collapseEl.addEventListener("hidden.bs.collapse", function () {
+            headerEl.classList.remove("navbar-expanded");
+            syncHeaderState();
+        });
+    }
+
+    syncHeaderState();
+})();
 // swap-page
 var transactionSettingClicked = document.querySelector("#transaction__setting-icon");
 var transactionSettingShow = document.querySelector("#transaction__setting-description");
