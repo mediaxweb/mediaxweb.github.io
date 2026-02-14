@@ -74,13 +74,15 @@
             width: min(1200px, 100%);
             padding: 0 clamp(16px, 4vw, 40px);
             white-space: normal;
+            z-index: 2;
         }
 
         .slideShow__image {
             display: block;
             padding: 0;
             height: auto;
-            width: 100%;            
+            width: 100%;
+            position: relative;
         }
 
         .slideShow__image img {
@@ -89,6 +91,40 @@
             max-height: 800px;
             max-width: 1540px;
             object-fit: cover;
+        }
+
+        .slideShow__slide--doccopilot .slideShow__image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 8%, rgba(0, 0, 0, 0.58) 100%);
+        }
+
+        .slideShow__slide--doccopilot .slide-content {
+            max-width: 980px;
+            padding: clamp(14px, 2.6vw, 28px) clamp(18px, 3vw, 34px);
+            background: rgba(0, 0, 0, 0.22);
+            border-radius: 16px;
+            backdrop-filter: blur(2px);
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+        }
+
+        .slideShow__slide--doccopilot .home-slide-title {
+            font-size: clamp(30px, 5vw, 76px);
+            line-height: 1.08;
+            margin-bottom: clamp(12px, 2vw, 22px);
+        }
+
+        .slideShow__slide--doccopilot .home-slide-medium {
+            max-width: 860px;
+            margin: 0 auto;
+            font-size: clamp(18px, 2.1vw, 48px);
+            line-height: 1.28;
+        }
+
+        .slideShow__slide--doccopilot .slide-btn {
+            margin-top: clamp(18px, 2.8vw, 34px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
         }
 
         .dot {
@@ -171,6 +207,19 @@
             .slide-content{
                 width: min(400px, 100%);
                 padding: 0 16px;
+            }
+            .slideShow__slide--doccopilot .slide-content{
+                width: min(440px, calc(100% - 32px));
+                padding: 16px 14px;
+                border-radius: 12px;
+            }
+            .slideShow__slide--doccopilot .home-slide-title{
+                font-size: clamp(28px, 7vw, 42px);
+                line-height: 1.12;
+            }
+            .slideShow__slide--doccopilot .home-slide-medium{
+                font-size: clamp(16px, 4.3vw, 22px);
+                line-height: 1.32;
             }
             .menu-home{
                 padding: 4px;
@@ -324,11 +373,32 @@
 <div class="col-lg-10">
 <div class="collapse navbar-collapse" id="navbar-header">
 <ul class="navbar-nav menu-header ms-auto mb-2 mb-lg-0 align-items-lg-end">
-<li>
-<a class="nav-link" href="services.html">Dịch vụ</a>
+<li class="nav-item nav-item-dropdown">
+    <a class="nav-link" href="javascript:void(0);" aria-haspopup="true">Sản phẩm</a>
+    <div class="nav-dropdown mega-menu" role="menu" aria-label="Sản phẩm">
+                                            <div class="mega-menu-grid mega-menu-grid-products">
+                                                <div class="mega-feature-card mega-feature-card-copy" aria-hidden="true">
+                                                    <p class="mega-products-title">Built for the AI Era</p>
+                                                    <p class="mega-products-subtitle">Explore Our AI Products</p>
+                                                </div>
+                                                <div class="mega-menu-section mega-products-links">
+                                                    <a class="mega-menu-link mega-menu-link-arrow" href="doc-copilot.html" role="menuitem">
+                                                        <span>Doc Copilot</span>
+                                                        <span class="mega-link-arrow">&rarr;</span>
+                                                    </a>
+                                                    <span class="mega-menu-link mega-menu-link-arrow is-disabled" aria-disabled="true">
+                                                        <span>CS Copilot</span>
+                                                        <span class="mega-link-arrow">&rarr;</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="our-research.html">Nghiên cứu</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="services.html">Dịch vụ</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="careers.html">Tuyển dụng</a>
@@ -356,13 +426,23 @@
 <article class="home-top-banner-2 d-flex align-items-center">
 <div class="slideShow">
 <ul class="slideShow__container">
+<li class="slideShow__slide slideShow__slide--doccopilot">
+<figure class="slideShow__image">
+<img alt="Doc Copilot" src="../assets/images/Chrome_Light.png"/>
+<div class="slide-content">
+<h1 class="home-slide-title">Khám phá Doc Copilot</h1>
+<div class="home-slide-medium">Biến kho tài liệu của bạn thành nguồn tri thức tương tác với tính năng hỏi đáp trực tiếp trên file.</div>
+<a class="slide-btn" href="doc-copilot.html">Khám phá Doc Copilot</a>
+</div>
+</figure>
+</li>
 <li class="slideShow__slide">
 <figure class="slideShow__image">
 <img alt="Trang chủ" src="../assets/images/slide-home-page-3.png"/>
 <div class="slide-content">
 <h1 class="home-slide-title">Trao quyền cho doanh nghiệp và cộng đồng Việt Nam bằng đổi mới AI</h1>
 <div class="home-slide-medium">Tại MediaX, chúng tôi hình dung một tương lai nơi ngôn ngữ và văn hóa Việt Nam phát triển mạnh mẽ trong hệ sinh thái AI toàn cầu, mang đến các giải pháp được thiết kế riêng cho thị trường trong nước.</div>
-<a class="slide-btn" href="careers.html">Bắt đầu ngay</a>
+<a class="slide-btn" href="services.html">Bắt đầu ngay</a>
 </div>
 </figure>
 </li>
@@ -380,6 +460,7 @@
 <div class="dot-container">
 <span class="dot" onclick="currentSlide(1)"></span>
 <span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
 </div>
 </div>
 </article>
@@ -563,7 +644,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 <script>
     var SlideShow = function() {
-        var slider, slide, dots, slideAmount, sliderWidth;
+        var slider, slide, dots, slideAmount, sliderWidth, ctaButtons;
         var clickCounter = 0; 
         var interval; 
 
@@ -571,6 +652,7 @@
             slider = document.getElementsByClassName('slideShow__container')[0];
             slide = document.getElementsByClassName('slideShow__slide');
             dots = document.getElementsByClassName('dot');
+            ctaButtons = slider ? slider.querySelectorAll('.slide-btn') : [];
             slideAmount = slide.length;
             sliderWidth = parseInt(getComputedStyle(slider).width);
             slider.style.transform = 'translateX(-' + sliderWidth * clickCounter + 'px)';
@@ -587,6 +669,12 @@
                     currentSlide(index);
                     _restartAutoSlide();
                 });
+            });
+            Array.from(ctaButtons).forEach(function(button) {
+                button.addEventListener('mouseenter', _pauseAutoSlide);
+                button.addEventListener('mouseleave', _restartAutoSlide);
+                button.addEventListener('focus', _pauseAutoSlide);
+                button.addEventListener('blur', _restartAutoSlide);
             });
             window.addEventListener('resize', _resize, false);
         }
@@ -606,10 +694,14 @@
             gsap.to(slider, {x: -clickCounter * sliderWidth});
         }
         var _startAutoSlide = function() {
+            clearInterval(interval);
             interval = setInterval(function() {
                 clickCounter = (clickCounter + 1) % slideAmount;
                 currentSlide(clickCounter);
             }, 5000);
+        }
+        var _pauseAutoSlide = function() {
+            clearInterval(interval);
         }
         var _restartAutoSlide = function() {
             clearInterval(interval);
