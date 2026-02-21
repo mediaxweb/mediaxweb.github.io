@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS Copilot Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fbfcff;
+        --text: #0f172a;
+        --muted: #586176;
+        --line: #e8ebf1;
+        --primary: #2f55ff;
+        --primary-2: #4c6fff;
+        --soft-blue: #e8f0ff;
+        --section-gray: #f2f4f8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Noto Sans", sans-serif;
+        line-height: 1.5;
+      }
+
+      .container {
+        width: min(1318px, calc(100% - 256px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.86);
+        border-bottom: 1px solid rgba(20, 30, 44, 0.06);
+      }
+
+      .site-header .container {
+        width: min(1318px, calc(100% - 256px));
+      }
+
+      .header-inner {
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 44px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .brand-logo {
+        height: 24px;
+        width: auto;
+        display: block;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav a {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #555e70;
+        text-decoration: none;
+        line-height: 1;
+        padding: 8px 16px;
+      }
+
+      .nav a:hover {
+        color: #1c2436;
+      }
+
+      .header-cta {
+        margin-left: auto;
+        padding: 10px 16px;
+        font-size: 0.78rem;
+        border-radius: 10px;
+        box-shadow: 0 6px 14px rgba(49, 86, 255, 0.26);
+      }
+
+      .site-header .header-cta {
+        background: #2b4bee;
+        color: #fff;
+        padding: 10px 16px;
+      }
+
+      .btn {
+        border: 0;
+        outline: 0;
+        border-radius: 10px;
+        padding: 16px 24px;
+        font-weight: 600;
+        font-size: 0.93rem;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        color: #fff;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        box-shadow: 0 8px 20px rgba(49, 86, 255, 0.32);
+      }
+
+      .btn-secondary {
+        color: #1f2a3d;
+        background: #fff;
+        border: 1px solid #dbe1ec;
+        box-shadow: 0 4px 10px rgba(19, 30, 45, 0.06);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(90deg, rgba(139, 108, 255, 0.09) 0%, rgba(139, 108, 255, 0.02) 42%, rgba(118, 209, 255, 0.12) 100%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15)),
+          url("assets/images/background_group.png");
+        background-position: center top, center top, center top;
+        background-size: 100% 100%, 100% 100%, 100% 100%;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 1) 66%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 1) 66%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .hero .container {
+        position: relative;
+        z-index: 1;
+        padding-top: 96px;
+        padding-bottom: 84px;
+      }
+
+      .hero-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        width: max-content;
+        margin: 0 auto 18px;
+        padding: 5px 12px;
+        border-radius: 999px;
+        border: 1px solid #cfe0ff;
+        color: #2f55ff;
+        font-weight: 600;
+        font-size: 0.7rem;
+        letter-spacing: 0.04em;
+        background: rgba(247, 251, 255, 0.94);
+      }
+
+      .eyebrow-icon {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        font-family: "Noto Sans", sans-serif;
+        letter-spacing: -0.03em;
+      }
+
+      .hero h1 {
+        text-align: center;
+        font-family: "Space Grotesk", "Noto Sans", sans-serif;
+        font-size: clamp(3rem, 5.25vw, 4.8rem);
+        line-height: 1.04;
+        letter-spacing: -0.025em;
+      }
+
+      .hero h1 .accent {
+        background: linear-gradient(135deg, #3458ff 8%, #4f7df8 52%, #65a5ff 96%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero .lead {
+        margin: 16px auto 0;
+        max-width: 740px;
+        text-align: center;
+        color: #5f6a7f;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .hero-actions .btn {
+        min-height: 46px;
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .hero-actions .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        line-height: 1;
+        background: #2b4bee;
+        box-shadow: 0 8px 16px rgba(47, 85, 255, 0.34);
+      }
+
+      .hero-actions .btn-primary span {
+        display: block;
+        line-height: 1;
+      }
+
+      .hero-actions .btn-secondary {
+        border: 1px solid #d8dfeb;
+        background: #fff;
+        color: #1f2a3d;
+        box-shadow: 0 2px 8px rgba(17, 27, 44, 0.06);
+      }
+
+      .cta-arrow-icon {
+        width: 14px;
+        height: 14px;
+        object-fit: contain;
+        display: inline-block;
+        flex: 0 0 14px;
+        vertical-align: middle;
+      }
+
+      .demo-icon {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+      }
+
+      .hero-media {
+        margin: 48px auto 0;
+        width: min(1180px, 100%);
+      }
+
+      .hero-media img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 14px;
+      }
+
+      section {
+        padding: 90px 0;
+        scroll-margin-top: 92px;
+      }
+
+      section.section-clicked .container {
+        animation: section-click-pop 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @keyframes section-click-pop {
+        0% {
+          opacity: 0.6;
+          transform: translateY(16px) scale(0.992);
+        }
+        64% {
+          opacity: 1;
+          transform: translateY(-2px) scale(1.004);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .section-title {
+        text-align: center;
+      }
+
+      .tag {
+        color: #5774ff;
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.09em;
+      }
+
+      .section-title h2 {
+        margin-top: 10px;
+        font-size: clamp(2rem, 3.2vw, 2.75rem);
+      }
+
+      .section-title p {
+        margin: 14px auto 0;
+        max-width: 670px;
+        color: var(--muted);
+      }
+
+      .feature-grid {
+        margin-top: 38px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .features {
+        background: #ffffff;
+      }
+
+      .feature-card {
+        background: #fff;
+        border: 1px solid #e4e9f2;
+        border-radius: 14px;
+        padding: 32px;
+        min-height: 154px;
+        box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        column-gap: 12px;
+      }
+
+      .features .section-title {
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .features .tag {
+        font-size: 0.74rem;
+      }
+
+      .features .section-title h2 {
+        margin-top: 8px;
+        font-family: "Space Grotesk", "Noto Sans", sans-serif;
+        font-size: clamp(2.2rem, 3vw, 3rem);
+        line-height: 1.15;
+        color: #101a2f;
+      }
+
+      .features .section-title p {
+        margin-top: 14px;
+        max-width: 690px;
+        color: #5a6780;
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .features .feature-grid {
+        margin-top: 40px;
+        gap: 16px;
+      }
+
+      .feature-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid #d9e2f4;
+        background: #edf2ff;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+
+      .feature-icon-zalo {
+        width: 24px;
+        height: 24px;
+        display: block;
+        object-fit: contain;
+      }
+
+      .feature-icon-smarttoy {
+        width: 24px;
+        height: 24px;
+        display: block;
+        object-fit: contain;
+      }
+
+      .feature-icon-school {
+        width: 24px;
+        height: 24px;
+        display: block;
+        object-fit: contain;
+      }
+
+      .feature-icon-manage {
+        width: 24px;
+        height: 24px;
+        display: block;
+        object-fit: contain;
+      }
+
+      .feature-icon-analytics {
+        width: 24px;
+        height: 24px;
+        display: block;
+        object-fit: contain;
+      }
+
+      .feature-icon-security {
+        width: 24px;
+        height: 24px;
+        display: block;
+        object-fit: contain;
+      }
+
+      .feature-card h3 {
+        margin: 0;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1.12rem;
+        line-height: 1.25;
+        color: #101a2f;
+      }
+
+      .feature-copy {
+        min-width: 0;
+      }
+
+      .feature-card p {
+        margin: 6px 0 0;
+        color: #5f6d85;
+        font-size: 0.93rem;
+        line-height: 1.55;
+      }
+
+      .why {
+        background: #ffffff;
+      }
+
+      .why .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .why-left h2 {
+        margin-top: 12px;
+        font-family: "Space Grotesk", "Noto Sans", sans-serif;
+        font-size: clamp(2rem, 3vw, 2.6rem);
+      }
+
+      .why-left > p {
+        color: var(--muted);
+        max-width: 580px;
+      }
+
+      .benefit-list {
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .benefit-list li {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .benefit-list li + li {
+        margin-top: 14px;
+      }
+
+      .benefit-icon {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .benefit-icon-img {
+        width: 24px;
+        height: 24px;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+      }
+
+      .benefit-list li:nth-child(1) .benefit-icon {
+        background: #e8faef;
+        color: #23ac5e;
+      }
+
+      .benefit-list li:nth-child(2) .benefit-icon {
+        background: #f2eaff;
+        color: #9359ff;
+      }
+
+      .benefit-list li:nth-child(3) .benefit-icon {
+        background: #fff0dd;
+        color: #ff9d3e;
+      }
+
+      .benefit-title {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .benefit-copy {
+        display: block;
+        margin-top: 2px;
+        color: #616d82;
+        font-size: 0.92rem;
+      }
+
+      .growth-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 26px;
+        position: relative;
+      }
+
+      .growth-card h3 {
+        margin: 0 0 18px;
+        font-family: "Noto Sans", sans-serif;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .metric {
+        border: 1px solid #ecf0f7;
+        border-radius: 14px;
+        padding: 14px;
+      }
+
+      .metric .label {
+        color: #6a748b;
+        font-size: 0.86rem;
+      }
+
+      .metric .value {
+        margin-top: 3px;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1.65rem;
+        line-height: 1;
+      }
+
+      .metric-number {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .metric .delta {
+        margin-left: 6px;
+        color: #2ca24d;
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+
+      .metric .line {
+        margin-top: 10px;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #2f55ff 62%, #edf1f9 62%);
+      }
+
+      .metric:nth-child(2) .line {
+        background: linear-gradient(90deg, #994cff 70%, #edf1f9 70%);
+      }
+
+      .bar-chart {
+        margin-top: 22px;
+        height: 190px;
+        border-radius: 14px;
+        background: #f5f7ff;
+        display: flex;
+        align-items: flex-end;
+        gap: 14px;
+        padding: 14px;
+      }
+
+      .bar {
+        flex: 1;
+        border-radius: 6px 6px 0 0;
+        background: #d8dff8;
+      }
+
+      .bar:nth-child(1) {
+        height: 46%;
+      }
+
+      .bar:nth-child(2) {
+        height: 62%;
+      }
+
+      .bar:nth-child(3) {
+        height: 34%;
+      }
+
+      .bar:nth-child(4) {
+        height: 84%;
+        background: #3555ff;
+      }
+
+      .bar:nth-child(5) {
+        height: 54%;
+      }
+
+      .float-chip {
+        position: absolute;
+        right: 18px;
+        bottom: 14px;
+        border-radius: 12px;
+        border: 1px solid #e5eaf5;
+        box-shadow: 0 10px 20px rgba(25, 35, 52, 0.12);
+        background: #fff;
+        padding: 9px 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+        color: #2d3b57;
+      }
+
+      .chip-dot {
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        background: #e7f9ee;
+        color: #22a552;
+        font-weight: 800;
+        display: grid;
+        place-items: center;
+      }
+
+      .chip-dot img {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+      }
+
+      .chip-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+      }
+
+      .chip-text strong {
+        font-weight: 700;
+      }
+
+      .contact {
+        background: #f2f4f8;
+        padding: 84px 0 94px;
+        border-top: 1px solid #e6eaf2;
+      }
+
+      .contact .content {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: 44px;
+        align-items: center;
+      }
+
+      .form-card {
+        background: #fff;
+        border: 1px solid #e2e7f0;
+        border-radius: 14px;
+        width: 100%;
+        max-width: 560px;
+        justify-self: start;
+        padding: 26px 22px 22px;
+        box-shadow: 0 10px 26px rgba(18, 28, 45, 0.08);
+      }
+
+      .form-card h3 {
+        margin-top: 0;
+        margin-bottom: 16px;
+        font-family: "Space Grotesk", "Noto Sans", sans-serif;
+        font-size: 24px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: #101a2f;
+      }
+
+      .field {
+        display: grid;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .field label {
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: #4f5b73;
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+        border: 1px solid #cfd7e4;
+        border-radius: 8px;
+        background: #fff;
+        padding: 10px 12px;
+        font-family: inherit;
+        font-size: 0.89rem;
+        color: #1f2b40;
+      }
+
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: #97a1b4;
+      }
+
+      .field textarea {
+        resize: none;
+        min-height: 72px;
+      }
+
+      .field input:focus,
+      .field textarea:focus {
+        outline: 0;
+        border-color: #3659ff;
+        box-shadow: 0 0 0 3px rgba(54, 89, 255, 0.12);
+      }
+
+      .submit-btn {
+        width: 100%;
+        height: auto;
+        padding: 16px 24px;
+        margin-top: 8px;
+        border-radius: 8px;
+        box-shadow: 0 8px 18px rgba(47, 85, 255, 0.32);
+        font-size: 0.9rem;
+      }
+
+      .contact-copy h2 {
+        font-family: "Space Grotesk", "Noto Sans", sans-serif;
+        font-size: 30px;
+        line-height: 1.18;
+        margin: 0;
+        color: #101a2f;
+      }
+
+      .contact-copy {
+        align-self: center;
+      }
+
+      .contact-copy p {
+        margin: 14px 0 0;
+        color: #606f88;
+        font-size: 0.92rem;
+        line-height: 1.65;
+      }
+
+      .contact-list {
+        margin-top: 26px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .contact-item {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .contact-item .icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 1px solid #e0e6f1;
+        background: #f8faff;
+        display: grid;
+        place-items: center;
+        color: #4165ff;
+        flex-shrink: 0;
+        margin-top: 0;
+      }
+
+      .contact-item .icon img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+
+      .contact-item strong {
+        display: block;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+        color: #111c31;
+      }
+
+      .contact-item span {
+        color: #687892;
+        font-size: 0.88rem;
+      }
+
+      footer {
+        background: #ffffff;
+        border-top: 1px solid #e1e6ef;
+        padding: 24px 0 34px;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-note {
+        margin: 0;
+        color: #6b768d;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .footer-brand {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .footer-logo {
+        height: 22px;
+        width: auto;
+      }
+
+      .reveal {
+        animation: fade-up 0.8s ease both;
+      }
+
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 960px) {
+        .container {
+          width: min(1120px, calc(100% - 32px));
+        }
+
+        .site-header .container {
+          width: min(1120px, calc(100% - 32px));
+        }
+
+        .header-inner {
+          height: 72px;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .feature-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .why .content,
+        .contact .content {
+          grid-template-columns: 1fr;
+        }
+
+        .contact {
+          padding: 68px 0 74px;
+        }
+
+        .contact .content {
+          gap: 30px;
+          align-items: start;
+        }
+
+        .form-card h3 {
+          font-size: 24px;
+        }
+
+        .contact-copy h2 {
+          font-size: 30px;
+        }
+
+      }
+
+      @media (max-width: 640px) {
+        .header-inner {
+          gap: 14px;
+        }
+
+        .site-header .header-cta {
+          width: auto;
+          padding: 10px 16px;
+          font-size: 0.74rem;
+        }
+
+        .hero .container {
+          padding-top: 56px;
+          padding-bottom: 62px;
+        }
+
+        .hero h1 {
+          font-size: clamp(2.05rem, 9vw, 3rem);
+        }
+
+        .hero .lead {
+          font-size: 0.93rem;
+        }
+
+        .hero-media {
+          margin-top: 34px;
+        }
+
+        .hero-media img {
+          border-radius: 10px;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 72px 0;
+        }
+
+        .form-card,
+        .growth-card {
+          padding: 20px;
+        }
+
+        .contact {
+          padding: 58px 0 66px;
+        }
+
+        .form-card h3 {
+          font-size: 24px;
+        }
+
+        .field textarea {
+          min-height: 64px;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">
+          <img class="brand-logo" src="assets/images/logo.png" alt="CS Copilot" />
+        </a>
+
+        <nav class="nav" aria-label="Điều hướng chính">
+          <a href="#hero">Giới thiệu</a>
+          <a href="#features">Tính năng</a>
+          <a href="#why">Lợi ích</a>
+          <a href="#contact">Liên hệ</a>
+        </nav>
+
+        <a class="btn btn-primary header-cta" href="#contact">Trải nghiệm ngay</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero reveal">
+        <div class="container">
+          <div class="hero-inner">
+            <div class="eyebrow">
+              <img class="eyebrow-icon" src="assets/images/star_icon.png" alt="" aria-hidden="true" />
+              <span>CS COPILOT</span>
+            </div>
+            <h1>
+              Cộng sự AI đắc lực.<br />
+              <span class="accent">Hỗ trợ doanh nghiệp<br />vận hành trên Zalo.</span>
+            </h1>
+            <p class="lead">
+              Tự động hóa chăm sóc khách hàng, tối ưu vận hành và bứt phá doanh số
+              với giải pháp AI chuyên biệt tích hợp sâu rộng vào hệ sinh thái Zalo.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">
+                <span>Trải nghiệm ngay</span>
+                <img class="cta-arrow-icon" src="assets/images/arrow_forward.png" alt="" aria-hidden="true" />
+              </a>
+              <a class="btn btn-secondary" href="#contact">
+                <img class="demo-icon" src="assets/images/play_circle.png" alt="" aria-hidden="true" />
+                Xem Demo
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <img src="assets/images/video_container.png" alt="Bảng điều khiển CS Copilot" />
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features reveal">
+        <div class="container">
+          <div class="section-title">
+            <div class="tag">GIẢI PHÁP TOÀN DIỆN</div>
+            <h2>Các tính năng đột phá</h2>
+            <p>
+              Bộ công cụ mạnh mẽ giúp doanh nghiệp của bạn vận hành trơn tru và hiệu quả
+              hơn bao giờ hết trên nền tảng Zalo.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon">
+                <img class="feature-icon-zalo" src="assets/images/icon_zalo.png" alt="Zalo" />
+              </div>
+              <div class="feature-copy">
+                <h3>Tích hợp Zalo</h3>
+                <p>Kết nối trực tiếp Zalo OA và nhóm chat để quản lý tập trung và đồng bộ.</p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <img class="feature-icon-smarttoy" src="assets/images/smart_toy.png" alt="Smart toy" />
+              </div>
+              <div class="feature-copy">
+                <h3>Chuyên gia ảo</h3>
+                <p>Phản hồi tức thì &lt; 2s, hoạt động 24/7 không nghỉ ngơi, đảm bảo không bỏ lỡ khách hàng.</p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <img class="feature-icon-school" src="assets/images/school.png" alt="School" />
+              </div>
+              <div class="feature-copy">
+                <h3>Huấn luyện riêng</h3>
+                <p>Học từ dữ liệu PDF, Excel, Website của doanh nghiệp để tư vấn chính xác như nhân viên kỳ cựu.</p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <img class="feature-icon-manage" src="assets/images/manage_accounts.png" alt="Manage accounts" />
+              </div>
+              <div class="feature-copy">
+                <h3>Quản lý thông minh</h3>
+                <p>Tự động phân loại nhóm khách hàng theo hành vi mua sắm và tương tác.</p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <img class="feature-icon-analytics" src="assets/images/analytics.png" alt="Analytics" />
+              </div>
+              <div class="feature-copy">
+                <h3>Báo cáo tự động</h3>
+                <p>Tổng hợp dữ liệu và phân tích hiệu quả dịch vụ, giúp tối ưu chiến lược kinh doanh.</p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <img class="feature-icon-security" src="assets/images/security.png" alt="Security" />
+              </div>
+              <div class="feature-copy">
+                <h3>Bảo mật tuyệt đối</h3>
+                <p>Đảm bảo an toàn dữ liệu đặc thù của thương hiệu với các tiêu chuẩn bảo mật cao cấp.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" class="why reveal">
+        <div class="container content">
+          <div class="why-left">
+            <div class="tag">Giá trị mang lại</div>
+            <h2>Tại sao nên chọn CS Copilot</h2>
+            <p>
+              Giải pháp tối ưu giúp doanh nghiệp của bạn vượt lên trên đối thủ cạnh
+              tranh bằng sức mạnh của trí tuệ nhân tạo và sự thấu hiểu khách hàng.
+            </p>
+
+            <ul class="benefit-list">
+              <li>
+                <div class="benefit-icon">
+                  <img class="benefit-icon-img" src="assets/images/check_icon.png" alt="Check icon" />
+                </div>
+                <div>
+                  <span class="benefit-title">Tiết kiệm 70% chi phí</span>
+                  <span class="benefit-copy">Giảm tải áp lực cho đội ngũ nhân sự trực chat, tối ưu ngân sách vận hành.</span>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <img class="benefit-icon-img" src="assets/images/user_icon.png" alt="User icon" />
+                </div>
+                <div>
+                  <span class="benefit-title">Tăng tỷ lệ chốt đơn</span>
+                  <span class="benefit-copy">Phản hồi nhanh chóng giúp giữ chân khách hàng và tăng cơ hội bán hàng.</span>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <img class="benefit-icon-img" src="assets/images/stonk.png" alt="Stonk icon" />
+                </div>
+                <div>
+                  <span class="benefit-title">Dễ dàng triển khai</span>
+                  <span class="benefit-copy">Tích hợp nhanh mà không cần kiến thức kỹ thuật phức tạp.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <article class="growth-card">
+            <h3>Tổng quan hiệu suất</h3>
+            <div class="metrics">
+              <div class="metric">
+                <div class="label">Khách hàng mới</div>
+                <div class="value"><span class="metric-number">2,450</span> <span class="delta">+12%</span></div>
+                <div class="line"></div>
+              </div>
+              <div class="metric">
+                <div class="label">Phản hồi tự động</div>
+                <div class="value"><span class="metric-number">12K</span> <span class="delta">+4%</span></div>
+                <div class="line"></div>
+              </div>
+            </div>
+            <div class="bar-chart" aria-hidden="true">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <div class="float-chip">
+              <div class="chip-dot">
+                <img src="assets/images/up_stonk_icon.png" alt="" aria-hidden="true" />
+              </div>
+              <span class="chip-text"><span>Tăng trưởng</span><strong>+46%</strong></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact reveal">
+        <div class="container content">
+          <form class="form-card" action="#" method="post">
+            <h3>Liên hệ với chúng tôi</h3>
+            <div class="field">
+              <label for="name">Họ và tên</label>
+              <input id="name" name="name" type="text" placeholder="Nguyen Van A" />
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="email@company.com" />
+            </div>
+            <div class="field">
+              <label for="message">Tin nhắn</label>
+              <textarea id="message" name="message" rows="1" placeholder="Mô tả nhu cầu của doanh nghiệp..."></textarea>
+            </div>
+            <button class="btn btn-primary submit-btn" type="submit">Gửi yêu cầu</button>
+          </form>
+
+          <div class="contact-copy">
+            <h2>Khởi đầu kỷ nguyên chăm sóc khách hàng tự động ngay hôm nay</h2>
+            <p>
+              Sẵn sàng nâng tầm hiệu quả vận hành và tối ưu hóa trải nghiệm khách hàng
+              trên Zalo cùng CS Copilot. Liên hệ với chúng tôi ngay để được tư vấn giải
+              pháp "trợ lý ảo" chuyên biệt, được huấn luyện riêng theo dữ liệu doanh nghiệp
+              và triển khai thần tốc cho đội ngũ của bạn.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="icon">
+                  <img src="assets/images/address_icon.png" alt="" aria-hidden="true" />
+                </div>
+                <div>
+                  <strong>Địa chỉ</strong>
+                  <span>Tầng 5 V1 The Terra An Hưng - La Khê - Hà Đông - Hà Nội</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="icon">
+                  <img src="assets/images/email_icon.png" alt="" aria-hidden="true" />
+                </div>
+                <div>
+                  <strong>Email</strong>
+                  <span>hello@mediax.com.vn</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="icon">
+                  <img src="assets/images/phone_icon.png" alt="" aria-hidden="true" />
+                </div>
+                <div>
+                  <strong>Điện thoại</strong>
+                  <span>0343 488 603</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="footer-note">CS Copilot - Khi AI trở thành cộng sự đắc lực nhất của doanh nghiệp bạn trên Zalo.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        var navLinks = document.querySelectorAll(".nav a[href^='#']");
+        if (!navLinks.length) {
+          return;
+        }
+
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function playSectionAnimation(section) {
+          section.classList.remove("section-clicked");
+          void section.offsetWidth;
+          section.classList.add("section-clicked");
+
+          window.setTimeout(function () {
+            section.classList.remove("section-clicked");
+          }, 760);
+        }
+
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            var selector = link.getAttribute("href");
+            if (!selector || selector === "#") {
+              return;
+            }
+
+            var section = document.querySelector(selector);
+            if (!section) {
+              return;
+            }
+
+            event.preventDefault();
+            section.scrollIntoView({
+              behavior: reduceMotion ? "auto" : "smooth",
+              block: "start"
+            });
+
+            if (history.pushState) {
+              history.pushState(null, "", selector);
+            } else {
+              window.location.hash = selector;
+            }
+
+            playSectionAnimation(section);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
