@@ -1,0 +1,733 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Face Recognition for Automated Staff Check-In" />
+    <meta property="og:description"
+        content="A practical face-recognition pipeline for accurate staff check-in under real camera conditions." />
+    <meta property="og:url" content="https://mediax.com.vn/" />
+    <meta property="og:site_name" content="MediaX" />
+    <meta property="og:image" content="https://mediax.com.vn/assets/images/update-4.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://mediax.com.vn/assets/images/update-4.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A practical face-recognition pipeline for accurate staff check-in under real camera conditions." />
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
+        integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/fav-blue.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <title>Face Recognition for Automated Staff Check-In</title>
+    <style id="svelte-166mr51-style">
+        ul.svelte-166mr51 {
+            display: flex;
+            flex-flow: column nowrap;
+            position: fixed;
+            font-size: 16px;
+            padding: 0 0.75em;
+            margin: 0;
+            list-style-type: none;
+            width: 20em;
+            bottom: 0;
+            right: 0;
+            font-family: 'Helvetica Neue';
+            max-height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            color: #4a4a4a;
+            background: transparent;
+            scrollbar-width: none;
+            box-sizing: border-box;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 99999999
+        }
+
+        @media only screen and (max-width: 450px) {
+            ul.svelte-166mr51 {
+                width: 100%
+            }
+        }
+
+        .bn-notify-custom.bn-notify-dark-mode {
+            background: #283944;
+            color: #ffffff;
+            background: rgba(40, 57, 68, 0.9)
+        }
+
+        .bn-notify-clickable:hover {
+            cursor: pointer
+        }
+
+        .svelte-166mr51::-webkit-scrollbar {
+            display: none
+        }
+
+        li.svelte-166mr51 {
+            position: relative;
+            display: flex;
+            padding: 0.75em;
+            font-size: 0.889em;
+            font-family: inherit;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            color: inherit;
+            transition: background 300ms ease-in-out, color 300ms ease-in-out;
+            pointer-events: all;
+            background: #fff;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9)
+        }
+
+        div.svelte-166mr51 {
+            position: absolute;
+            top: 0.75em;
+            right: 0.75em;
+            font-size: inherit;
+            font-family: inherit
+        }
+    </style>
+    <style id="svelte-7rn0pv-style">
+        div.svelte-7rn0pv {
+            height: 100%;
+            font-size: inherit;
+            font-family: inherit;
+            width: 1.5em
+        }
+    </style>
+    <style id="svelte-5f7pqk-style">
+        div.svelte-5f7pqk {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            font-size: inherit;
+            font-family: inherit;
+            margin-left: 0.75em;
+            width: 90%
+        }
+
+        p.svelte-5f7pqk {
+            display: flex;
+            align-items: center;
+            margin: 0.5em 0 0 0;
+            opacity: 0.7;
+            font-size: 0.889em;
+            line-height: 1.15;
+            font-family: inherit
+        }
+
+        span.svelte-5f7pqk {
+            font-family: inherit;
+            display: flex;
+            align-items: center
+        }
+    </style>
+    <style id="svelte-12gqi36-style">
+        p.svelte-12gqi36 {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit
+        }
+    </style>
+    <style id="svelte-1ociadw-style">
+        svg.svelte-1ociadw {
+            margin: 0 0.25em 0 0.5em
+        }
+    </style>
+    <style>
+        .my-image {
+            width: 1542px;
+            min-height: auto;
+            margin-bottom: 32px;
+            margin-top: 32px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+            margin-bottom: 32px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* --- Post Content Typography & Spacing --- */
+        .post_content {
+            padding-top: 8px;
+        }
+
+        .post_content h2 {
+            margin-top: 48px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8e8e8;
+        }
+
+        .post_content h2:first-child {
+            margin-top: 24px;
+        }
+
+        .post_content h3 {
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .post_content h2+h3 {
+            margin-top: 4px;
+        }
+
+        .post_content p {
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .post_content ul,
+        .post_content ol {
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+
+        .post_content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+
+        /* --- Research Table Styling --- */
+        .research-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            margin-bottom: 32px;
+            font-size: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .research-table thead th {
+            background-color: #1a3a5c;
+            color: #ffffff;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 14px;
+            letter-spacing: 0.025em;
+        }
+
+        .research-table tbody td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #e8ecf0;
+            color: #333;
+        }
+
+        .research-table tbody tr:nth-child(even) {
+            background-color: #f7f9fb;
+        }
+
+        .research-table tbody tr:hover {
+            background-color: #edf2f7;
+            transition: background-color 0.15s ease;
+        }
+
+        .research-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* --- Overview Section --- */
+        .overview-intro {
+            margin-bottom: 6px;
+        }
+
+        .overview-list {
+            margin-top: 0;
+        }
+
+        .overview-followup {
+            margin-bottom: 12px;
+        }
+
+        .overview-goal {
+            margin-top: 0;
+            margin-bottom: 48px;
+        }
+
+        .subheading-compact {
+            font-size: 30px;
+            line-height: 1.2;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        @media screen and (min-width: 992px) {
+            .page-client .post_content p.mb-18-desktop {
+                margin-bottom: 18px;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .page-client.wrapper {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .page-client #post-title .title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+
+            .page-client .post_content {
+                padding-top: 24px;
+            }
+
+            .page-client .post_content p {
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 24px;
+            }
+
+            .page-client .post_content h2 {
+                margin-top: 36px;
+                margin-bottom: 12px;
+            }
+
+            .page-client .post_content h3 {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+            .page-client .image-grid {
+                gap: 16px;
+            }
+
+            .research-table {
+                font-size: 13px;
+            }
+
+            .research-table thead th,
+            .research-table tbody td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper page-client">
+        <header class="header" id="header">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container container-1">
+                    <div class="row flex-grow-1 align-items-center">
+                        <div class="col-6 col-lg-2 menu-home">
+                            <div class="d-flex align-items-center">
+                                <button class="navbar-toggler mr-3" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbar-header">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <div class="logo" onclick="window.location = 'index.html'">
+                                    <h1><img class="logo-header" src="../assets/images/mediax-logo.svg" /></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="collapse navbar-collapse" id="navbar-header">
+                                <ul class="navbar-nav menu-header ms-auto mb-2 mb-lg-0 align-items-lg-end">
+                                    <li class="nav-item nav-item-dropdown">
+                                        <a class="nav-link" href="javascript:void(0);" aria-haspopup="true">Our
+                                            Products</a>
+                                        <div class="nav-dropdown mega-menu" role="menu" aria-label="Our Products menu">
+                                            <div class="mega-menu-grid mega-menu-grid-products">
+                                                <div class="mega-feature-card mega-feature-card-copy"
+                                                    aria-hidden="true">
+                                                    <p class="mega-products-title">Built for the AI Era</p>
+                                                    <p class="mega-products-subtitle">Explore Our AI Products</p>
+                                                </div>
+                                                <div class="mega-menu-section mega-products-links">
+                                                    <a class="mega-menu-link mega-menu-link-arrow"
+                                                        href="doc-copilot.html" role="menuitem">
+                                                        <span>Doc Copilot</span>
+                                                        <span class="mega-link-arrow">&rarr;</span>
+                                                    </a>
+                                                    <span class="mega-menu-link mega-menu-link-arrow is-disabled"
+                                                        aria-disabled="true">
+                                                        <span>CS Copilot</span>
+                                                        <span class="mega-link-arrow">&rarr;</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="our-research.html">Our Research</a>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="careers.html">Careers</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="about-us.html">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact-us.html">Contact</a>
+                                    </li>
+
+                                    <li class="nav-item lang-switcher">
+                                        <a class="nav-link lang-link active" data-lang="en"
+                                            href="face-recognition-for-automated-staff-check-in.html"><img
+                                                class="lang-flag" src="../assets/images/flag-us.svg" alt="English"></a>
+                                        <span class="lang-separator">/</span>
+                                        <a class="nav-link lang-link" data-lang="vi"
+                                            href="vi/face-recognition-for-automated-staff-check-in.html"><img
+                                                class="lang-flag" src="../assets/images/flag-vn.svg"
+                                                alt="Vietnamese"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="page__home page-our-client" style="min-height: calc(100vh - 73px);background: #fff;">
+            <div id="post-research" style="background-color: #fff;">
+                <div class="container container-1">
+                    <article class="instruction-1" id="post-title">
+                        <h1 class="title">Face Recognition for Automated Staff Check-In</h1>
+                        <p><em>March 11, 2026 | MediaX Research Team</em></p>
+                    </article>
+                    <div id="horizontal-line"></div>
+                    <div class="post_content">
+                        <h3>Using InsightFace + ByteTrack with a Tapo Camera</h3>
+
+                        <h2>Overview</h2>
+                        <p class="overview-intro">This research explores a low-cost automated staff check-in system
+                            using computer vision.</p>
+                        <h3 class="subheading-compact">The System Combines</h3>
+                        <ul class="overview-list">
+                            <li>Face detection &amp; recognition: InsightFace</li>
+                            <li>Multi-object tracking: ByteTrack</li>
+                            <li>Camera hardware: TP‑Link Tapo Camera</li>
+                        </ul>
+                        <p class="overview-followup">The camera is installed far from the entrance door, simulating a
+                            realistic office setup where employees walk through naturally without interacting with a
+                            device.</p>
+                        <p class="overview-goal">The goal is to enable fully automatic attendance logging without RFID
+                            cards, fingerprint scanners, or manual interaction.</p>
+
+                        <h2>System Architecture</h2>
+                        <h3>Camera Setup</h3>
+                        <ul>
+                            <li>A Tapo IP camera is mounted at a distance from the entrance.</li>
+                            <li>Video stream is processed continuously.</li>
+                            <li>Staff walk naturally through the door.</li>
+                        </ul>
+
+                        <h3>Processing Pipeline</h3>
+                        <ol>
+                            <li>Video Stream Input</li>
+                            <li>Face Detection</li>
+                            <li>Face Tracking (ByteTrack)</li>
+                            <li>Face Recognition (InsightFace embeddings)</li>
+                            <li>Identity Matching</li>
+                            <li>Attendance Logging</li>
+                        </ol>
+                        <p>ByteTrack ensures the system tracks the same person across frames, avoiding repeated
+                            recognition calls and improving stability.</p>
+
+                        <h2>Evaluation Dataset</h2>
+                        <h3>Test Dataset Characteristics</h3>
+                        <ul>
+                            <li>Total samples: 72 face instances</li>
+                            <li>Multiple staff identities</li>
+                            <li>Unknown faces included to test rejection ability</li>
+                            <li>Captured from real camera footage rather than controlled photos</li>
+                        </ul>
+
+                        <h2>Overall Performance</h2>
+                        <table class="research-table">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Accuracy</td>
+                                    <td>93.06%</td>
+                                </tr>
+                                <tr>
+                                    <td>Weighted F1</td>
+                                    <td>0.9297</td>
+                                </tr>
+                                <tr>
+                                    <td>Macro F1</td>
+                                    <td>0.9313</td>
+                                </tr>
+                                <tr>
+                                    <td>Weighted Precision</td>
+                                    <td>0.9444</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>Other Stats</h3>
+                        <ul>
+                            <li>No missing face detections</li>
+                            <li>No corrupted images</li>
+                        </ul>
+
+                        <h2>Per-Class Results (Names Hidden)</h2>
+                        <table class="research-table">
+                            <thead>
+                                <tr>
+                                    <th>Staff ID</th>
+                                    <th>Support</th>
+                                    <th>Precision</th>
+                                    <th>Recall</th>
+                                    <th>F1</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Staff-A</td>
+                                    <td>5</td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Staff-B</td>
+                                    <td>15</td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Staff-C</td>
+                                    <td>9</td>
+                                    <td>1.00</td>
+                                    <td>0.89</td>
+                                    <td>0.94</td>
+                                </tr>
+                                <tr>
+                                    <td>Staff-D</td>
+                                    <td>10</td>
+                                    <td>1.00</td>
+                                    <td>0.80</td>
+                                    <td>0.89</td>
+                                </tr>
+                                <tr>
+                                    <td>Staff-E</td>
+                                    <td>7</td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Staff-F</td>
+                                    <td>6</td>
+                                    <td>1.00</td>
+                                    <td>0.67</td>
+                                    <td>0.80</td>
+                                </tr>
+                                <tr>
+                                    <td>Unknown</td>
+                                    <td>20</td>
+                                    <td>0.80</td>
+                                    <td>1.00</td>
+                                    <td>0.89</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Error Analysis</h2>
+                        <h3>Top Misclassifications</h3>
+                        <table class="research-table">
+                            <thead>
+                                <tr>
+                                    <th>Expected</th>
+                                    <th>Predicted</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Staff-D</td>
+                                    <td>Unknown</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Staff-F</td>
+                                    <td>Unknown</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Staff-C</td>
+                                    <td>Unknown</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>Observations</h3>
+                        <ul>
+                            <li>Most errors occur when a staff member is classified as unknown, not as another staff
+                                member.</li>
+                            <li>This is a safe failure mode, avoiding incorrect attendance.</li>
+                        </ul>
+
+                        <h2>Key Insights</h2>
+                        <h3>1. Tracking Improves Recognition Stability</h3>
+                        <p>Using ByteTrack allows the system to:</p>
+                        <ul>
+                            <li>Recognize a person once per track</li>
+                            <li>Avoid repeated recognition per frame</li>
+                            <li>Reduce computation cost</li>
+                        </ul>
+
+                        <h3>2. Long-Distance Camera Still Works</h3>
+                        <p>Despite the camera being far from the door:</p>
+                        <ul>
+                            <li>Detection remained reliable</li>
+                            <li>Recognition maintained &gt;93% accuracy</li>
+                        </ul>
+
+                        <h3>3. Unknown Detection Works Well</h3>
+                        <p>The system successfully rejects unfamiliar faces:</p>
+                        <ul>
+                            <li>Recall for unknown class = 100%</li>
+                            <li>Some unknown faces still match known identities; threshold tuning may improve this.</li>
+                        </ul>
+
+                        <h2>Practical Implications</h2>
+                        <h3>System Benefits</h3>
+                        <p>This approach enables a fully automated attendance system with:</p>
+                        <ul>
+                            <li>No hardware interaction</li>
+                            <li>No fingerprint scanners</li>
+                            <li>No RFID cards</li>
+                            <li>Minimal installation cost</li>
+                        </ul>
+                        <h3>Only Requirements</h3>
+                        <ul>
+                            <li>A single IP camera</li>
+                            <li>A small compute server</li>
+                        </ul>
+
+                        <h2>Future Improvements</h2>
+                        <h3>Potential Next Steps</h3>
+                        <ul>
+                            <li>Add multi-camera fusion</li>
+                            <li>Improve distance face quality filtering</li>
+                            <li>Use temporal embedding averaging</li>
+                            <li>Integrate with HR / payroll systems</li>
+                        </ul>
+                        <p><a href="our-research.html">Find out more about our research.</a></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <nav class="navbar navbar-expand-lg navbar-footer">
+                <div class="container container-1">
+                    <div class="row flex-grow-1 justify-content-between">
+                        <div class="col-lg-6" style="display: flex;align-items: stretch;flex-direction: column;">
+                            <div class="logo-footer">
+                                <a href="#"><img src="./assets/images/mediax-logo.svg" style="max-height: 40px;"
+                                        alt=""></a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbar-footer">
+                                <ul class="menu-footer mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="services.html">Services <i
+                                                class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="our-research.html">Our Research <i
+                                                class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="careers.html">Careers<i
+                                                class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="about-us.html">About Us <i
+                                                class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="contact-us.html" class="nav-link" href="">Contact <i
+                                                class="fa-solid fa-arrow-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-5">
+                            <div class="social-area d-flex ms-auto mb-2 mb-lg-0 justify-content-start">
+                                <ul class="social-list d-flex flex-row ">
+                                    <!-- <li><a href=""><img src="./assets/images/telegram-logo.png" alt=""></a></li> -->
+                                </ul>
+                            </div>
+                            <div class="contact-us">
+                                <div>Contact info</div>
+                                <div class="mail">
+                                    <span class=""><img src="./assets/images/mail-logo.svg" alt=""></span>
+                                    <p><a href="mailto:hello@mediax.com.vn">hello@mediax.com.vn</a></p>
+                                </div>
+                                <div class="phone">
+                                    <span class=""><img src="./assets/images/phone-logo.svg" alt=""></span>
+                                    <p><a href="tel:0343488603">0343488603</a></p>
+                                </div>
+                                <div class="address">
+                                    <span class=""><img src="./assets/images/address-logo.svg" alt=""></span>
+                                    <p>5th floor V1 The Terra An Hung - La Khe - Ha Dong - HN</p>
+                                </div>
+                            </div>
+                            <div class="copy-right">
+                                <p>Â© 2023 - 2026 MediaX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </footer>
+    </div>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Corporation",
+          "name": "MediaX - Pioneering Artificial Intelligence for Vietnam",
+          "url": "https://mediax.com.vn/",
+          "logo": "https://mediax.com.vn/assets/images/mediax-logo.svg",
+          "sameAs": "https://mediax.com.vn/"
+        }
+    </script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/custom.menu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"
+        integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>
