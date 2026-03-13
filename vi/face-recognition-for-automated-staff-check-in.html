@@ -278,42 +278,6 @@
             margin-bottom: 12px;
         }
 
-        .post-actions {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
-            margin-top: 8px;
-            margin-bottom: 8px;
-        }
-
-        .post-actions .action-primary {
-            display: inline-block;
-            background: #111111;
-            color: #ffffff !important;
-            text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: background-color 0.2s ease;
-        }
-
-        .post-actions .action-primary:hover {
-            background: #000000;
-        }
-
-        .post-actions .action-secondary {
-            display: inline-block;
-            color: #1f3c88 !important;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-            font-weight: 500;
-        }
-
-        .post-actions .action-secondary:hover {
-            color: #15295d !important;
-        }
-
         @media screen and (min-width: 992px) {
             .page-client .post_content p.mb-18-desktop {
                 margin-bottom: 18px;
@@ -364,10 +328,6 @@
                 padding: 8px 10px;
             }
 
-            .post-actions .action-primary {
-                width: 100%;
-                text-align: center;
-            }
         }
     </style>
 </head>
@@ -681,12 +641,9 @@
                             <li>Sử dụng temporal embedding averaging</li>
                             <li>Tích hợp với hệ thống HR/payroll</li>
                         </ul>
-                        <div class="post-actions">
-                            <a class="action-primary" href="https://github.com/mediaxweb/staff_monitoring"
-                                target="_blank" rel="noopener noreferrer">Check the source code on Github</a>
-                            <a class="action-secondary" href="our-research.html">Tìm hiểu thêm về các nghiên cứu của
-                                chúng tôi.</a>
-                        </div>
+                        <p>Mã nguồn: <a href="https://github.com/mediaxweb/staff_monitoring" target="_blank"
+                                rel="noopener noreferrer">Check the source code on Github</a></p>
+                        <p><a href="our-research.html">Tìm hiểu thêm về các nghiên cứu của chúng tôi.</a></p>
                     </div>
                 </div>
             </div>
