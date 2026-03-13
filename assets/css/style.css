@@ -1576,11 +1576,9 @@ body.mega-menu-open::before {
 
 .post_content p {
     text-align: justify;
-    margin-bottom: 20px;
     font-size: 18px;
     line-height: 27px;
     font-weight: 400;
-    margin-bottom: 64px;
 }
 
 .page-our-client #about-us {
