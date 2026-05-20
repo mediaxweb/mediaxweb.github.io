@@ -226,7 +226,7 @@
                         <h1 class="client-title">Recruitment Announcement</h1>
                         <p class="client-subtitle">We’re a fast-growing startup seeking <br> passionate and talented
                             individuals to join our team and make a real impact.</p>
-                        <a href="junior-ai-agent-engineer.html" class="careers-btn">View jobs</a>
+                        <a href="#featured-jobs" class="careers-btn">View jobs</a>
                     </article>
                 </div>
                 <div class="img-careers">
@@ -313,7 +313,7 @@
             </div>
 
             <div id="contact-us" style="background-color: #ffff;">
-                <div class="container container-1">
+                <div class="container container-1" id="featured-jobs">
                     <article class="instruction-1" id="home-title">
                         <h2 class="title" style="padding-top: 0;">Featured Jobs</h2>
                         <p class="client-subtitle">We’re actively seeking talented individuals to join our team and
@@ -452,13 +452,9 @@
                                     <span class=""><img src="./assets/images/mail-logo.svg" alt=""></span>
                                     <p><a href="mailto:hello@mediax.com.vn">hello@mediax.com.vn</a></p>
                                 </div>
-                                <div class="phone">
-                                    <span class=""><img src="./assets/images/phone-logo.svg" alt=""></span>
-                                    <p><a href="tel:0343488603">0343488603</a></p>
-                                </div>
                                 <div class="address">
                                     <span class=""><img src="./assets/images/address-logo.svg" alt=""></span>
-                                    <p>5th floor V1 The Terra An Hung - La Khe - Ha Dong - HN</p>
+                                    <p>5th Floor, V1 Building, The Terra An Hung, Duong Noi, Hanoi</p>
                                 </div>
                             </div>
                             <div class="copy-right">
@@ -531,6 +527,24 @@
                 } else {
                     link.classList.add('inactive');
                 }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var jobsButton = document.querySelector('a.careers-btn[href="#featured-jobs"]');
+            var jobsSection = document.getElementById("featured-jobs");
+            if (!jobsButton || !jobsSection) return;
+
+            jobsButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                var header = document.getElementById("header");
+                var headerHeight = header ? header.getBoundingClientRect().height : 0;
+                var targetTop = jobsSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+                window.scrollTo({
+                    top: Math.max(targetTop, 0),
+                    behavior: "smooth"
+                });
             });
         });
     </script>
