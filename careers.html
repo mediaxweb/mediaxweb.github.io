@@ -226,7 +226,7 @@
                         <h1 class="client-title">Recruitment Announcement</h1>
                         <p class="client-subtitle">We’re a fast-growing startup seeking <br> passionate and talented
                             individuals to join our team and make a real impact.</p>
-                        <a href="junior-ai-agent-engineer.html" class="careers-btn">View jobs</a>
+                        <a href="#featured-jobs" class="careers-btn">View jobs</a>
                     </article>
                 </div>
                 <div class="img-careers">
@@ -313,7 +313,7 @@
             </div>
 
             <div id="contact-us" style="background-color: #ffff;">
-                <div class="container container-1">
+                <div class="container container-1" id="featured-jobs">
                     <article class="instruction-1" id="home-title">
                         <h2 class="title" style="padding-top: 0;">Featured Jobs</h2>
                         <p class="client-subtitle">We’re actively seeking talented individuals to join our team and
@@ -527,6 +527,24 @@
                 } else {
                     link.classList.add('inactive');
                 }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var jobsButton = document.querySelector('a.careers-btn[href="#featured-jobs"]');
+            var jobsSection = document.getElementById("featured-jobs");
+            if (!jobsButton || !jobsSection) return;
+
+            jobsButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                var header = document.getElementById("header");
+                var headerHeight = header ? header.getBoundingClientRect().height : 0;
+                var targetTop = jobsSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+                window.scrollTo({
+                    top: Math.max(targetTop, 0),
+                    behavior: "smooth"
+                });
             });
         });
     </script>

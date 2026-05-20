@@ -232,7 +232,7 @@
                         <h1 class="client-title">Cơ hội nghề nghiệp</h1>
                         <p class="client-subtitle">Chúng tôi là một startup phát triển nhanh, đang tìm kiếm những cá
                             nhân nhiệt huyết và tài năng để gia nhập đội ngũ và tạo ra ảnh hưởng thực sự.</p>
-                        <a class="careers-btn" href="junior-ai-agent-engineer.html">Xem các vị trí</a>
+                        <a class="careers-btn" href="#featured-jobs">Xem các vị trí</a>
                     </article>
                 </div>
                 <div class="img-careers">
@@ -317,7 +317,7 @@
                 </div>
             </div>
             <div id="contact-us" style="background-color: #ffff;">
-                <div class="container container-1">
+                <div class="container container-1" id="featured-jobs">
                     <article class="instruction-1" id="home-title">
                         <h2 class="title" style="padding-top: 0;">Các vị trí nổi bật</h2>
                         <p class="client-subtitle">Chúng tôi đang tìm kiếm những cá nhân tài năng để gia nhập đội ngũ và
@@ -530,6 +530,24 @@
                 } else {
                     link.classList.add('inactive');
                 }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var jobsButton = document.querySelector('a.careers-btn[href="#featured-jobs"]');
+            var jobsSection = document.getElementById("featured-jobs");
+            if (!jobsButton || !jobsSection) return;
+
+            jobsButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                var header = document.getElementById("header");
+                var headerHeight = header ? header.getBoundingClientRect().height : 0;
+                var targetTop = jobsSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+                window.scrollTo({
+                    top: Math.max(targetTop, 0),
+                    behavior: "smooth"
+                });
             });
         });
     </script>
